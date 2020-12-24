@@ -19,17 +19,9 @@ Lecture Link: https://master.d2s409snhlt74e.amplifyapp.com/  (<i>믿을만하지
 ### Lab1 - module 2 STM secure boot 관련 부분 문제 처리
 
 https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/
-   
-1. pythonn version 은 3.8.4를 쓰는걸로 (진행중..확인중)
-2. 압축을 풀면 sh 스크립트가 실행파일이 아닙...
-   * ```chomd -R 755 prebuild.sh``` 같은 처리가 필요.
-3. python 관련 라이브러리 필요
-   * ```pip3 install pycryptodomex```
-   * ```pip3 install pycryptodomex```
-   * ```pip3 install ecdsa```
-   * ```pip3 install numpy```
-   * ```pip3 install pyelftools```
 
-이러면 prebuild script 실행완료 됩니다 ㅠ
+https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/#build-error-fix
+
+이부분을 참조하면 됩니다. SBSFU 까지 빌드 되어서 플래싱되는것 확인.
 
 
