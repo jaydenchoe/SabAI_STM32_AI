@@ -25,3 +25,8 @@ https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/#build-error-fix
 이부분을 참조하면 됩니다. SBSFU 까지 빌드 되어서 플래싱되는것 확인.
 
 
+### Lab 1 - module 3 aws iot application
+
+1. 바이너리 빌드 설치 후
+2. 인증서 받아서 저장.
+
