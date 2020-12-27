@@ -22,9 +22,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stm32l4xx_hal_uart.h"
-#include <stdio.h>
-#include "stm32l4xx_hal.h"
+#include <stdio.h> // for printf
+#include "lsm6dsl.h" // for LSM6DSL sensor
+#include "b_l4s5i_iot01a_bus.h" // for LSM6DSL sensor
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,9 +46,6 @@ ADC_HandleTypeDef hadc1;
 
 DFSDM_Channel_HandleTypeDef hdfsdm1_channel2;
 
-I2C_HandleTypeDef hi2c1;
-I2C_HandleTypeDef hi2c2;
-
 OSPI_HandleTypeDef hospi1;
 
 SPI_HandleTypeDef hspi1;
@@ -59,8 +56,9 @@ TIM_HandleTypeDef htim15;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-extern uint8_t g_ch_uart1_rx_data;
-extern uint8_t g_testData;
+extern uint8_t g_ch_uart1_rx_data; // for UART1 rx
+extern LSM6DSL_Object_t g_motion_sensor;
+extern volatile uint32_t g_data_rdy_int_received;
 
 /* USER CODE END PV */
 
@@ -69,8 +67,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_DFSDM1_Init(void);
-static void MX_I2C1_Init(void);
-static void MX_I2C2_Init(void);
 static void MX_OCTOSPI1_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_SPI3_Init(void);
@@ -79,6 +75,8 @@ static void MX_USB_OTG_FS_USB_Init(void);
 static void MX_TIM15_Init(void);
 /* USER CODE BEGIN PFP */
 extern void test_UART1_Output ();
+extern void get_and_print_3axis( void );
+extern void MEMS_Init( void );
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -115,17 +113,18 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_DFSDM1_Init();
-  MX_I2C1_Init();
-  MX_I2C2_Init();
   MX_OCTOSPI1_Init();
   MX_SPI1_Init();
   MX_SPI3_Init();
   MX_USART1_UART_Init();
   MX_USB_OTG_FS_USB_Init();
   MX_TIM15_Init();
-  /* USER CODE BEGIN 2 */
 
-  // 아래 라인을 빼면 Printf 실행이 안된다!!!!!!!
+  /* USER CODE BEGIN 2 */
+  // 가속 센서 초기화합니다.
+    MEMS_Init();
+
+  //UART1 RX 인터럽트 받는다. 이상하게 아래 라인을 빼면 Printf 실행이 안된다!!!!!!!
 	HAL_UART_Receive_IT( &huart1, &g_ch_uart1_rx_data, 1); // UART1 RX 인터럽트 살린다.
 
   // Timer 15 실행 (by 인터럽트). 상세 설정은 static void MX_TIM15_Init(void) 참고. prescale 12000, period 10000으로 1초마다 한번씩 이벤트 발생.
@@ -135,14 +134,14 @@ int main(void)
 	test_UART1_Output();
 
   // Hello World - Printf version
-	printf( "PRINTF - Hello World\r\n" );
+	printf( "PRINTF. Hello World\r\n" );
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+  while (1) {
+	  get_and_print_3axis(); // 3축 센서 값을 받아서 그 값들 printf로 출력한다.
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -202,12 +201,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_I2C1
-                              |RCC_PERIPHCLK_I2C2|RCC_PERIPHCLK_DFSDM1
-                              |RCC_PERIPHCLK_USB|RCC_PERIPHCLK_ADC
-                              |RCC_PERIPHCLK_OSPI;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_I2C2
+                              |RCC_PERIPHCLK_DFSDM1|RCC_PERIPHCLK_USB
+                              |RCC_PERIPHCLK_ADC|RCC_PERIPHCLK_OSPI;
   PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
-  PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
   PeriphClkInit.I2c2ClockSelection = RCC_I2C2CLKSOURCE_PCLK1;
   PeriphClkInit.AdcClockSelection = RCC_ADCCLKSOURCE_PLLSAI1;
   PeriphClkInit.Dfsdm1ClockSelection = RCC_DFSDM1CLKSOURCE_PCLK;
@@ -320,98 +317,6 @@ static void MX_DFSDM1_Init(void)
   /* USER CODE BEGIN DFSDM1_Init 2 */
 
   /* USER CODE END DFSDM1_Init 2 */
-
-}
-
-/**
-  * @brief I2C1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_I2C1_Init(void)
-{
-
-  /* USER CODE BEGIN I2C1_Init 0 */
-
-  /* USER CODE END I2C1_Init 0 */
-
-  /* USER CODE BEGIN I2C1_Init 1 */
-
-  /* USER CODE END I2C1_Init 1 */
-  hi2c1.Instance = I2C1;
-  hi2c1.Init.Timing = 0x307075B1;
-  hi2c1.Init.OwnAddress1 = 0;
-  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-  hi2c1.Init.OwnAddress2 = 0;
-  hi2c1.Init.OwnAddress2Masks = I2C_OA2_NOMASK;
-  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure Analogue filter
-  */
-  if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure Digital filter
-  */
-  if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN I2C1_Init 2 */
-
-  /* USER CODE END I2C1_Init 2 */
-
-}
-
-/**
-  * @brief I2C2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_I2C2_Init(void)
-{
-
-  /* USER CODE BEGIN I2C2_Init 0 */
-
-  /* USER CODE END I2C2_Init 0 */
-
-  /* USER CODE BEGIN I2C2_Init 1 */
-
-  /* USER CODE END I2C2_Init 1 */
-  hi2c2.Instance = I2C2;
-  hi2c2.Init.Timing = 0x307075B1;
-  hi2c2.Init.OwnAddress1 = 0;
-  hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-  hi2c2.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-  hi2c2.Init.OwnAddress2 = 0;
-  hi2c2.Init.OwnAddress2Masks = I2C_OA2_NOMASK;
-  hi2c2.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-  hi2c2.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  if (HAL_I2C_Init(&hi2c2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure Analogue filter
-  */
-  if (HAL_I2CEx_ConfigAnalogFilter(&hi2c2, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure Digital filter
-  */
-  if (HAL_I2CEx_ConfigDigitalFilter(&hi2c2, 0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN I2C2_Init 2 */
-
-  /* USER CODE END I2C2_Init 2 */
 
 }
 
@@ -804,6 +709,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : ARD_D15_Pin ARD_D14_Pin */
+  GPIO_InitStruct.Pin = ARD_D15_Pin|ARD_D14_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
