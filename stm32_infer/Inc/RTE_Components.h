@@ -36,6 +36,8 @@
 #define  __RTE_COMPONENTS_H__
 
 /* Defines ------------------------------------------------------------------*/
+/* STMicroelectronics.X-CUBE-AI.5.2.0 */
+#define AI_ApplicationTemplate
 /* STMicroelectronics.X-CUBE-MEMS1.8.2.0 */
 #define LSM6DSL_ACCGYR_I2C
 

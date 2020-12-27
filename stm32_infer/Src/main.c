@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "app_x-cube-ai.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -43,6 +44,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+
+CRC_HandleTypeDef hcrc;
 
 DFSDM_Channel_HandleTypeDef hdfsdm1_channel2;
 
@@ -73,6 +76,7 @@ static void MX_SPI3_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USB_OTG_FS_USB_Init(void);
 static void MX_TIM15_Init(void);
+static void MX_CRC_Init(void);
 /* USER CODE BEGIN PFP */
 extern void test_UART1_Output ();
 extern void get_and_print_3axis( void );
@@ -119,7 +123,8 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USB_OTG_FS_USB_Init();
   MX_TIM15_Init();
-
+  MX_CRC_Init();
+  MX_X_CUBE_AI_Init();
   /* USER CODE BEGIN 2 */
   // 가속 센서 초기화합니다.
     MEMS_Init();
@@ -134,7 +139,7 @@ int main(void)
 	test_UART1_Output();
 
   // Hello World - Printf version
-	printf( "PRINTF. Hello World\r\n" );
+	printf( "PRINTF(): Hello World\r\n" );
 
   /* USER CODE END 2 */
 
@@ -144,6 +149,7 @@ int main(void)
 	  get_and_print_3axis(); // 3축 센서 값을 받아서 그 값들 printf로 출력한다.
     /* USER CODE END WHILE */
 
+	  MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -279,6 +285,37 @@ static void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
+
+}
+
+/**
+  * @brief CRC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_CRC_Init(void)
+{
+
+  /* USER CODE BEGIN CRC_Init 0 */
+
+  /* USER CODE END CRC_Init 0 */
+
+  /* USER CODE BEGIN CRC_Init 1 */
+
+  /* USER CODE END CRC_Init 1 */
+  hcrc.Instance = CRC;
+  hcrc.Init.DefaultPolynomialUse = DEFAULT_POLYNOMIAL_ENABLE;
+  hcrc.Init.DefaultInitValueUse = DEFAULT_INIT_VALUE_ENABLE;
+  hcrc.Init.InputDataInversionMode = CRC_INPUTDATA_INVERSION_NONE;
+  hcrc.Init.OutputDataInversionMode = CRC_OUTPUTDATA_INVERSION_DISABLE;
+  hcrc.InputDataFormat = CRC_INPUTDATA_FORMAT_BYTES;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN CRC_Init 2 */
+
+  /* USER CODE END CRC_Init 2 */
 
 }
 
