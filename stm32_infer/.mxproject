@@ -7,8 +7,8 @@ HeaderPath=Drivers/STM32L4xx_HAL_Driver/Inc;Drivers/STM32L4xx_HAL_Driver/Inc/Leg
 CDefines=USE_HAL_DRIVER;STM32L4S5xx;USE_HAL_DRIVER;USE_HAL_DRIVER;
 
 [PreviousGenFiles]
-HeaderPath=/Users/jaehunchoe/workplace/stm32/Inc
+HeaderPath=/Users/jaehunchoe/workplace/GitHub/SabAI/stm32_infer/Inc
 HeaderFiles=stm32l4xx_it.h;stm32l4xx_hal_conf.h;main.h;
-SourcePath=/Users/jaehunchoe/workplace/stm32/Src
+SourcePath=/Users/jaehunchoe/workplace/GitHub/SabAI/stm32_infer/Src
 SourceFiles=stm32l4xx_it.c;stm32l4xx_hal_msp.c;main.c;
 
