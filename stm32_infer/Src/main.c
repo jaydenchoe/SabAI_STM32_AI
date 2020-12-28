@@ -147,9 +147,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1) {
 	  get_and_print_3axis(); // 3축 센서 값을 받아서 그 값들 printf로 출력한다.
+	  continue;
     /* USER CODE END WHILE */
 
-	  MX_X_CUBE_AI_Process();
+  MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

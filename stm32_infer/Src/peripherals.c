@@ -51,7 +51,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 // UART1 RX complete시 불리는 콜백함수 (지금 에코 기능만 일단 넣었고, CR+NL 에코 출력은 NL이 안 먹는 것 같아 수정 필 )
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	if ( huart->Instance == USART1 ) { // UART1 RX 끝날 때 마다 할일
-		 if (g_ch_uart1_rx_data == 'r' || g_ch_uart1_rx_data == '\n' ) {
+		 if (g_ch_uart1_rx_data == '\r' || g_ch_uart1_rx_data == '\n' ) {
 			 HAL_UART_Transmit(&huart1, &ch_linefeed, 1, 1); // CR + NL을 에코 출력
 			 HAL_UART_Transmit(&huart1, &ch_CR, 1, 1);
 		 } else {
