@@ -1,0 +1,77 @@
+/*###ICF### Set of symbols used in SE and SB_SFU projects ****/
+
+/******************************************************************************/
+/*                              ROM section                                   */
+/******************************************************************************/
+
+/* SE Code region protected by firewall */
+define exported symbol __ICFEDIT_SE_Code_region_ROM_start__       = 0x08000200;
+define exported symbol __ICFEDIT_SE_CallGate_region_ROM_start__   = __ICFEDIT_SE_Code_region_ROM_start__ + 4;
+define exported symbol __ICFEDIT_SE_CallGate_Region_ROM_End__     = __ICFEDIT_SE_Code_region_ROM_start__ + 0x1FF;
+
+/* SE key region protected by firewall */
+define exported symbol __ICFEDIT_SE_Key_region_ROM_start__        = __ICFEDIT_SE_CallGate_Region_ROM_End__ + 1;
+define exported symbol __ICFEDIT_SE_Key_region_ROM_end__          = __ICFEDIT_SE_Key_region_ROM_start__ + 0xFF;
+
+/* SE Startup: call before enabling firewall                                  */
+define exported symbol __ICFEDIT_SE_Startup_region_ROM_start__    = __ICFEDIT_SE_Key_region_ROM_end__ + 1;
+define exported symbol __ICFEDIT_SE_Code_nokey_region_ROM_start__ = __ICFEDIT_SE_Startup_region_ROM_start__ + 0x100;
+define exported symbol __ICFEDIT_SE_Code_region_ROM_end__         = __ICFEDIT_SE_Startup_region_ROM_start__ + 0x1AFFF;
+
+/* SE IF ROM: used to locate Secure Engine interface code out of firewall     */
+define exported symbol __ICFEDIT_SE_IF_region_ROM_start__         = __ICFEDIT_SE_Code_region_ROM_end__ + 1;
+define exported symbol __ICFEDIT_SE_IF_region_ROM_end__           = __ICFEDIT_SE_IF_region_ROM_start__ + 0xAFF;
+
+/* SBSFU Code region */
+define exported symbol __ICFEDIT_SB_region_ROM_start__            = __ICFEDIT_SE_IF_region_ROM_end__ + 1;
+define exported symbol __ICFEDIT_SB_region_ROM_end__              = 0x08035FFF;
+
+/* KMS Data Storage (NVMS) region protected by firewall */
+/* In Dual Bank configuration, we propose to set it up to the beginning of the second bank + 0x1000 in case of bank swap */
+/* KMS Data Storage need for 2 images : 6 kbytes * 2 ==> 12 kbytes */
+define exported symbol __ICFEDIT_KMS_DataStorage_start__          = 0x08101000;
+define exported symbol __ICFEDIT_KMS_DataStorage_end__            = 0x08104FFF;
+
+
+
+/* ROM regions definition : ordered  */
+define region SE_Entry_Secure_ROM_Region = mem:[from __ICFEDIT_SE_Code_region_ROM_start__ to __ICFEDIT_SE_CallGate_Region_ROM_End__];
+define region SE_Key_ROM_region          = mem:[from __ICFEDIT_SE_Key_region_ROM_start__ to __ICFEDIT_SE_Key_region_ROM_end__];
+define region SE_ROM_region              = mem:[from __ICFEDIT_SE_Code_nokey_region_ROM_start__ to __ICFEDIT_SE_Code_region_ROM_end__];
+define region SE_IF_ROM_region           = mem:[from __ICFEDIT_SE_IF_region_ROM_start__ to __ICFEDIT_SE_IF_region_ROM_end__];
+define region SB_ROM_region              = mem:[from __ICFEDIT_SB_region_ROM_start__ to __ICFEDIT_SB_region_ROM_end__];
+define region KMS_DataStorage            = mem:[from __ICFEDIT_KMS_DataStorage_start__ to __ICFEDIT_KMS_DataStorage_end__];
+
+/******************************************************************************/
+/*                              RAM section                                   */
+/*                                                                            */
+/******************************************************************************/
+
+/* ---------- */
+/* Watch out: the SRAM1 mnemonic is kept for lowering the changes on SBSFU side. */
+/* Nevertheless, the entire SRAM1 is kept for the Firewall.                      */
+/* Hence, SRAM2 and SRAM3 are used for the SB_region_SRAM1                       */
+/* ---------- */
+
+
+/* SE RAM1 region protected by firewall */
+/* SE stack is placed 1st in RAM, stack overflow does not write on other RAM area */
+define exported symbol __ICFEDIT_SE_region_SRAM1_start__     = 0x20000000;
+define exported symbol __ICFEDIT_SE_region_SRAM1_stack_top__ = 0x20002000; /* Secure Engine's private stack */
+define exported symbol __ICFEDIT_SE_region_SRAM1_end__       = 0x2001FFBF; /* 0x1FFC0 bytes of SRAM1 under FWALL */
+define exported symbol __ICFEDIT_SE_region_SRAM1_do_not_use_start__     = 0x2001FFC0;
+define exported symbol __ICFEDIT_SE_region_SRAM1_do_not_use_end__       = 0x2002FFFF; /* 0x10040 bytes we cannot use to avoid spurious firewall reset */
+/* See errata sheet: ES0393 - Rev 6 - October 2019                                                                              */
+/* Only 128 Kbytes - 1 byte and with the 6 lowest bits set to 0 of SRAM1 can be protected by the firewall instead of the full memory space (192 Kbytes of SRAM1). */
+/* Use SRAM2 or SRAM3 as system RAM and avoid accessing SRAM1 before any access to an address outside the protected SRAM1 area,                                   */
+/* of which the 18 LSBs correspond to an address within the protected SRAM1 area.                                                                                 */
+/* So we declare all SRAM1 to avoid spurious Firewall reset but only 0x1FFC0 bytes can be actually used (under Firewall).                                         */
+
+/* SBSFU RAM1 region */
+define exported symbol __ICFEDIT_SB_region_SRAM1_start__ = 0x20030000; /* SRAM2 instead of __ICFEDIT_SE_region_SRAM1_end__ + 1; */
+define exported symbol __ICFEDIT_SB_region_SRAM1_end__   = 0x2009FFFF; /* SRAM2+SRAM3 instead of 0x20017FFF; */
+
+/* RAM regions definition */
+define region SE_SRAM1_region    = mem:[from __ICFEDIT_SE_region_SRAM1_stack_top__ to __ICFEDIT_SE_region_SRAM1_end__];
+define region SRAM1_do_not_use   = mem:[from __ICFEDIT_SE_region_SRAM1_do_not_use_start__ to __ICFEDIT_SE_region_SRAM1_do_not_use_end__];
+define region SB_SRAM1_region    = mem:[from __ICFEDIT_SB_region_SRAM1_start__ to __ICFEDIT_SB_region_SRAM1_end__];

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>X-CUBE-AWS Projects</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12">
+<h1 id="x-cube-aws-projects"><mark>X-CUBE-AWS</mark> Projects</h1>
+<p>The application samples are located under <code>STM32CubeExpansion_Cloud_AWS_VX.Y.Z/Projects/Applications</code>, and all of them have the same structure:</p>
+<ul>
+<li><code>/Inc</code> folder that contains all header files.</li>
+<li><code>/Src</code> folder for the sources code.</li>
+<li><code>/EWARM</code>, <code>/MDK-ARM</code>, and <code>/STM32CubeIDE</code> folders contain the preconfigured project for each toolchain.</li>
+<li><code>readme.txt</code> describing the application behavior and the environment required to run the example.</li>
+</ul>
+<p>Note: refer to section “Development Toolchains and Compilers” and “Supported Devices and boards” of the Firmware package <a href="../Release_Notes.html">release notes <span class="icon-link"></span></a> to know about the SW/HW environment used for the Firmware development and validation.</p>
+<hr />
+<p>The table below contains the list of the provided applications.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Project Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">B-L4S5I-IOT01A</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Provisioning</td>
+<td style="text-align: left;">STSAFE_A1xx</td>
+<td style="text-align: left;">Bootloader_STSAFE/STSAFE_Provisioning</td>
+<td style="text-align: left;">Pair the on-board secure element with the MCU secure bootloader</td>
+<td style="text-align: left;"><span class="icon-bookmark"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Secure bootloader</td>
+<td style="text-align: left;">STM32_Secure_Engine, STM32_Key_Management_Services, STSAFE_A1xx</td>
+<td style="text-align: left;">Bootloader_STSAFE/2_Images_{SECoreBin|SBSFU}</td>
+<td style="text-align: left;">FreeRTOS-dedicated bootloader relying on the on-board secure element</td>
+<td style="text-align: left;"><span class="icon-bookmark"></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Demo</td>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">Cloud/aws_demos</td>
+<td style="text-align: left;">OTA firmare update demo of FreeRTOS</td>
+<td style="text-align: left;"><span class="icon-bookmark"></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Qualification</td>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">Cloud/aws_tests</td>
+<td style="text-align: left;">Test application of the FreeRTOS Qualification Program</td>
+<td style="text-align: left;"><span class="icon-bookmark"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer class="sticky">
+For complete documentation on <mark>STM32</mark> microcontrollers please visit <a href="http://www.st.com/stm32" class="uri">http://www.st.com/stm32</a>
+</footer>
+</body>
+</html>
