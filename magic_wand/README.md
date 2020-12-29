@@ -1,3 +1,6 @@
+# 참고용으로 아래에서 가져왔어요:
+https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d26c205/tensorflow/lite/micro/examples/magic_wand
+
 # Magic wand example
 
 This example shows how you can use TensorFlow Lite to run a 20 kilobyte neural
