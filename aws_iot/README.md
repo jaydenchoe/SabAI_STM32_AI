@@ -50,9 +50,9 @@ https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/#build-error-fix
   
 ### 우리가 해야할 부분
 
-[ ] AWS IOT에 기기 연동 테스트
-[ ] AWS IOT에 데모 값 MQTT로 전송되는지 확인
-[ ] Queue에 넣을 데이터 structure 구현
-[ ] 해당 데이터 structure에 맞는 데이터 입력하게끔 serial RX 부분 구현
-[ ] AWS IOT로 올라간 값을 web 에서 읽게 해주기
-[ ] web page 구성
+1. [ ] AWS IOT에 기기 연동 테스트
+2. [ ] AWS IOT에 데모 값 MQTT로 전송되는지 확인
+3. [ ] Queue에 넣을 데이터 structure 구현
+4. [ ] 해당 데이터 structure에 맞는 데이터 입력하게끔 serial RX 부분 구현
+5. [ ] AWS IOT로 올라간 값을 web 에서 읽게 해주기
+6. [ ] web page 구성
