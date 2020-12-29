@@ -30,3 +30,15 @@ https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/#build-error-fix
 1. 바이너리 빌드 설치 후
 2. 인증서 받아서 저장.
 
+### AWS IOT project 관련 설정부분
+
+* [aws_wifi_config.h](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/config_files/aws_wifi_config.h)
+  * * WIFI 설정 파일
+
+
+* [aws_iot 관련 메인 파일](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/aws_customdemo_main.c)
+
+* [AWS IOT 로 MQTT publish 하는 부분](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/aws_customdemo_publisher.c)
+
+* [Sensor 정보 수집해서 Queue에 넣는 부분](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c)
+
