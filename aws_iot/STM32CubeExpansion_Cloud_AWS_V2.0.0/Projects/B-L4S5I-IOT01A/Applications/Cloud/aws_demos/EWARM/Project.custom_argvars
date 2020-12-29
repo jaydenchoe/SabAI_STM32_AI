@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iarUserArgVars>
+    <group name="amazon-freertos" active="true">
+        <variable>
+            <name>AFR_DIR</name>
+            <value>$PROJ_DIR$\..\..\..\..\..\..\Middlewares\Third_Party\amazon-freertos</value>
+        </variable>
+    </group>
+    <group name="bootloader" active="true">
+        <variable>
+            <name>BOOTLOADER_DIR</name>
+            <value>$PROJ_DIR$\..\..\..\BootLoader_STSAFE</value>
+        </variable>
+    </group>
+</iarUserArgVars>

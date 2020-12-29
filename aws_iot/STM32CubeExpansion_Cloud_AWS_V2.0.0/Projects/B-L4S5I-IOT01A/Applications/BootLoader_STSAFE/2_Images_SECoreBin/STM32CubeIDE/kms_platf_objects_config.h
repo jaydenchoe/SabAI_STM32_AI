@@ -1,0 +1,208 @@
+/**
+  ******************************************************************************
+  * @file    kms_platf_objects_config.h
+  * @author  MCD Application Team
+  * @brief   This file contains definitions for Key Management Services (KMS)
+  *          module platform objects management configuration
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
+  *
+  ******************************************************************************
+  */
+
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef KMS_PLATF_OBJECTS_CONFIG_H
+#define KMS_PLATF_OBJECTS_CONFIG_H
+
+/* Includes ------------------------------------------------------------------*/
+#include "kms_platf_objects_interface.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/** @addtogroup Key_Management_Services Key Management Services (KMS)
+  * @{
+  */
+
+/** @addtogroup KMS_PLATF Platform Objects
+  * @{
+  */
+
+/* Exported constants --------------------------------------------------------*/
+
+/** @addtogroup KMS_PLATF_Exported_Constants Exported Constants
+  * @note KMS support different type of objects, their respective ranges are
+  *       defined here
+  * @{
+  */
+
+/* We consider that the ORDER (static = lower ids) will be kept. */
+#define KMS_INDEX_MIN_EMBEDDED_OBJECTS                1UL   /*!< Embedded objects min ID. Must be > 0 as '0' is never a
+                                                                 valid key index */
+#define KMS_INDEX_MAX_EMBEDDED_OBJECTS               29UL   /*!< Embedded objects max ID */
+#define KMS_INDEX_MIN_NVM_STATIC_OBJECTS             30UL   /*!< NVM static objects min ID */
+#define KMS_INDEX_MAX_NVM_STATIC_OBJECTS             49UL   /*!< NVM static objects max ID */
+#define KMS_INDEX_MIN_NVM_DYNAMIC_OBJECTS            50UL   /*!< NVM dynamic objects min ID */
+#define KMS_INDEX_MAX_NVM_DYNAMIC_OBJECTS            69UL   /*!< NVM dynamic objects max ID */
+
+/* When EXTERNAL TOKEN is not supported the below values can be commented */
+#define KMS_INDEX_MIN_EXT_TOKEN_STATIC_OBJECTS        70UL  /*!< External token static objects min ID */
+#define KMS_INDEX_MAX_EXT_TOKEN_STATIC_OBJECTS        89UL  /*!< External token static objects max ID */
+#define KMS_INDEX_MIN_EXT_TOKEN_DYNAMIC_OBJECTS       90UL  /*!< External token dynamic objects min ID */
+#define KMS_INDEX_MAX_EXT_TOKEN_DYNAMIC_OBJECTS      110UL  /*!< External token dynamic objects max ID */
+
+/* Blob import key index */
+#define KMS_INDEX_BLOBIMPORT_VERIFY       (1U)      /*!< Index in embedded objects range
+                                                         where the blob verification key is stored */
+#define KMS_INDEX_BLOBIMPORT_DECRYPT      (2U)      /*!< Index in embedded objects range
+                                                         where the blob decryption key is stored */
+
+/**
+  * @}
+  */
+
+/*
+ * Embedded objects definition
+ *
+ */
+#ifdef KMS_PLATF_OBJECTS_C
+
+/* This object is used for KMS blob header signature                 */
+static const kms_obj_keyhead_256_t   KMS_Blob_ECDSA_Verify =
+{
+  KMS_ABI_VERSION_CK_2_40,         /*  uint32_t version; */
+  KMS_ABI_CONFIG_KEYHEAD,          /*  uint32_t configuration; */
+  148,                             /*  uint32_t blobs_size; */
+  6,                               /*  uint32_t blobs_count; */
+  CKO_PUBLIC_KEY,                  /*  uint32_t class; */
+  CKK_EC,                          /*  uint32_t type; */
+  3,                               /*   uint32_t object_id; */
+  {
+    CKA_CLASS,        sizeof(CK_OBJECT_CLASS), (uint8_t)CKO_PUBLIC_KEY,
+    CKA_KEY_TYPE,     sizeof(CK_KEY_TYPE),     CKK_EC,
+    CKA_TOKEN,        sizeof(CK_BBOOL), (uint8_t)CK_TRUE,
+    CKA_LABEL,        8, 0x424F4C42U, 0x49524556U,      /* 'BLOB', 'VERI' */
+    CKA_EC_PARAMS,    10, 0x06082a86U, 0x48ce3d03U, 0x0107U,
+    CKA_EC_POINT,     66, 0x0440baf2U, 0x97f83ee3U, 0x07dc16c3U, 0x71781df1U, 0xb03ef095U, 0xb0445412U, 0x8148fb2cU, 0x66b9543dU, 0xa54ae826U, 0x0476b737U, 0x8b3c46d8U, 0xfd6a6361U, 0x7c46c37dU, 0xe9464431U, 0x6ed7e16dU, 0xba70ed44U, 0xba02U,
+    0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, /* Fill end of table */
+    0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, /* Fill end of table */
+    0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, /* Fill end of table */
+  }
+};
+
+/* This object is used for KMS blob encryption                    */
+static const kms_obj_keyhead_t   KMS_Blob_AES_CBC128_Decrypt =
+{
+  KMS_ABI_VERSION_CK_2_40,         /*  uint32_t version; */
+  KMS_ABI_CONFIG_KEYHEAD,          /*  uint32_t configuration; */
+  100,                             /*  uint32_t blobs_size; */
+  7,                               /*  uint32_t blobs_count; */
+  CKO_SECRET_KEY,                  /*  uint32_t class; */
+  CKK_AES,                         /*  uint32_t type; */
+  4,                               /*  uint32_t object_id; */
+  {
+    CKA_KEY_TYPE,     sizeof(CK_KEY_TYPE),          CKK_AES,
+    CKA_VALUE,        16, 0x4f454d5f, 0x4b45595f, 0x434f4d50, 0x414e5931,
+    CKA_DECRYPT,      sizeof(CK_BBOOL), (uint8_t)CK_TRUE,
+    CKA_TOKEN,        sizeof(CK_BBOOL), (uint8_t)CK_TRUE,
+    CKA_LABEL,        8, 0x424F4C42U, 0x50595243U,      /* 'BLOB', 'CRYP' */
+    CKA_COPYABLE,     sizeof(CK_BBOOL), (uint8_t)CK_FALSE,
+    CKA_CLASS,        sizeof(CK_OBJECT_CLASS), (uint8_t)CKO_SECRET_KEY,
+    0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, /* Fill end of table */
+  }
+};
+
+
+/* These objects are used by user tKMS application                 */
+static const kms_obj_keyhead_t   Test_Key_AES128 =
+{
+  KMS_ABI_VERSION_CK_2_40,         /*  uint32_t version; */
+  KMS_ABI_CONFIG_KEYHEAD,          /*  uint32_t configuration; */
+  128,                             /*  uint32_t blobs_size; */
+  9,                               /*  uint32_t blobs_count; */
+  CKO_SECRET_KEY,                  /*  uint32_t class; */
+  CKK_AES,                         /*  uint32_t type; */
+  5,                               /*  uint32_t object_id; */
+  {
+    CKA_KEY_TYPE,     sizeof(CK_KEY_TYPE),          CKK_AES,
+    CKA_VALUE,        16, 0xfeffe992U, 0x8665731cU, 0x6d6a8f94U, 0x67308308U,
+    CKA_ENCRYPT,      sizeof(CK_BBOOL), (uint8_t)CK_TRUE,
+    CKA_DECRYPT,      sizeof(CK_BBOOL), (uint8_t)CK_TRUE,
+    CKA_TOKEN,        sizeof(CK_BBOOL), (uint8_t)CK_TRUE,
+    CKA_COPYABLE,     sizeof(CK_BBOOL), (uint8_t)CK_FALSE,
+    CKA_EXTRACTABLE,  sizeof(CK_BBOOL), (uint8_t)CK_TRUE,
+    CKA_CLASS,        sizeof(CK_OBJECT_CLASS), (uint8_t)CKO_SECRET_KEY,
+    CKA_LABEL,        12, 0x52455355U, 0x50595243U, 0x00383231U      /* 'USER', 'CRYP', '128' */
+  }
+};
+
+static const kms_obj_keyhead_256_t   Test_Key_AES256 =
+{
+  KMS_ABI_VERSION_CK_2_40,         /* uint32_t version;  */
+  KMS_ABI_CONFIG_KEYHEAD,          /* uint32_t configuration; */
+  144,                             /* uint32_t blobs_size; */
+  9,                               /* uint32_t blobs_count; */
+  CKO_SECRET_KEY,                  /* uint32_t class; */
+  CKK_AES,                         /* uint32_t type; */
+  6,                               /* uint32_t object_id; */
+  {
+    CKA_KEY_TYPE,     sizeof(CK_KEY_TYPE), CKK_AES,
+    CKA_VALUE,        32, 0x03030303U, 0x03030303U, 0x03030303U, 0x03030303U,
+    0x03030303U, 0x03030303U, 0x03030303U, 0x03030303U,
+    CKA_ENCRYPT,      sizeof(CK_BBOOL), CK_TRUE,
+    CKA_DECRYPT,      sizeof(CK_BBOOL), CK_TRUE,
+    CKA_TOKEN,        sizeof(CK_BBOOL), CK_TRUE,
+    CKA_COPYABLE,     sizeof(CK_BBOOL), CK_FALSE,
+    CKA_MODIFIABLE,   sizeof(CK_BBOOL), CK_FALSE,
+    CKA_CLASS,        sizeof(CK_OBJECT_CLASS), CKO_SECRET_KEY,
+    CKA_LABEL,        12, 0x52455355U, 0x50595243U, 0x00363532U,      /* 'USER', 'CRYP', '256' */
+    0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, /* Fill end of table */
+    0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, /* Fill end of table */
+    0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, /* Fill end of table */
+  }
+};
+
+/**
+  * @brief  KMS embedded objects definition
+  * @note   Must contains KMS blob verification and decryption keys
+  */
+static const kms_obj_keyhead_t *KMS_PlatfObjects_EmbeddedList[] =
+{
+  /* KMS Blob import keys */
+  (kms_obj_keyhead_t *) &KMS_Blob_ECDSA_Verify,       /* Index = 1 */
+  (kms_obj_keyhead_t *) &KMS_Blob_AES_CBC128_Decrypt, /* Index = 2 */
+  (kms_obj_keyhead_t *) &Test_Key_AES128,             /* Index = 3 */
+  (kms_obj_keyhead_t *) &Test_Key_AES256,             /* Index = 4 */
+};
+
+/**
+  * @}
+  */
+#endif /* KMS_PLATF_OBJECTS_C */
+
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* KMS_PLATF_OBJECTS_CONFIG_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
