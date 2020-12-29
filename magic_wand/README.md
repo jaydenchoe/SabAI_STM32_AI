@@ -1,6 +1,16 @@
 # 참고용으로 아래에서 가져왔어요:
 https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d26c205/tensorflow/lite/micro/examples/magic_wand
 
+# 아래는 분석하면서 STM32용으로 수정하는 내용입니다 (실시간 수정)
+
+## Application Architecture
+- x, y, z 3 axis accelerometer sensor 값을 사용합니다
+- 예제의 SparkFun Edge 보드에서는 25Hz로 샘플링합니다. ==> 우리 보드에서 어떻게 되어 있는지 내용 확인해야함
+- 예제에서는 전처리 없이 그냥 x, y, z 의 값을 바로 때려 넣습니다. ==> 우리도 일단 이렇게 해 봅시다. 나중에는 calibration이나 normalization windowing 작업 필요할 수 있어요.
+
+## Model Overview
+
+
 # Magic wand example
 
 This example shows how you can use TensorFlow Lite to run a 20 kilobyte neural
