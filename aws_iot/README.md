@@ -33,12 +33,26 @@ https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/#build-error-fix
 ### AWS IOT project 관련 설정부분
 
 * [aws_wifi_config.h](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/config_files/aws_wifi_config.h)
-  * * WIFI 설정 파일
+  * WIFI 설정 파일
 
 
-* [aws_iot 관련 메인 파일](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/aws_customdemo_main.c)
+* [aws_customdemo_main.c](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/aws_customdemo_main.c)
+  * AWS IOT 데모의 메인 부분입니다.
+  * [aws_customdemo_main](https://github.com/jaydenchoe/SabAI/blob/daa75e09d48e921298ab7970bf5439b6b133a350/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/aws_customdemo_main.c#L66) 함수 부분만 파악하면 될 것 같은 부분입니다.
+  * Thread를 두개 생성하는데 센서 리딩하는 Thread(onboardSensorReaderTask), 리딩한 값을 MQTT로 publish하는 Thread(_sensorDataPublisherTask) 이렇게 구성됩니다.
 
-* [AWS IOT 로 MQTT publish 하는 부분](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/aws_customdemo_publisher.c)
+* [aws_customdemo_publisher.c](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/aws_customdemo_publisher.c)
+  * MQTT로 publish하는 부분
 
-* [Sensor 정보 수집해서 Queue에 넣는 부분](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c)
+* [st_sensordata_collector.c](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c)
+  * 센서 값을 읽어서 Queue에 넣는 부분
+  
+  
+### 우리가 해야할 부분
 
+[ ] AWS IOT에 기기 연동 테스트
+[ ] AWS IOT에 데모 값 MQTT로 전송되는지 확인
+[ ] Queue에 넣을 데이터 structure 구현
+[ ] 해당 데이터 structure에 맞는 데이터 입력하게끔 serial RX 부분 구현
+[ ] AWS IOT로 올라간 값을 web 에서 읽게 해주기
+[ ] web page 구성
