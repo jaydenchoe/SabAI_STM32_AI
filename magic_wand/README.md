@@ -9,6 +9,8 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 - 예제에서는 전처리 없이 그냥 x, y, z 의 값을 바로 때려 넣습니다. ==> 우리도 일단 이렇게 해 봅시다. 나중에는 calibration이나 normalization windowing 작업 필요할 수 있어요.
 
 ## Model Overview
+- 예제 모델은 x, y, z 3개 1 set일 때 예제 모델은 128 set 데이터를 입력을 받습니다 이는 즉 5.12초 정도의 데이터 양입니다. ==> 향후에 데이터 주실 때 동일하게 128 set로 끊어서 만들어 주셔야 합니다!!
+- 예제 모델은 output node가 4개입니다: "wing", "ring", "slope", "no gesture"의 4가지 output node가 있는겁니다.
 
 
 # Magic wand example
