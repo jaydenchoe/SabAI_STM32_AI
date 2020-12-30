@@ -146,3 +146,8 @@ stm32_infer/Inc/cnn_human.h
 stm32_infer/Inc/cnn_human_data.h
 stm32_infer/Src/cnn_human.c
 stm32_infer/.ai/cnn_human_c_graph.json
+stm32_infer/.ai/cnn_human_c_graph.json
+stm32_infer/.ai/cnn_human_report.json
+stm32_infer/Inc/cnn_human.h
+stm32_infer/Inc/cnn_human_data.h
+stm32_infer/Src/cnn_human.c
