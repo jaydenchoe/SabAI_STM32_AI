@@ -1,3 +1,29 @@
+# 참고용으로 아래에서 가져왔어요:
+https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d26c205/tensorflow/lite/micro/examples/magic_wand
+
+# 아래는 분석하면서 STM32용으로 수정하는 내용입니다 (실시간 수정)
+
+## Application Architecture
+- x, y, z 3 axis accelerometer sensor 값을 사용합니다
+- 예제의 SparkFun Edge 보드에서는 25Hz로 샘플링합니다. ==> 우리 보드에서 어떻게 되어 있는지 내용 확인해야함
+- 예제에서는 전처리 없이 그냥 x, y, z 의 값을 바로 때려 넣습니다. ==> 우리도 일단 이렇게 해 봅시다. 나중에는 calibration이나 normalization windowing 작업 필요할 수 있어요.
+
+## Model Overview
+- 예제 모델은 x, y, z 3개 1 set일 때 예제 모델은 128 set 데이터를 입력을 받습니다 이는 즉 5.12초 정도의 데이터 양입니다. ==> 향후에 데이터 주실 때 동일하게 128 set로 끊어서 만들어 주셔야 합니다!!
+- 예제 모델은 output node가 4개입니다: "wing", "ring", "slope", "no gesture"의 4가지 output node가 있는겁니다. ==> 우리도 동일하게 4가지 모션을 정하면 됩니다. 
+
+## (중요) SabAI에서 취할 모델 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원, https://www.youtube.com/watch?v=fgA63sgDft4)
+1) 어깨 으쓱하며 숨쉬기
+2) 양손 위로 들기
+3) 가슴 펴기
+4) "No gesture"
+이렇게 일단 4개만 하겠습니다. 
+
+## (중요) 운동 step 안은 다음과 같습니다
+0) 보드를 팔에 부착합니다. 부착하는 위치와 방향은 한번 밴드로 묶어 보시고 안을 주세요 저도 해보겠습니다.
+1) 먼저 운동 시작 포지션으로 팔을 움직여 놓은 생태에서,
+2) 5초 시간 내에 안에 한번의 운동이 완전히 끝나야 합니다. 
+
 # Magic wand example
 
 This example shows how you can use TensorFlow Lite to run a 20 kilobyte neural
