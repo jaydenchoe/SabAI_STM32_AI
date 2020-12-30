@@ -38,7 +38,8 @@
 4. Printf
 5. 3축 센서 입력
 6. AI 모델 template 1차 완료. 일단 케라스 모델 3축 모델 찾아서 STM32CubeMX 설정에서 끼워 넣었음. https://github.com/ausilianapoli/HAR-CNN-Keras-STM32. 하지만 입력 부분, 출력 부분 손봐야함. Normalization, Windowing, 해당 모델과 정합성 등.... 봐야함.
-7. 더 필요하면 말씀 주세요. 심전도나 심박, 카메라 등 각종 센서 붙여 볼 수 있을 것 같습니다. 다만 학습은 또 다른 이야기고....
+7. AWS 보드에 command 날릴 목적으로 UART4 RX/TX 살렸습니다. 루프백으로 테스트 코드와 ifdef 넣어서 commit 했습니다. 루프백 코드 돌리려면 UART4 TX/RX가 아두이노 커넥터 PA0/1이니 이 둘을 묶어주고 테스트 해 보면 됩니다(굳이 할일은 없겠으나). 참고자료: https://os.mbed.com/platforms/B-L4S5I-IOT01A/
+8. 더 필요하면 말씀 주세요. 심전도나 심박, 카메라 등 각종 센서 붙여 볼 수 있을 것 같습니다. 다만 학습은 또 다른 이야기고....
 
 ## AI 코드 관련 주의사항
 1. 지금 AI 쪽 코드가 들어가면서 모델 사이즈가 있어서 flashing이 오래 걸림. 그전보다 5~10배 느려지니 참고. 이게 싫으면 깃헙에서 땡긴 다음 CubeMX 설정에서 AI SW PKG 빼버리면 됨. (AI 필요없으면)
