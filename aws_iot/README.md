@@ -4,12 +4,28 @@
 
 Lecture Link: https://master.d2s409snhlt74e.amplifyapp.com/  (<i>믿을만하지 못함</i>)
 
+### Installation guide
+
+**선행조건**
+
+* python 3.8.4 버전 무조껀 설치되어있어야 한다.
+
+1. /B-L4S5I-IOT01_STSAFE_Provisioning 프로젝트 빌드 후 플래시
+2. /B-L4S5I-IOT01_2_Images_SECoreBin 빌드 후 플래시
+3. /B-L4S5I-IOT01_2_Images_SBSFU 빌드 후 플래시
+4. /B-L4S5I-IOT01_aws_demos 빌드 후 플래시
+5. 로그에 STM32 MCU 보드의 디바이스 인증서가 출력 됩니다.
+이 인증서는 STSAFE A110의 Root CA로 부터 생성된 X.509 표준 인증서 이며 PEM format으로 출력 되었습니다.
+로그에 출력되는 인증서를 복사하여 Device Certificate로 저장 합니다 : stm32-iot-node-cert.pem
+stm32-iot-node-cert.pem 파일은 AWS에 연결할 때 Device의 인증서로 등록하여 사용합니다.
+
+
 ## Trouble shooting
 
 ### STM32CubeProgramming Mac에서 실행방법
 
 1. 기존 설치된 java를 지운다. (<i>optional</i>)
-   * 만약 jenv 같은 java version manager가 있다면 그걸 써도 무관.
+  *  *  만약 jenv 같은 java version manager가 있다면 그걸 써도 무관.
 2. zulu jdk 1.8을 설치한다
    * https://www.azul.com/downloads/zulu-community/?version=java-8-lts&os=macos&architecture=x86-64-bit&package=jdk-fx
 3. 실행은 lecture에 나와있는 ```java -jar STM32CubeProgramming``` 으로 하면 안된다.
