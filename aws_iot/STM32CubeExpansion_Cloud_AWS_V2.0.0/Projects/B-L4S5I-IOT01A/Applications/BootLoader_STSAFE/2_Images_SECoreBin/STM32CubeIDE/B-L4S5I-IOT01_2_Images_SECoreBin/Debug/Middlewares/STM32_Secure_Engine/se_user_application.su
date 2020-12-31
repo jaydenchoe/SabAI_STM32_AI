@@ -1,0 +1,3 @@
+se_user_application.c:51:16:SE_APPLI_GetActiveFwInfo	104	static
+se_user_application.c:88:16:SE_APPLI_GetActiveFwState	184	static
+se_user_application.c:227:16:SE_APPLI_SetActiveFwState	56	static

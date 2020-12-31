@@ -1,0 +1,2 @@
+se_interface_common.c:77:13:SE_EnterSecureMode	0	static,ignoring_inline_asm
+se_interface_common.c:91:13:SE_ExitSecureMode	0	static,ignoring_inline_asm

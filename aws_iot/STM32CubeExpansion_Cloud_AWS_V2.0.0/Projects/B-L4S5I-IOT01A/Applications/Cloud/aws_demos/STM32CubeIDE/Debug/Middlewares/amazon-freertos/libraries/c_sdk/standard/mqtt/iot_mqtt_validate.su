@@ -1,0 +1,4 @@
+iot_mqtt_validate.c:42:6:_IotMqtt_ValidateConnect	40	static
+iot_mqtt_validate.c:183:6:_IotMqtt_ValidatePublish	32	static
+iot_mqtt_validate.c:316:6:_IotMqtt_ValidateOperation	32	static
+iot_mqtt_validate.c:349:6:_IotMqtt_ValidateSubscriptionList	64	static,ignoring_inline_asm

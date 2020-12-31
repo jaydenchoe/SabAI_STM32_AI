@@ -1,0 +1,13 @@
+aws_iot_defender_api.c:117:23:AwsIotDefender_SetMetrics	24	static
+aws_iot_defender_api.c:148:23:AwsIotDefender_Start	56	static,ignoring_inline_asm
+aws_iot_defender_api.c:275:6:AwsIotDefender_Stop	32	static
+aws_iot_defender_api.c:332:23:AwsIotDefender_SetPeriod	32	static
+aws_iot_defender_api.c:355:10:AwsIotDefender_GetPeriod	4	static
+aws_iot_defender_api.c:362:14:AwsIotDefender_strerror	24	static
+aws_iot_defender_api.c:402:14:AwsIotDefender_EventType	24	static
+aws_iot_defender_api.c:434:23:_metricsSubscribeRoutine	24	static
+aws_iot_defender_api.c:455:13:_metricsPublishRoutine	48	static
+aws_iot_defender_api.c:524:6:_unsubscribeMqtt	24	static
+aws_iot_defender_api.c:538:6:_acceptCallback	32	static,ignoring_inline_asm
+aws_iot_defender_api.c:557:6:_rejectCallback	32	static,ignoring_inline_asm
+aws_iot_defender_api.c:575:6:_handleApplicationCallback	40	static

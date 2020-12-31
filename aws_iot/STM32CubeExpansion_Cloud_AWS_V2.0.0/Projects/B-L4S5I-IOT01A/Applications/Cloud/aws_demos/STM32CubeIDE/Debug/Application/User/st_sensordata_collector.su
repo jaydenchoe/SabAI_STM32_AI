@@ -1,0 +1,6 @@
+st_sensordata_collector.c:55:13:prvSensorsInit	8	static
+st_sensordata_collector.c:89:6:onboardSensorReaderTask	160	static
+st_sensordata_collector.c:161:5:BSP_Proximity_Init	32	static
+st_sensordata_collector.c:205:5:SetupSingleShot	56	static
+st_sensordata_collector.c:310:7:BSP_Proximity_Read	16	static
+st_sensordata_collector.c:334:6:Sensor_SetNewRange	16	static

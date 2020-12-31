@@ -1,0 +1,11 @@
+iot_linear_containers.h:303:20:IotLink_IsLinked	24	static
+iot_linear_containers.h:446:20:IotListDouble_InsertHead	32	static,ignoring_inline_asm
+iot_linear_containers.h:584:20:IotListDouble_Remove	24	static,ignoring_inline_asm
+iot_mqtt_network.c:110:13:_incomingPacketValid	24	static
+iot_mqtt_network.c:137:23:_getIncomingPacket	64	static,ignoring_inline_asm
+iot_mqtt_network.c:277:23:_deserializeIncomingPacket	64	static,ignoring_inline_asm
+iot_mqtt_network.c:661:13:_sendPuback	56	static
+iot_mqtt_network.c:752:13:_flushPacket	32	static
+iot_mqtt_network.c:769:6:_IotMqtt_GetNextByte	40	static,ignoring_inline_asm
+iot_mqtt_network.c:799:6:_IotMqtt_CloseNetworkConnection	96	static,ignoring_inline_asm
+iot_mqtt_network.c:903:6:IotMqtt_ReceiveCallback	48	static

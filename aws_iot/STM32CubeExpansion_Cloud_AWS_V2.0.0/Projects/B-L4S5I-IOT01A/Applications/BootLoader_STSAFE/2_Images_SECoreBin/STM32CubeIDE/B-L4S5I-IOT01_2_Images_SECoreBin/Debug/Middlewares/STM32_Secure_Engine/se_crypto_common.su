@@ -1,0 +1,7 @@
+se_crypto_common.c:82:16:SE_CRYPTO_AES_GCM_Encrypt_Init	8	static
+se_crypto_common.c:132:16:SE_CRYPTO_AES_GCM_Header_Append	8	static
+se_crypto_common.c:166:16:SE_CRYPTO_AES_GCM_Encrypt_Append	16	static
+se_crypto_common.c:198:16:SE_CRYPTO_AES_GCM_Encrypt_Finish	8	static
+se_crypto_common.c:229:16:SE_CRYPTO_AES_GCM_Decrypt_Init	8	static
+se_crypto_common.c:283:16:SE_CRYPTO_AES_GCM_Decrypt_Append	16	static
+se_crypto_common.c:315:16:SE_CRYPTO_AES_GCM_Decrypt_Finish	8	static

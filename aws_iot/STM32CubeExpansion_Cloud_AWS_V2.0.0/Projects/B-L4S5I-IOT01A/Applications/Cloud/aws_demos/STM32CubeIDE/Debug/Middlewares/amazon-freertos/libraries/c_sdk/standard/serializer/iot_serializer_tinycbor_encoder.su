@@ -1,0 +1,14 @@
+cbor.h:231:27:cbor_encode_boolean	16	static
+cbor.h:233:27:cbor_encode_null	16	static
+cbor.h:255:24:cbor_encoder_get_buffer_size	16	static
+cbor.h:260:24:cbor_encoder_get_extra_bytes_needed	16	static
+iot_serializer_tinycbor_encoder.c:80:13:_translateErrorCode	16	static
+iot_serializer_tinycbor_encoder.c:109:15:_getEncodedSize	24	static
+iot_serializer_tinycbor_encoder.c:119:15:_getExtraBufferSizeNeeded	24	static
+iot_serializer_tinycbor_encoder.c:128:29:_init	40	static
+iot_serializer_tinycbor_encoder.c:162:13:_destroy	24	static
+iot_serializer_tinycbor_encoder.c:175:29:_openContainer	40	static
+iot_serializer_tinycbor_encoder.c:224:29:_openContainerWithKey	56	static
+iot_serializer_tinycbor_encoder.c:244:29:_closeContainer	32	static
+iot_serializer_tinycbor_encoder.c:265:29:_append	40	static
+iot_serializer_tinycbor_encoder.c:306:29:_appendKeyValue	48	static

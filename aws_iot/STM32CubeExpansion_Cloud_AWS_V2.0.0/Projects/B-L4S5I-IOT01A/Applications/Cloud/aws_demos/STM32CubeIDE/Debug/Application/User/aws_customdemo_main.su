@@ -1,0 +1,2 @@
+aws_customdemo_main.c:66:5:aws_customdemo_main	40	static
+aws_customdemo_main.c:114:6:init_telemetry_pub_queue	16	static

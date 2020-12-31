@@ -1,0 +1,6 @@
+st_statusled_update.c:96:13:_getDelta	48	static
+st_statusled_update.c:147:13:_getUpdatedState	48	static
+st_statusled_update.c:196:13:_shadowDeltaCallback	96	static
+st_statusled_update.c:316:13:_shadowUpdatedCallback	64	static
+st_statusled_update.c:379:12:_setShadowCallbacks	56	static
+st_statusled_update.c:424:5:init_shadow_callbacks	40	static

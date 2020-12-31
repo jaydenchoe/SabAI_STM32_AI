@@ -1,0 +1,8 @@
+FreeRTOS_POSIX_pthread_cond.c:55:13:prvInitializeStaticCond	16	static
+FreeRTOS_POSIX_pthread_cond.c:84:13:prvTestAndDecrement	48	static,ignoring_inline_asm
+FreeRTOS_POSIX_pthread_cond.c:105:5:pthread_cond_broadcast	64	static,ignoring_inline_asm
+FreeRTOS_POSIX_pthread_cond.c:141:5:pthread_cond_destroy	24	static
+FreeRTOS_POSIX_pthread_cond.c:153:5:pthread_cond_init	24	static
+FreeRTOS_POSIX_pthread_cond.c:182:5:pthread_cond_signal	56	static,ignoring_inline_asm
+FreeRTOS_POSIX_pthread_cond.c:215:5:pthread_cond_timedwait	80	static,ignoring_inline_asm
+FreeRTOS_POSIX_pthread_cond.c:290:5:pthread_cond_wait	16	static

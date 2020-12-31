@@ -1,0 +1,4 @@
+se_fwimg.c:58:16:SE_IMG_Write	8	static
+se_fwimg.c:87:16:SE_IMG_Read	8	static
+se_fwimg.c:114:16:SE_IMG_Erase	4	static
+se_fwimg.c:144:16:SE_SetActiveFwState	64	static

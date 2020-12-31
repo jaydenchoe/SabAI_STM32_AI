@@ -1,0 +1,9 @@
+FreeRTOS_POSIX_utils.c:42:8:UTILS_strnlen	24	static
+FreeRTOS_POSIX_utils.c:62:5:UTILS_AbsoluteTimespecToDeltaTicks	48	static
+FreeRTOS_POSIX_utils.c:103:5:UTILS_TimespecToTicks	56	static
+FreeRTOS_POSIX_utils.c:163:6:UTILS_NanosecondsToTimespec	40	static
+FreeRTOS_POSIX_utils.c:185:5:UTILS_TimespecAdd	48	static
+FreeRTOS_POSIX_utils.c:227:5:UTILS_TimespecAddNanoseconds	56	static
+FreeRTOS_POSIX_utils.c:268:5:UTILS_TimespecSubtract	40	static
+FreeRTOS_POSIX_utils.c:323:5:UTILS_TimespecCompare	24	static
+FreeRTOS_POSIX_utils.c:371:6:UTILS_ValidateTimespec	24	static

@@ -1,0 +1,2 @@
+watchdogkicker.c:48:13:prvWatchDogKickerTask	40	static
+watchdogkicker.c:102:12:xWatchDogKickerTaskInitialize	48	static

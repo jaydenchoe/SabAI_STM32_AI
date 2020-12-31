@@ -1,0 +1,2 @@
+mbedtls_utils.c:50:5:convert_pem_to_der	56	static
+mbedtls_utils.c:155:5:PKI_RSA_RSASSA_PKCS1_v15_Encode	56	static

@@ -1,0 +1,4 @@
+stm32l475e_iot01_gyro.c:52:9:BSP_GYRO_Init	24	static
+stm32l475e_iot01_gyro.c:95:6:BSP_GYRO_DeInit	8	static
+stm32l475e_iot01_gyro.c:112:6:BSP_GYRO_LowPower	16	static
+stm32l475e_iot01_gyro.c:128:6:BSP_GYRO_GetXYZ	16	static

@@ -1,0 +1,9 @@
+kms_init.c:87:8:KMS_Initialize	16	static
+kms_init.c:159:7:KMS_Finalize	16	static
+kms_init.c:194:7:KMS_GetTokenInfo	184	static
+kms_init.c:247:7:KMS_OpenSession	28	static
+kms_init.c:318:8:KMS_CallbackFunction_ForExtToken	16	static
+kms_init.c:358:8:KMS_OpenSession_RegisterExtToken	8	static
+kms_init.c:383:7:KMS_CloseSession	0	static
+kms_init.c:411:11:KMS_Check_Session_Handle	0	static
+kms_init.c:441:11:KMS_GetMechanismInfo	0	static

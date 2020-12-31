@@ -1,0 +1,2 @@
+platform.c:375:5:mbedtls_platform_setup	0	static
+platform.c:385:6:mbedtls_platform_teardown	0	static

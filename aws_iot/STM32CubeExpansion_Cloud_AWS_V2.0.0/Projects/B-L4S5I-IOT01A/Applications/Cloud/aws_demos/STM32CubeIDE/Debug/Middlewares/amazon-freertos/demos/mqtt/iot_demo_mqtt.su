@@ -1,0 +1,8 @@
+iot_demo_mqtt.c:199:13:_operationCompleteCallback	48	static
+iot_demo_mqtt.c:238:13:_mqttSubscriptionCallback	176	static
+iot_demo_mqtt.c:349:12:_initializeDemo	16	static
+iot_demo_mqtt.c:370:13:_cleanupDemo	8	static
+iot_demo_mqtt.c:393:12:_establishMqttConnection	176	static
+iot_demo_mqtt.c:504:12:_modifySubscriptions	136	static
+iot_demo_mqtt.c:611:12:_publishAllMessages	112	static
+iot_demo_mqtt.c:741:5:RunMqttDemo	152	static

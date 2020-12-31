@@ -1,0 +1,7 @@
+iot_clock_freertos.c:68:13:prvTimerCallback	32	static,ignoring_inline_asm
+iot_clock_freertos.c:87:6:IotClock_GetTimestring	64	static,ignoring_inline_asm
+iot_clock_freertos.c:114:10:IotClock_GetTimeMs	32	static
+iot_clock_freertos.c:136:6:IotClock_SleepMs	16	static
+iot_clock_freertos.c:143:6:IotClock_TimerCreate	48	static,ignoring_inline_asm
+iot_clock_freertos.c:174:6:IotClock_TimerDestroy	40	static,ignoring_inline_asm
+iot_clock_freertos.c:200:6:IotClock_TimerArm	48	static,ignoring_inline_asm

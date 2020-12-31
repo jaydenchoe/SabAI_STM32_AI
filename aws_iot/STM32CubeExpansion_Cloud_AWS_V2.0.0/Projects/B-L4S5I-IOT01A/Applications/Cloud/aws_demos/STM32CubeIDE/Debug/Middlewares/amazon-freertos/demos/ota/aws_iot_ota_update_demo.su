@@ -1,0 +1,6 @@
+aws_iot_ota_update_demo.c:118:13:prvNetworkStateChangeCallback	24	static
+aws_iot_ota_update_demo.c:145:26:prvNetworkDisconnectCallback	16	static
+aws_iot_ota_update_demo.c:153:19:prxCreateNetworkConnection	24	static
+aws_iot_ota_update_demo.c:206:6:vRunOTAUpdateDemo	104	static
+aws_iot_ota_update_demo.c:300:13:App_OTACompleteCallback	24	static
+aws_iot_ota_update_demo.c:339:5:vStartOTAUpdateDemoTask	32	static

@@ -1,0 +1,8 @@
+stsafea_service.c:535:6:StSafeA_Crc16	16	static
+stsafea_service.c:240:24:StSafeA_Transmit	24	static
+stsafea_service.c:267:24:StSafeA_Receive	48	static
+stsafea_service.c:313:6:StSafeA_Delay	0	static
+stsafea_service.c:346:15:StSafeA_HW_Probe	0	static
+stsafea_service.c:189:8:StSafeA_HW_Init	8	static
+stsafea_service.c:497:16:CRC16X25_Init	0	static
+stsafea_service.c:514:17:CRC_Compute	12	static

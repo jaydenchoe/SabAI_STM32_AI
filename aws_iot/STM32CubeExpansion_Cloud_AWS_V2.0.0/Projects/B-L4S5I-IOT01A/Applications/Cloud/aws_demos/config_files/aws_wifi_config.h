@@ -64,12 +64,12 @@
 /**
  * @brief Soft Access point SSID
  */
-#define wificonfigACCESS_POINT_SSID_PREFIX    ( "ConfigureMe" )
+#define wificonfigACCESS_POINT_SSID_PREFIX    ( "Semoon" )
 
 /**
  * @brief Soft Access point Passkey
  */
-#define wificonfigACCESS_POINT_PASSKEY        ( "awsiotdevice" )
+#define wificonfigACCESS_POINT_PASSKEY        ( "jess8412%%" )
 
 /**
  * @brief Soft Access point Channel

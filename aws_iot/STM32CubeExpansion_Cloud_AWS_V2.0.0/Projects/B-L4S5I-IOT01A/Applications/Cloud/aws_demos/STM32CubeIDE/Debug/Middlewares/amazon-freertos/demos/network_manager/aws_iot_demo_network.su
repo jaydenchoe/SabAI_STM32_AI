@@ -1,0 +1,4 @@
+aws_iot_demo_network.c:103:27:prxCreateSecureSocketConnection	48	static
+aws_iot_demo_network.c:151:21:prxCreateNetworkConnection	24	static
+aws_iot_demo_network.c:214:16:xMqttDemoCreateNetworkConnection	24	static
+aws_iot_demo_network.c:229:10:vMqttDemoDeleteNetworkConnection	24	static

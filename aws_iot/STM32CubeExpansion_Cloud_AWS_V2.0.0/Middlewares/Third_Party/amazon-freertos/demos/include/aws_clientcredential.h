@@ -55,13 +55,13 @@
  *
  * @todo If you are using Wi-Fi, set this to your network name.
  */
-#define clientcredentialWIFI_SSID                    ""
+#define clientcredentialWIFI_SSID                    "SEAMOON_2G"
 
 /*
  * @brief Password needed to join Wi-Fi network.
  * @todo If you are using WPA, set this to your network password.
  */
-#define clientcredentialWIFI_PASSWORD                ""
+#define clientcredentialWIFI_PASSWORD                "XUYX4DRQ"
 
 /*
  * @brief Wi-Fi network security type.

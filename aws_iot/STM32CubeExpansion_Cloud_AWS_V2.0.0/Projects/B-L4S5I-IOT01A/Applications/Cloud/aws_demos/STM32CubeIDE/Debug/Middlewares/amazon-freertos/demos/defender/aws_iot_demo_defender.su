@@ -1,0 +1,3 @@
+aws_iot_demo_defender.c:74:13:_defenderCallback	24	static
+aws_iot_demo_defender.c:121:12:_establishMqttConnection	120	static
+aws_iot_demo_defender.c:194:5:RunDefenderDemo	72	static

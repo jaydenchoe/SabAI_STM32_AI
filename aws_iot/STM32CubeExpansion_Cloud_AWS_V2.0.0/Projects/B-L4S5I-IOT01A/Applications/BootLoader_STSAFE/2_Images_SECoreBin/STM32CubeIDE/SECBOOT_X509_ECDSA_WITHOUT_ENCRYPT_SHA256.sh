@@ -44,11 +44,16 @@ if [ $? = 0 ] && [  -e "$prepareimage" ]; then
   prepareimage="prepareimage.exe"
   bigelftuner=$basedir"/win/bigelftuner.exe"
 else
+  # add venv
+  echo "run python3 on venv"
+  python3 -m venv venv
+  source venv/bin/activate
+  pip3 install -r $basedir/requirements.txt
   # line for python
   echo "prepareimage with python script"
   prepareimage=$basedir"/prepareimage.py"
   bigelftuner=$basedir"/bigelftuner.py"
-  cmd="python"
+  cmd="python3"
 fi
 
 echo "$cmd $prepareimage" > $1/output.txt
@@ -88,7 +93,7 @@ if [ $ret = 0 ]; then
           if [ $? = 0 ]; then
             programmertool="STM32_Programmer_CLI"
           else
-            echo "fix access path to STM32_Programmer_CLI"
+            programmertool="/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin/STM32_Programmer_CLI"
           fi
         fi
         command=$programmertool" -ms "$elf" "$headerbin" "$sbsfuelf

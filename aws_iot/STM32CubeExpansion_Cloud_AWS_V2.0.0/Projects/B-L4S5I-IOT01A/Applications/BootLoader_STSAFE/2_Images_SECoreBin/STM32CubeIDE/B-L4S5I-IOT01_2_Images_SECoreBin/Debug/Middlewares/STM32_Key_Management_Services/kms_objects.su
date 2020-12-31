@@ -1,0 +1,11 @@
+kms_objects.c:619:8:read_next_chunk	536	static
+kms_objects.c:475:32:authenticate_blob	1152	static
+kms_objects.c:645:32:install_blob	632	static
+kms_objects.c:138:18:KMS_Objects_GetRange	16	static
+kms_objects.c:200:8:KMS_LockKeyHandle	0	static
+kms_objects.c:228:8:KMS_CheckKeyIsNotLocked	0	static
+kms_objects.c:81:20:KMS_Objects_GetPointer	24	static
+kms_objects.c:250:8:KMS_Objects_SearchAttributes	12	static
+kms_objects.c:292:11:KMS_Objects_TranslateKey	8	static
+kms_objects.c:324:10:KMS_Objects_TranslateRsaAttributes	12	static
+kms_objects.c:372:8:KMS_Objects_ImportBlob	40	static

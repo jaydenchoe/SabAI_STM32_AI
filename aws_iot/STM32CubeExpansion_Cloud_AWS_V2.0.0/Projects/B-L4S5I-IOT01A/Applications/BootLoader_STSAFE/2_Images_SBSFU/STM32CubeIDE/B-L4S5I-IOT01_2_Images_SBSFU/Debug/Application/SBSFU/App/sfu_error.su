@@ -1,0 +1,9 @@
+sfu_error.c:473:13:SFU_EXCPT_RuntimeExceptionHandler	0	static
+sfu_error.c:102:17:SFU_BOOT_SetLastExecError	40	static
+sfu_error.c:133:6:SFU_BOOT_IrqExceptionHandler	8	static
+sfu_error.c:167:6:SFU_BOOT_StateExceptionHandler	32	static
+sfu_error.c:251:17:SFU_EXCPT_Check_Code	0	static
+sfu_error.c:333:6:SFU_EXCPT_Security_Error	8	static,ignoring_inline_asm
+sfu_error.c:356:17:SFU_EXCPT_Init	0	static
+sfu_error.c:373:17:SFU_EXCPT_DeInit	0	static
+sfu_error.c:402:6:SFU_EXCPT_ResetExceptionHandler	0	static

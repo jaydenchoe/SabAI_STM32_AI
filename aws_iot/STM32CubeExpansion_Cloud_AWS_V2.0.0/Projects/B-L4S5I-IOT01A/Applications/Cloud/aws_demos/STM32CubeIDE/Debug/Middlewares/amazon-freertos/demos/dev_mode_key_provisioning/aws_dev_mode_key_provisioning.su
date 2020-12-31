@@ -1,0 +1,15 @@
+aws_dev_mode_key_provisioning.c:122:14:prvProvisionPrivateECKey	152	static
+aws_dev_mode_key_provisioning.c:202:14:prvProvisionPrivateRSAKey	256	static
+aws_dev_mode_key_provisioning.c:294:7:xProvisionPrivateKey	56	static
+aws_dev_mode_key_provisioning.c:348:7:xProvisionPublicKey	464	static
+aws_dev_mode_key_provisioning.c:458:7:xProvisionGenerateKeyPairRSA	200	static
+aws_dev_mode_key_provisioning.c:508:7:xProvisionGenerateKeyPairEC	200	static
+aws_dev_mode_key_provisioning.c:557:7:xProvisionCertificate	152	static
+aws_dev_mode_key_provisioning.c:671:7:xDestroyProvidedObjects	48	static
+aws_dev_mode_key_provisioning.c:726:7:xDestroyDefaultCryptoObjects	64	static
+aws_dev_mode_key_provisioning.c:754:14:prvExportPublicKey	88	static
+aws_dev_mode_key_provisioning.c:849:14:prvGetProvisionedState	200	static
+aws_dev_mode_key_provisioning.c:947:13:prvWriteHexBytesToConsole	80	static
+aws_dev_mode_key_provisioning.c:1003:7:xProvisionDevice	64	static
+aws_dev_mode_key_provisioning.c:1193:7:vAlternateKeyProvisioning	32	static
+aws_dev_mode_key_provisioning.c:1225:7:vDevModeKeyProvisioning	32	static

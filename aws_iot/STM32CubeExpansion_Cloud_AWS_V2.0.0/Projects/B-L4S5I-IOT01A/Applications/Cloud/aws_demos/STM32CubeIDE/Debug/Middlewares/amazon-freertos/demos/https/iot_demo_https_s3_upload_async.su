@@ -1,0 +1,3 @@
+iot_demo_https_s3_upload_async.c:204:13:_writeCallback	32	static
+iot_demo_https_s3_upload_async.c:234:13:_responseCompleteCallback	32	static
+iot_demo_https_s3_upload_async.c:270:5:RunHttpsAsyncUploadDemo	232	static

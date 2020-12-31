@@ -1,0 +1,16 @@
+cipher.h:418:28:mbedtls_cipher_get_block_size	0	static
+cipher.c:733:12:get_no_padding	0	static
+cipher.c:90:12:mbedtls_cipher_list	12	static
+cipher.c:111:30:mbedtls_cipher_info_from_type	0	static
+cipher.c:122:30:mbedtls_cipher_info_from_string	16	static
+cipher.c:136:30:mbedtls_cipher_info_from_values	12	static
+cipher.c:151:6:mbedtls_cipher_init	0	static
+cipher.c:156:6:mbedtls_cipher_free	8	static
+cipher.c:202:5:mbedtls_cipher_setkey	8	static
+cipher.c:236:5:mbedtls_cipher_set_iv	16	static
+cipher.c:284:5:mbedtls_cipher_reset	0	static
+cipher.c:334:5:mbedtls_cipher_update	48	static
+cipher.c:745:5:mbedtls_cipher_finish	32	static
+cipher.c:833:5:mbedtls_cipher_set_padding_mode	0	static
+cipher.c:176:5:mbedtls_cipher_setup	16	static
+cipher.c:971:5:mbedtls_cipher_crypt	40	static

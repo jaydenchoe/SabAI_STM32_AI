@@ -1,0 +1,14 @@
+iot_secure_sockets.c:239:17:prvGetFreeSocket	16	static
+iot_secure_sockets.c:278:13:prvReturnSocket	16	static
+iot_secure_sockets.c:291:19:prvIsValidSocket	24	static
+iot_secure_sockets.c:317:19:prvNetworkSend	56	static,ignoring_inline_asm
+iot_secure_sockets.c:390:19:prvNetworkRecv	64	static
+iot_secure_sockets.c:508:10:SOCKETS_Socket	40	static,ignoring_inline_asm
+iot_secure_sockets.c:542:9:SOCKETS_Connect	96	static
+iot_secure_sockets.c:732:9:SOCKETS_Recv	40	static
+iot_secure_sockets.c:808:9:SOCKETS_Send	40	static
+iot_secure_sockets.c:865:9:SOCKETS_Shutdown	32	static
+iot_secure_sockets.c:921:9:SOCKETS_Close	48	static
+iot_secure_sockets.c:999:9:SOCKETS_SetSockOpt	40	static
+iot_secure_sockets.c:1157:10:SOCKETS_GetHostByName	24	static
+iot_secure_sockets.c:1179:12:SOCKETS_Init	16	static

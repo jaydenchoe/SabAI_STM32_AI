@@ -1,0 +1,2 @@
+aws_customdemo_publisher.c:32:6:_sensorDataPublisherTask	40	static
+aws_customdemo_publisher.c:67:6:sendToTelemetryQueue	40	static

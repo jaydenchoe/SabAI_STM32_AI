@@ -1,0 +1,8 @@
+ssl_ciphersuites.c:2190:12:mbedtls_ssl_list_ciphersuites	24	static
+ssl_ciphersuites.c:2223:34:mbedtls_ssl_ciphersuite_from_string	24	static
+ssl_ciphersuites.c:2242:34:mbedtls_ssl_ciphersuite_from_id	24	static
+ssl_ciphersuites.c:2257:13:mbedtls_ssl_get_ciphersuite_name	24	static
+ssl_ciphersuites.c:2269:5:mbedtls_ssl_get_ciphersuite_id	24	static
+ssl_ciphersuites.c:2282:19:mbedtls_ssl_get_ciphersuite_sig_pk_alg	16	static
+ssl_ciphersuites.c:2304:19:mbedtls_ssl_get_ciphersuite_sig_alg	16	static
+ssl_ciphersuites.c:2325:5:mbedtls_ssl_ciphersuite_uses_ec	16	static

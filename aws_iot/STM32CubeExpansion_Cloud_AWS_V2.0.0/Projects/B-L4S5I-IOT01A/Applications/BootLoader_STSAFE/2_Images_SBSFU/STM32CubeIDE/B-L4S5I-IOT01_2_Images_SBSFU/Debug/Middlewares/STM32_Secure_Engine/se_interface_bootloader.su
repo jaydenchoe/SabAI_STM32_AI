@@ -1,0 +1,10 @@
+se_interface_bootloader.c:90:16:SE_Init	24	static,ignoring_inline_asm
+se_interface_bootloader.c:126:16:SE_Startup	16	static,ignoring_inline_asm
+se_interface_bootloader.c:162:16:SE_INFO_ReadBootInfo	24	static,ignoring_inline_asm
+se_interface_bootloader.c:203:16:SE_INFO_WriteBootInfo	24	static,ignoring_inline_asm
+se_interface_bootloader.c:243:16:SE_LockRestrictServices	16	static,ignoring_inline_asm
+se_interface_bootloader.c:316:16:SE_SFU_IMG_Read	40	static,ignoring_inline_asm
+se_interface_bootloader.c:359:16:SE_SFU_IMG_Write	40	static,ignoring_inline_asm
+se_interface_bootloader.c:396:16:SE_SFU_IMG_Erase	32	static,ignoring_inline_asm
+se_interface_bootloader.c:778:23:SE_SFU_IMG_SetActiveFwState	24	static,ignoring_inline_asm
+se_interface_bootloader.c:819:23:SE_SFU_IMG_GetActiveFwState	24	static,ignoring_inline_asm

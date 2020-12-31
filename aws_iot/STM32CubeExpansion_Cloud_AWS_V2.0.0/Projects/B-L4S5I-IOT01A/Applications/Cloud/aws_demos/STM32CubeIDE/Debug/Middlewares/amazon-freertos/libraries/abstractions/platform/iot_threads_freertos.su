@@ -1,0 +1,15 @@
+iot_threads_freertos.c:80:13:_threadRoutineWrapper	24	static
+iot_threads_freertos.c:93:6:Iot_CreateDetachedThread	48	static,ignoring_inline_asm
+iot_threads_freertos.c:136:6:IotMutex_Create	24	static,ignoring_inline_asm
+iot_threads_freertos.c:169:6:IotMutex_Destroy	24	static,ignoring_inline_asm
+iot_threads_freertos.c:180:6:prIotMutexTimedLock	32	static,ignoring_inline_asm
+iot_threads_freertos.c:205:6:IotMutex_Lock	16	static
+iot_threads_freertos.c:212:6:IotMutex_TryLock	16	static
+iot_threads_freertos.c:219:6:IotMutex_Unlock	24	static,ignoring_inline_asm
+iot_threads_freertos.c:240:6:IotSemaphore_Create	32	static,ignoring_inline_asm
+iot_threads_freertos.c:257:10:IotSemaphore_GetCount	32	static,ignoring_inline_asm
+iot_threads_freertos.c:273:6:IotSemaphore_Destroy	24	static,ignoring_inline_asm
+iot_threads_freertos.c:286:6:IotSemaphore_Wait	32	static,ignoring_inline_asm
+iot_threads_freertos.c:309:6:IotSemaphore_TryWait	24	static,ignoring_inline_asm
+iot_threads_freertos.c:322:6:IotSemaphore_TimedWait	24	static,ignoring_inline_asm
+iot_threads_freertos.c:348:6:IotSemaphore_Post	32	static,ignoring_inline_asm

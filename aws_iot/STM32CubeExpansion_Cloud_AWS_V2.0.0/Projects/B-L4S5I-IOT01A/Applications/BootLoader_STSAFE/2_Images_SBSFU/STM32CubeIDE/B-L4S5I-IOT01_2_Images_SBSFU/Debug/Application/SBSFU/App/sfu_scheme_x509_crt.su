@@ -1,0 +1,6 @@
+sfu_scheme_x509_crt.c:56:9:SFU_SCHEME_X509_CRT_SizeOfDer	0	static
+sfu_scheme_x509_crt.c:142:6:SFU_SCHEME_X509_CRT_PrintCerts	24	static
+sfu_scheme_x509_crt.c:176:17:SFU_SCHEME_X509_CRT_VerifyCert	1384	static
+sfu_scheme_x509_crt.c:369:17:SFU_SCHEME_X509_CRT_SEOpenSession	32	static
+sfu_scheme_x509_crt.c:421:17:SFU_SCHEME_X509_CRT_SECloseSession	16	static
+sfu_scheme_x509_crt.c:467:17:SFU_SCHEME_X509_CRT_GetSECert	96	static

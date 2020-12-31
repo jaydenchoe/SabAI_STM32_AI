@@ -1,0 +1,7 @@
+sfu_com_loader.c:153:17:SFU_COM_Transmit	0	static
+sfu_com_loader.c:164:17:SFU_COM_Receive	0	static
+sfu_com_loader.c:174:17:SFU_COM_Flush	0	static
+sfu_com_loader.c:366:17:SFU_COM_Serial_PutByte	16	static
+sfu_com_loader.c:593:24:SFU_COM_YMODEM_HeaderPktRxCpltCallback	0	static
+sfu_com_loader.c:608:24:SFU_COM_YMODEM_DataPktRxCpltCallback	0	static
+sfu_com_loader.c:185:17:SFU_COM_YMODEM_Receive	80	static

@@ -1,0 +1,14 @@
+FreeRTOS_POSIX_mqueue.c:154:12:prvCalculateTickTimeout	48	static
+FreeRTOS_POSIX_mqueue.c:203:19:prvCreateNewMessageQueue	48	static
+FreeRTOS_POSIX_mqueue.c:273:13:prvDeleteMessageQueue	24	static
+FreeRTOS_POSIX_mqueue.c:294:19:prvFindQueueInList	40	static
+FreeRTOS_POSIX_mqueue.c:335:13:prvInitializeQueueList	8	static
+FreeRTOS_POSIX_mqueue.c:365:19:prvValidateQueueName	24	static
+FreeRTOS_POSIX_mqueue.c:398:5:mq_close	32	static
+FreeRTOS_POSIX_mqueue.c:461:5:mq_getattr	32	static
+FreeRTOS_POSIX_mqueue.c:494:7:mq_open	56	static
+FreeRTOS_POSIX_mqueue.c:611:9:mq_receive	32	static
+FreeRTOS_POSIX_mqueue.c:621:5:mq_send	32	static
+FreeRTOS_POSIX_mqueue.c:631:9:mq_timedreceive	48	static
+FreeRTOS_POSIX_mqueue.c:724:5:mq_timedsend	48	static
+FreeRTOS_POSIX_mqueue.c:829:5:mq_unlink	32	static

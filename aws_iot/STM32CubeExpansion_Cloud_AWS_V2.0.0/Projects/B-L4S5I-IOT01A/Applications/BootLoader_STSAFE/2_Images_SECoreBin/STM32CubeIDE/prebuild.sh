@@ -21,11 +21,16 @@ if [ $? = 0 ] && [  -e "$prepareimage" ]; then
   echo "prepareimage with windows executeable"
   cmd=""
 else
+  # add venv
+  echo "run python3 on venv"
+  python3 -m venv venv
+  source venv/bin/activate
+  pip3 install -r $basedir/requirements.txt
   # line for python
   echo "prepareimage with python script" >> $1/output.txt
   echo "prepareimage with python script"
   prepareimage=$basedir/prepareimage.py
-  cmd=python
+  cmd=python3
 fi
 
 echo "$cmd $prepareimage" >> $1/output.txt

@@ -1,0 +1,8 @@
+sfu_low_level_flash.c:474:24:SFU_LL_FLASH_Init	8	static
+sfu_low_level_flash.c:191:17:SFU_LL_FLASH_Write	56	static
+sfu_low_level_flash.c:289:17:SFU_LL_FLASH_Read	24	static
+sfu_low_level_flash.c:333:17:SFU_LL_FLASH_CleanUp	48	static
+sfu_low_level_flash.c:368:6:NMI_Handler	0	static,ignoring_inline_asm
+sfu_low_level_flash.c:405:10:SFU_LL_FLASH_GetPage	0	static
+sfu_low_level_flash.c:429:10:SFU_LL_FLASH_GetBank	8	static
+sfu_low_level_flash.c:82:17:SFU_LL_FLASH_Erase_Size	64	static

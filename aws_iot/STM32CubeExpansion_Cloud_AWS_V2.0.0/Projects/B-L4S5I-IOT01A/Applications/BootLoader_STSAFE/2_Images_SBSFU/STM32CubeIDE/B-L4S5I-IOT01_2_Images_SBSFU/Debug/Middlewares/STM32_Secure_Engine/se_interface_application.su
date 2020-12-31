@@ -1,0 +1,3 @@
+se_interface_application.c:82:23:SE_APP_GetActiveFwInfo	24	static
+se_interface_application.c:123:23:SE_APP_GetActiveFwState	24	static
+se_interface_application.c:161:23:SE_APP_SetActiveFwState	24	static

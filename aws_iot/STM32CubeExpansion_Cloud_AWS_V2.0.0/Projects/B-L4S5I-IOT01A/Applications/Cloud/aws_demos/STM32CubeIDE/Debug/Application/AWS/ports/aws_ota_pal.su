@@ -1,0 +1,17 @@
+core_cm4.h:1939:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+aws_ota_pal.c:188:26:prvContextValidate	16	static
+aws_ota_pal.c:202:11:prvPAL_CreateFileForRx	24	static
+aws_ota_pal.c:251:11:prvPAL_Abort	24	static
+aws_ota_pal.c:293:9:prvPAL_WriteBlock	40	static
+aws_ota_pal.c:350:11:prvPAL_CloseFile	24	static
+aws_ota_pal.c:398:18:prvPAL_CheckFileSignature	56	static
+aws_ota_pal.c:461:18:prvPAL_ReadAndAssumeCertificate	16	static
+aws_ota_pal.c:473:11:prvPAL_ResetDevice	8	static
+aws_ota_pal.c:480:11:prvPAL_ActivateNewImage	1960	static
+aws_ota_pal.c:563:11:prvInitOTAImageState	8	static
+aws_ota_pal.c:570:11:prvSetOTAImageState	24	static
+aws_ota_pal.c:596:11:prvPAL_SetPlatformImageState	40	static
+aws_ota_pal.c:727:18:prvGetOTAImageState	4	static
+aws_ota_pal.c:740:22:prvPAL_GetPlatformImageState	24	static
+aws_ota_pal.c:794:17:SFU_APP_GetDownloadAreaInfo	24	static
+aws_ota_pal.c:812:17:SFU_APP_InstallAtNextReset	120	static

@@ -1,0 +1,6 @@
+HAL_STSAFE-Axx.c:111:9:Init_HAL	16	static
+HAL_STSAFE-Axx.c:170:9:Init_Perso	64	static
+HAL_STSAFE-Axx.c:231:9:HAL_Store_Data_Zone	40	static
+HAL_STSAFE-Axx.c:293:9:HAL_Get_Data_Zone	576	static
+HAL_STSAFE-Axx.c:452:9:HAL_Erase_Data_Zone	40	static
+HAL_STSAFE-Axx.c:512:6:HAL_Version	0	static

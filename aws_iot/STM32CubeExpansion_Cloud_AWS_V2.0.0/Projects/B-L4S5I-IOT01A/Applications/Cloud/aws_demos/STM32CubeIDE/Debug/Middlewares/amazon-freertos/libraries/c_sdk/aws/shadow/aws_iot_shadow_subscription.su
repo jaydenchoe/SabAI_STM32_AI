@@ -1,0 +1,12 @@
+iot_linear_containers.h:303:20:IotLink_IsLinked	24	static
+iot_linear_containers.h:446:20:IotListDouble_InsertHead	32	static,ignoring_inline_asm
+iot_linear_containers.h:584:20:IotListDouble_Remove	24	static,ignoring_inline_asm
+iot_linear_containers.h:710:27:IotListDouble_FindFirstMatch	32	static,ignoring_inline_asm
+aws_iot_shadow_subscription.c:105:13:_shadowSubscription_match	32	static,ignoring_inline_asm
+aws_iot_shadow_subscription.c:132:28:_modifyOperationSubscriptions	88	static,ignoring_inline_asm
+aws_iot_shadow_subscription.c:196:25:_AwsIotShadow_FindSubscription	48	static
+aws_iot_shadow_subscription.c:257:6:_AwsIotShadow_RemoveSubscription	40	static
+aws_iot_shadow_subscription.c:328:6:_AwsIotShadow_DestroySubscription	24	static,ignoring_inline_asm
+aws_iot_shadow_subscription.c:342:21:_AwsIotShadow_IncrementReferences	80	static,ignoring_inline_asm
+aws_iot_shadow_subscription.c:461:6:_AwsIotShadow_DecrementReferences	80	static,ignoring_inline_asm
+aws_iot_shadow_subscription.c:552:21:AwsIotShadow_RemovePersistentSubscriptions	80	static,ignoring_inline_asm

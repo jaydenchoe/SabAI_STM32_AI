@@ -1,0 +1,8 @@
+stsafe_platf_objects.c:109:7:STSAFE_OBJ_Init	8	static
+stsafe_platf_objects.c:138:7:STSAFE_OBJ_GetTemplateFromObjectHandle	8	static
+stsafe_platf_objects.c:171:7:STSAFE_OBJ_FindAttributeInTemplate	16	static
+stsafe_platf_objects.c:212:7:STSAFE_OBJ_FilterTemplate	32	static
+stsafe_platf_objects.c:253:7:STSAFE_OBJ_GetObjectRange	0	static
+stsafe_platf_objects.c:274:7:STSAFE_OBJ_GetAttributeValue	16	static
+stsafe_platf_objects.c:305:7:STSAFE_OBJ_SetAttributeValue	8	static
+stsafe_platf_objects.c:333:7:STSAFE_OBJ_CompareTemplates	40	static

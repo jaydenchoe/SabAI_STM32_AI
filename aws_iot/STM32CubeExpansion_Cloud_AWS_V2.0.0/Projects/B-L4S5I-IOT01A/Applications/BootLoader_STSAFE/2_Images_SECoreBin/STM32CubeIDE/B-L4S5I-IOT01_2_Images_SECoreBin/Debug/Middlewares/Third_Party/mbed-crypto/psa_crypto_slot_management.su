@@ -1,0 +1,9 @@
+psa_crypto_slot_management.c:110:21:psa_internal_allocate_key_slot	16	static
+psa_crypto_slot_management.c:59:14:psa_get_key_slot	0	static
+psa_crypto_slot_management.c:134:21:psa_internal_release_key_slot	16	static
+psa_crypto_slot_management.c:82:14:psa_initialize_key_slots	0	static
+psa_crypto_slot_management.c:91:6:psa_wipe_all_key_slots	16	static
+psa_crypto_slot_management.c:146:14:psa_allocate_key	0	static
+psa_crypto_slot_management.c:267:14:psa_open_key	16	static
+psa_crypto_slot_management.c:274:14:psa_create_key	16	static
+psa_crypto_slot_management.c:290:14:psa_close_key	0	static

@@ -1,0 +1,3 @@
+version.c:33:14:mbedtls_version_get_number	4	static
+version.c:38:6:mbedtls_version_get_string	16	static
+version.c:44:6:mbedtls_version_get_string_full	16	static

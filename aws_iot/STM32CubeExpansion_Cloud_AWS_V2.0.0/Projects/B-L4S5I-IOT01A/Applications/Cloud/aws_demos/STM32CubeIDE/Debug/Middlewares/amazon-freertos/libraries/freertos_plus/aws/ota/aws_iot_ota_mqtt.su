@@ -1,0 +1,13 @@
+aws_iot_ota_mqtt.c:144:15:prvSubscribeToJobNotificationTopics	312	static
+aws_iot_ota_mqtt.c:209:15:prvUnSubscribeFromDataStream	304	static
+aws_iot_ota_mqtt.c:260:13:prvUnSubscribeFromJobNotificationTopic	312	static
+aws_iot_ota_mqtt.c:338:23:prvPublishMessage	64	static
+aws_iot_ota_mqtt.c:366:13:prvSendCallbackEvent	48	static
+aws_iot_ota_mqtt.c:418:13:prvJobPublishCallback	16	static
+aws_iot_ota_mqtt.c:434:13:prvDataPublishCallback	16	static
+aws_iot_ota_mqtt.c:452:11:prvRequestJob_Mqtt	400	static
+aws_iot_ota_mqtt.c:518:11:prvUpdateJobStatus_Mqtt	464	static
+aws_iot_ota_mqtt.c:697:11:prvInitFileTransfer_Mqtt	304	static
+aws_iot_ota_mqtt.c:743:11:prvRequestFileBlock_Mqtt	720	static
+aws_iot_ota_mqtt.c:842:11:prvDecodeFileBlock_Mqtt	48	static
+aws_iot_ota_mqtt.c:884:11:prvCleanup_Mqtt	16	static

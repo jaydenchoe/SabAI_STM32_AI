@@ -1,0 +1,11 @@
+aws_iot_demo_shadow.c:165:13:_getDelta	48	static
+aws_iot_demo_shadow.c:216:13:_getUpdatedState	48	static
+aws_iot_demo_shadow.c:265:13:_shadowDeltaCallback	96	static
+aws_iot_demo_shadow.c:379:13:_shadowUpdatedCallback	64	static
+aws_iot_demo_shadow.c:436:12:_initializeDemo	16	static
+aws_iot_demo_shadow.c:486:13:_cleanupDemo	8	static
+aws_iot_demo_shadow.c:509:12:_establishMqttConnection	120	static
+aws_iot_demo_shadow.c:586:12:_setShadowCallbacks	56	static
+aws_iot_demo_shadow.c:640:13:_clearShadowDocument	48	static
+aws_iot_demo_shadow.c:684:12:_sendShadowUpdates	96	static
+aws_iot_demo_shadow.c:796:5:RunShadowDemo	128	static

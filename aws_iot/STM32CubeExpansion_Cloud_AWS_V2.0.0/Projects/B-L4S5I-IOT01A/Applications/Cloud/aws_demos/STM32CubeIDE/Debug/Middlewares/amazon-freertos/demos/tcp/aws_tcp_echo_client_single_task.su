@@ -1,0 +1,4 @@
+aws_tcp_echo_client_single_task.c:156:5:vStartTCPEchoClientTasks_SingleTasks	48	static
+aws_tcp_echo_client_single_task.c:188:13:prvEchoClientTask	96	static,ignoring_inline_asm
+aws_tcp_echo_client_single_task.c:408:19:prvCreateTxData	24	static
+aws_tcp_echo_client_single_task.c:439:12:xAreSingleTaskTCPEchoClientsStillRunning	16	static

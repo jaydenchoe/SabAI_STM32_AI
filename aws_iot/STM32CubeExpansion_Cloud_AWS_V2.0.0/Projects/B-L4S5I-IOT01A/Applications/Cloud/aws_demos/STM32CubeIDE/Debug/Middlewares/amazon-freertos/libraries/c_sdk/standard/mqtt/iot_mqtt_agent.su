@@ -1,0 +1,16 @@
+iot_mqtt_agent.c:178:37:prvConvertReturnCode	24	static
+iot_mqtt_agent.c:203:13:prvPublishCallbackWrapper	72	static
+iot_mqtt_agent.c:317:13:prvDisconnectCallbackWrapper	48	static
+iot_mqtt_agent.c:336:23:prvStoreCallback	40	static
+iot_mqtt_agent.c:385:29:prvFindCallback	32	static
+iot_mqtt_agent.c:410:17:prvRemoveCallback	32	static
+iot_mqtt_agent.c:438:21:MQTT_AGENT_Getv2Connection	24	static
+iot_mqtt_agent.c:447:12:MQTT_AGENT_Init	16	static
+iot_mqtt_agent.c:462:23:MQTT_AGENT_Create	24	static
+iot_mqtt_agent.c:517:23:MQTT_AGENT_Delete	24	static
+iot_mqtt_agent.c:544:23:MQTT_AGENT_Connect	160	static
+iot_mqtt_agent.c:651:23:MQTT_AGENT_Disconnect	24	static
+iot_mqtt_agent.c:673:23:MQTT_AGENT_Subscribe	64	static
+iot_mqtt_agent.c:724:23:MQTT_AGENT_Unsubscribe	64	static
+iot_mqtt_agent.c:757:23:MQTT_AGENT_Publish	64	static
+iot_mqtt_agent.c:783:23:MQTT_AGENT_ReturnBuffer	16	static

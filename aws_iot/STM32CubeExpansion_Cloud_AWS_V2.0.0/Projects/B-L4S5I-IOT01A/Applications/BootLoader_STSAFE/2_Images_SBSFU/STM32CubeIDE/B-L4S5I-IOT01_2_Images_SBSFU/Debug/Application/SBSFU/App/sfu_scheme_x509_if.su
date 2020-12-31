@@ -1,0 +1,7 @@
+sfu_scheme_x509_if.c:62:16:SE_AuthenticateFW_Init	40	static
+sfu_scheme_x509_if.c:167:16:SE_AuthenticateFW_Append	8	static
+sfu_scheme_x509_if.c:241:16:SE_AuthenticateFW_Finish	16	static
+sfu_scheme_x509_if.c:339:16:SE_VerifyFwRawHeaderTag	16	static
+sfu_scheme_x509_if.c:401:16:SE_Decrypt_Init	0	static
+sfu_scheme_x509_if.c:423:16:SE_Decrypt_Append	16	static
+sfu_scheme_x509_if.c:446:16:SE_Decrypt_Finish	0	static

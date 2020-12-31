@@ -1,0 +1,13 @@
+kms_aes.c:722:6:KMS_InitBufferAlloc	0	static
+kms_aes.c:738:6:KMS_FinalizeBufferAlloc	8	static
+kms_aes.c:763:10:KMS_AllocKey	0	static
+kms_aes.c:141:23:encrypt_decrypt_init	56	static
+kms_aes.c:791:9:KMS_FreeKey	0	static
+kms_aes.c:824:16:KMS_EncryptInit	0	static
+kms_aes.c:881:16:KMS_EncryptUpdate	40	static
+kms_aes.c:849:16:KMS_Encrypt	24	static
+kms_aes.c:976:16:KMS_EncryptFinal	32	static
+kms_aes.c:1075:16:KMS_DecryptInit	0	static
+kms_aes.c:1133:16:KMS_DecryptUpdate	48	static
+kms_aes.c:1096:16:KMS_Decrypt	24	static
+kms_aes.c:1234:16:KMS_DecryptFinal	32	static
