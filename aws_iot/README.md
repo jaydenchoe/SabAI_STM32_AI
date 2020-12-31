@@ -62,7 +62,31 @@ https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/#build-error-fix
 
 * [st_sensordata_collector.c](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c)
   * 센서 값을 읽어서 Queue에 넣는 부분
-  
+ 
+### WIFI 설정 ###
+
+WiFi 연결을 설정합니다.
+STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/Third_Party/amazon-freertos/demos/include/aws_clientcredential.h
+STM32 CubeIDE에서 B-L4S5I-IOT01_aws_dems project를 선택한 후 includes의 ‘amazon-freertos/demos/include’를 확장한 후 aws_clientcredential.h 파일을 선택합니다.
+File 속성이 읽기 모드로 되어 있는 경우 쓰기가 가능하도록 변경합니다.
+
+파일 속성을 쓰기 가능 모드로 변경 합니다.
+접속할 WiFI 공유기의 SSID와 비밀 번호를 설정합니다.
+
+```
+/*
+ * @brief Wi-Fi network to join.
+ *
+ * @todo If you are using Wi-Fi, set this to your network name.
+ */
+#define clientcredentialWIFI_SSID                    "xxxx"
+
+/*
+ * @brief Password needed to join Wi-Fi network.
+ * @todo If you are using WPA, set this to your network password.
+ */
+#define clientcredentialWIFI_PASSWORD                "xxxx"
+```
   
 ### 우리가 해야할 부분
 
