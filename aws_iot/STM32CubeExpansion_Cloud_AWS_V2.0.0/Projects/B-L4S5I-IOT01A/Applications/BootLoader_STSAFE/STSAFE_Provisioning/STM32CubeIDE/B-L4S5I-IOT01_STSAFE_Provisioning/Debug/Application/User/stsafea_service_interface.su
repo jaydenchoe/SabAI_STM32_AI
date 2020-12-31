@@ -1,0 +1,8 @@
+stsafea_service_interface.c:166:9:HW_IO_Init	48	static
+stsafea_service_interface.c:291:9:BSP_I2C2_Send	16	static
+stsafea_service_interface.c:314:10:BSP_I2C2_Recv	16	static
+stsafea_service_interface.c:267:9:BSP_I2C2_DeInit	8	static
+stsafea_service_interface.c:142:8:StSafeA_HW_Probe	0	static
+stsafea_service_interface.c:193:6:BSP_TimeDelay	0	static
+stsafea_service_interface.c:205:26:MX_I2C2_Init	8	static
+stsafea_service_interface.c:235:9:BSP_I2C2_Init	56	static

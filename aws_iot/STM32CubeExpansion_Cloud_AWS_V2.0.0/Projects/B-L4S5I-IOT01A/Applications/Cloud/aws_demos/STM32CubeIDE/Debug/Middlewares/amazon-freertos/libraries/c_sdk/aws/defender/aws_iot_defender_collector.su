@@ -1,0 +1,10 @@
+iot_linear_containers.h:349:22:IotListDouble_Count	24	static
+aws_iot_defender_collector.c:97:6:_assertSuccess	24	static,ignoring_inline_asm
+aws_iot_defender_collector.c:105:6:_assertSuccessOrBufferToSmall	24	static,ignoring_inline_asm
+aws_iot_defender_collector.c:113:11:AwsIotDefenderInternal_GetReportBuffer	4	static
+aws_iot_defender_collector.c:120:8:AwsIotDefenderInternal_GetReportBufferSize	8	static
+aws_iot_defender_collector.c:129:6:AwsIotDefenderInternal_CreateReport	40	static,ignoring_inline_asm
+aws_iot_defender_collector.c:182:6:AwsIotDefenderInternal_DeleteReport	8	static
+aws_iot_defender_collector.c:208:13:_serialize	104	static,ignoring_inline_asm
+aws_iot_defender_collector.c:297:13:_copyMetricsFlag	8	static
+aws_iot_defender_collector.c:310:13:_serializeTcpConnections	136	static,ignoring_inline_asm

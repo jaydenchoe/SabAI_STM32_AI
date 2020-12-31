@@ -1,0 +1,13 @@
+aws_iot_defender_v1.c:51:6:_defenderCallback	16	static
+aws_iot_defender_v1.c:76:22:_toDefenderErr	24	static
+aws_iot_defender_v1.c:103:15:DEFENDER_MetricsInitFunc	32	static
+aws_iot_defender_v1.c:129:15:DEFENDER_ReportPeriodSet	16	static
+aws_iot_defender_v1.c:137:15:DEFENDER_ConnectionTimeoutSet	16	static
+aws_iot_defender_v1.c:148:15:DEFENDER_Start	40	static
+aws_iot_defender_v1.c:189:15:DEFENDER_Stop	8	static
+aws_iot_defender_v1.c:200:24:DEFENDER_ReportStatusGet	4	static
+aws_iot_defender_v1.c:207:9:GetLastReportId	4	static
+aws_iot_defender_v1.c:215:14:DEFENDER_ErrAsString	16	static
+aws_iot_defender_v1.c:253:14:DEFENDER_ReportStatusAsString	16	static
+aws_iot_defender_v1.c:281:23:_startMqttConnection	80	static
+aws_iot_defender_v1.c:318:13:_stopMqttConnection	8	static

@@ -1,0 +1,12 @@
+aes.c:518:6:mbedtls_aes_init	16	static
+aes.c:525:6:mbedtls_aes_free	16	static
+aes.c:556:5:mbedtls_aes_setkey_enc	32	static
+aes.c:672:5:mbedtls_aes_setkey_dec	328	static
+aes.c:868:5:mbedtls_internal_aes_encrypt	64	static
+aes.c:936:5:mbedtls_internal_aes_decrypt	64	static
+aes.c:1003:5:mbedtls_aes_crypt_ecb	24	static
+aes.c:1041:5:mbedtls_aes_crypt_cbc	56	static
+aes.c:1280:5:mbedtls_aes_crypt_cfb128	32	static
+aes.c:1339:5:mbedtls_aes_crypt_cfb8	48	static
+aes.c:1424:5:mbedtls_aes_crypt_ctr	40	static
+aes.c:1784:5:mbedtls_aes_self_test	544	static

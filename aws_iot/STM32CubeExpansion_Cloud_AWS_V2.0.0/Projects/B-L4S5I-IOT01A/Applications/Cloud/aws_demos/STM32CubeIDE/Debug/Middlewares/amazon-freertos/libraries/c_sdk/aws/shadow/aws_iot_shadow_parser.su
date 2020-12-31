@@ -1,0 +1,4 @@
+aws_iot_shadow_parser.c:91:28:_codeToShadowStatus	16	static
+aws_iot_shadow_parser.c:140:26:_AwsIotShadow_ParseShadowStatus	32	static,ignoring_inline_asm
+aws_iot_shadow_parser.c:191:21:_AwsIotShadow_ParseErrorDocument	56	static,ignoring_inline_asm
+aws_iot_shadow_parser.c:251:21:_AwsIotShadow_ParseThingName	32	static

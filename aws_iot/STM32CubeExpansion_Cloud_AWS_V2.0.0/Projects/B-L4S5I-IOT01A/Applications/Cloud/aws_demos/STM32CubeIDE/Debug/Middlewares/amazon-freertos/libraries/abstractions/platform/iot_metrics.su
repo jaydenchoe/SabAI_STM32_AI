@@ -1,0 +1,15 @@
+iot_linear_containers.h:303:20:IotLink_IsLinked	24	static
+iot_linear_containers.h:330:20:IotListDouble_Create	24	static,ignoring_inline_asm
+iot_linear_containers.h:473:20:IotListDouble_InsertTail	32	static,ignoring_inline_asm
+iot_linear_containers.h:584:20:IotListDouble_Remove	24	static,ignoring_inline_asm
+iot_linear_containers.h:710:27:IotListDouble_FindFirstMatch	32	static,ignoring_inline_asm
+iot_linear_containers.h:776:27:IotListDouble_RemoveFirstMatch	32	static
+iot_metrics.c:83:17:_connectionMatch	24	static
+iot_metrics.c:97:10:IotMetrics_Init	8	static
+iot_metrics.c:106:10:IotMetrics_Cleanup	8	static
+iot_metrics.c:113:10:IotMetrics_GetTcpConnections	16	static
+iot_metrics.c:125:17:_metricsAddTcpConnection	40	static
+iot_metrics.c:166:17:_metricsRemoveTcpConnection	24	static
+iot_metrics.c:187:16:Sockets_MetricsInit	16	static
+iot_metrics.c:201:13:Sockets_MetricsConnect	32	static
+iot_metrics.c:217:13:Sockets_MetricsShutdown	24	static

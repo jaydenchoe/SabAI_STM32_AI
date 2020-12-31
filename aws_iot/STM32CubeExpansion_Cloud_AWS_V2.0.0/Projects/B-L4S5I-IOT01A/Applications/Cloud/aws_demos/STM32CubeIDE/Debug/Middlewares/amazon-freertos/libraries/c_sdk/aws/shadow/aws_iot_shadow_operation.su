@@ -1,0 +1,15 @@
+iot_linear_containers.h:303:20:IotLink_IsLinked	24	static
+iot_linear_containers.h:446:20:IotListDouble_InsertHead	32	static,ignoring_inline_asm
+iot_linear_containers.h:584:20:IotListDouble_Remove	24	static,ignoring_inline_asm
+iot_linear_containers.h:710:27:IotListDouble_FindFirstMatch	32	static,ignoring_inline_asm
+aws_iot_shadow_operation.c:159:13:_shadowOperation_match	80	static,ignoring_inline_asm
+aws_iot_shadow_operation.c:223:13:_commonOperationCallback	88	static,ignoring_inline_asm
+aws_iot_shadow_operation.c:354:13:_deleteCallback	16	static
+aws_iot_shadow_operation.c:365:13:_getCallback	16	static
+aws_iot_shadow_operation.c:376:28:_processAcceptedGet	32	static,ignoring_inline_asm
+aws_iot_shadow_operation.c:422:13:_updateCallback	16	static
+aws_iot_shadow_operation.c:433:21:_AwsIotShadow_CreateOperation	40	static
+aws_iot_shadow_operation.c:494:6:_AwsIotShadow_DestroyOperation	40	static,ignoring_inline_asm
+aws_iot_shadow_operation.c:526:21:_AwsIotShadow_GenerateShadowTopic	64	static,ignoring_inline_asm
+aws_iot_shadow_operation.c:610:21:_AwsIotShadow_ProcessOperation	128	static,ignoring_inline_asm
+aws_iot_shadow_operation.c:824:6:_AwsIotShadow_Notify	64	static,ignoring_inline_asm

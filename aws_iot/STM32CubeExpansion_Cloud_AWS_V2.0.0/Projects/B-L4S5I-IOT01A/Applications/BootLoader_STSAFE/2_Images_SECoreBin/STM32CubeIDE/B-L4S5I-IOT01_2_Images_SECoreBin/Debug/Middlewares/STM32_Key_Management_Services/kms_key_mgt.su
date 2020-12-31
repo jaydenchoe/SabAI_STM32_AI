@@ -1,0 +1,3 @@
+kms_key_mgt.c:166:16:KMS_DeriveKey	80	static
+kms_key_mgt.c:365:7:KMS_WrapKey	0	static
+kms_key_mgt.c:387:7:KMS_GetAttributeValue	40	static

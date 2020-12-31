@@ -1,0 +1,15 @@
+core_cm4.h:1939:34:__NVIC_SystemReset	0	static,ignoring_inline_asm
+se_low_level.c:408:17:SE_LL_GetPage	0	static
+se_low_level.c:82:16:SE_LL_CRC_Config	8	static
+se_low_level.c:113:16:SE_LL_CRC_Init	8	static
+se_low_level.c:126:16:SE_LL_CRC_DeInit	8	static
+se_low_level.c:145:10:SE_LL_CRC_Calculate	0	static
+se_low_level.c:164:16:SE_LL_FLASH_Erase	40	static
+se_low_level.c:203:16:SE_LL_FLASH_Write	24	static
+se_low_level.c:252:16:SE_LL_FLASH_Read	16	static
+se_low_level.c:286:6:NMI_Handler	8	static,ignoring_inline_asm
+se_low_level.c:321:16:SE_LL_Buffer_in_ram	8	static
+se_low_level.c:346:16:SE_LL_Buffer_in_SBSFU_ram	8	static
+se_low_level.c:371:16:SE_LL_Buffer_part_of_SE_ram	8	static
+se_low_level.c:468:7:SE_LL_CORE_Cleanup	0	static
+se_low_level.c:477:7:SysTick_Handler	0	static

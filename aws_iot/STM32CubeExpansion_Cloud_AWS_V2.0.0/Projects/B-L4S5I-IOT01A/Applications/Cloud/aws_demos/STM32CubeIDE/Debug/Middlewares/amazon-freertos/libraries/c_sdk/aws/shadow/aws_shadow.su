@@ -1,0 +1,12 @@
+aws_shadow.c:126:27:prvConvertReturnCode	24	static
+aws_shadow.c:186:13:prvDeltaCallbackWrapper	56	static
+aws_shadow.c:229:13:prvUpdatedCallbackWrapper	56	static
+aws_shadow.c:272:20:SHADOW_ClientCreate	32	static
+aws_shadow.c:387:20:SHADOW_ClientConnect	32	static
+aws_shadow.c:408:20:SHADOW_ClientDisconnect	24	static
+aws_shadow.c:421:20:SHADOW_ClientDelete	24	static
+aws_shadow.c:456:20:SHADOW_Update	64	static
+aws_shadow.c:488:20:SHADOW_Get	80	static
+aws_shadow.c:537:20:SHADOW_Delete	56	static
+aws_shadow.c:562:20:SHADOW_RegisterCallbacks	56	static
+aws_shadow.c:637:20:SHADOW_ReturnMQTTBuffer	16	static

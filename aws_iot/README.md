@@ -4,12 +4,28 @@
 
 Lecture Link: https://master.d2s409snhlt74e.amplifyapp.com/  (<i>믿을만하지 못함</i>)
 
+### Installation guide
+
+**선행조건**
+
+* python 3.8.4 버전 무조껀 설치되어있어야 한다.
+
+1. /B-L4S5I-IOT01_STSAFE_Provisioning 프로젝트 빌드 후 플래시
+2. /B-L4S5I-IOT01_2_Images_SECoreBin 빌드 후 플래시
+3. /B-L4S5I-IOT01_2_Images_SBSFU 빌드 후 플래시
+4. /B-L4S5I-IOT01_aws_demos 빌드 후 플래시
+5. 로그에 STM32 MCU 보드의 디바이스 인증서가 출력 됩니다.
+이 인증서는 STSAFE A110의 Root CA로 부터 생성된 X.509 표준 인증서 이며 PEM format으로 출력 되었습니다.
+로그에 출력되는 인증서를 복사하여 Device Certificate로 저장 합니다 : stm32-iot-node-cert.pem
+stm32-iot-node-cert.pem 파일은 AWS에 연결할 때 Device의 인증서로 등록하여 사용합니다.
+
+
 ## Trouble shooting
 
 ### STM32CubeProgramming Mac에서 실행방법
 
 1. 기존 설치된 java를 지운다. (<i>optional</i>)
-   * 만약 jenv 같은 java version manager가 있다면 그걸 써도 무관.
+  *  *  만약 jenv 같은 java version manager가 있다면 그걸 써도 무관.
 2. zulu jdk 1.8을 설치한다
    * https://www.azul.com/downloads/zulu-community/?version=java-8-lts&os=macos&architecture=x86-64-bit&package=jdk-fx
 3. 실행은 lecture에 나와있는 ```java -jar STM32CubeProgramming``` 으로 하면 안된다.
@@ -46,7 +62,31 @@ https://master.d2s409snhlt74e.amplifyapp.com/lab1/module2/#build-error-fix
 
 * [st_sensordata_collector.c](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c)
   * 센서 값을 읽어서 Queue에 넣는 부분
-  
+ 
+### WIFI 설정 ###
+
+WiFi 연결을 설정합니다.
+STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/Third_Party/amazon-freertos/demos/include/aws_clientcredential.h
+STM32 CubeIDE에서 B-L4S5I-IOT01_aws_dems project를 선택한 후 includes의 ‘amazon-freertos/demos/include’를 확장한 후 aws_clientcredential.h 파일을 선택합니다.
+File 속성이 읽기 모드로 되어 있는 경우 쓰기가 가능하도록 변경합니다.
+
+파일 속성을 쓰기 가능 모드로 변경 합니다.
+접속할 WiFI 공유기의 SSID와 비밀 번호를 설정합니다.
+
+```
+/*
+ * @brief Wi-Fi network to join.
+ *
+ * @todo If you are using Wi-Fi, set this to your network name.
+ */
+#define clientcredentialWIFI_SSID                    "xxxx"
+
+/*
+ * @brief Password needed to join Wi-Fi network.
+ * @todo If you are using WPA, set this to your network password.
+ */
+#define clientcredentialWIFI_PASSWORD                "xxxx"
+```
   
 ### 우리가 해야할 부분
 

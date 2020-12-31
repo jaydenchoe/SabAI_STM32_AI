@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: lief
+Version: 0.10.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Romain Thomas
+Author-email: rthomas@quarkslab.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: C++
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=2.7
+
+UNKNOWN
+
+

@@ -1,0 +1,10 @@
+stm32l4xx_hal_usart_ex.c:114:13:HAL_USARTEx_RxFifoFullCallback	16	static
+stm32l4xx_hal_usart_ex.c:129:13:HAL_USARTEx_TxFifoEmptyCallback	16	static
+stm32l4xx_hal_usart_ex.c:181:19:HAL_USARTEx_EnableSlaveMode	24	static
+stm32l4xx_hal_usart_ex.c:229:19:HAL_USARTEx_DisableSlaveMode	24	static
+stm32l4xx_hal_usart_ex.c:277:19:HAL_USARTEx_ConfigNSS	24	static
+stm32l4xx_hal_usart_ex.c:317:19:HAL_USARTEx_EnableFifoMode	24	static
+stm32l4xx_hal_usart_ex.c:358:19:HAL_USARTEx_DisableFifoMode	24	static
+stm32l4xx_hal_usart_ex.c:404:19:HAL_USARTEx_SetTxFifoThreshold	24	static
+stm32l4xx_hal_usart_ex.c:453:19:HAL_USARTEx_SetRxFifoThreshold	24	static
+stm32l4xx_hal_usart_ex.c:510:13:USARTEx_SetNbDataToProcess	40	static

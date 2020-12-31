@@ -1,0 +1,5 @@
+aws_helper_secure_connect.c:57:12:GGD_SecureConnect_Connect	72	static,ignoring_inline_asm
+aws_helper_secure_connect.c:181:6:GGD_SecureConnect_Disconnect	48	static,ignoring_inline_asm
+aws_helper_secure_connect.c:228:12:GGD_SecureConnect_Send	40	static,ignoring_inline_asm
+aws_helper_secure_connect.c:283:12:GGD_SecureConnect_Read	48	static,ignoring_inline_asm
+aws_helper_secure_connect.c:338:17:prvIsIPaddress	48	static

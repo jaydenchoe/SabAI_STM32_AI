@@ -1,0 +1,7 @@
+FreeRTOS_POSIX_semaphore.c:45:5:sem_destroy	24	static
+FreeRTOS_POSIX_semaphore.c:57:5:sem_getvalue	24	static
+FreeRTOS_POSIX_semaphore.c:74:5:sem_init	32	static
+FreeRTOS_POSIX_semaphore.c:109:5:sem_post	48	static,ignoring_inline_asm
+FreeRTOS_POSIX_semaphore.c:129:5:sem_timedwait	72	static,ignoring_inline_asm
+FreeRTOS_POSIX_semaphore.c:206:5:sem_trywait	40	static
+FreeRTOS_POSIX_semaphore.c:228:5:sem_wait	16	static

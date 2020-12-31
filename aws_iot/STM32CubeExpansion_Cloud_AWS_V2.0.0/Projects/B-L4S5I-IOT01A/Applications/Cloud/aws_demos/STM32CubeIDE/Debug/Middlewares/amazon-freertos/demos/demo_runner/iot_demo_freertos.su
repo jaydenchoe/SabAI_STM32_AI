@@ -1,0 +1,9 @@
+iot_demo_freertos.c:68:33:demoGetMqttSerializer	16	static
+iot_demo_freertos.c:85:17:_getConnectedNetworkForDemo	24	static
+iot_demo_freertos.c:111:17:_waitForDemoNetworkConnection	16	static
+iot_demo_freertos.c:120:13:_onNetworkStateChangeCallback	56	static
+iot_demo_freertos.c:183:12:_initialize	32	static
+iot_demo_freertos.c:280:13:_cleanup	8	static
+iot_demo_freertos.c:291:6:runDemoTask	72	static
+iot_demo_freertos.c:417:6:vApplicationMallocFailedHook	16	static,ignoring_inline_asm
+iot_demo_freertos.c:441:6:vApplicationStackOverflowHook	24	static,ignoring_inline_asm

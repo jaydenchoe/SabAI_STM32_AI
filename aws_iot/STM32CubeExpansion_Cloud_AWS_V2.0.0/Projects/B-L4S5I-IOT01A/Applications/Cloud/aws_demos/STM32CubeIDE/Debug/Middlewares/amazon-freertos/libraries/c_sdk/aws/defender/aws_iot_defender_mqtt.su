@@ -1,0 +1,5 @@
+aws_iot_defender_mqtt.c:58:23:AwsIotDefenderInternal_BuildTopicsNames	56	static
+aws_iot_defender_mqtt.c:116:6:AwsIotDefenderInternal_DeleteTopicsNames	8	static
+aws_iot_defender_mqtt.c:132:16:AwsIotDefenderInternal_MqttSubscribe	56	static
+aws_iot_defender_mqtt.c:156:16:AwsIotDefenderInternal_MqttPublish	48	static
+aws_iot_defender_mqtt.c:175:16:AwsIotDefenderInternal_MqttUnSubscribe	56	static

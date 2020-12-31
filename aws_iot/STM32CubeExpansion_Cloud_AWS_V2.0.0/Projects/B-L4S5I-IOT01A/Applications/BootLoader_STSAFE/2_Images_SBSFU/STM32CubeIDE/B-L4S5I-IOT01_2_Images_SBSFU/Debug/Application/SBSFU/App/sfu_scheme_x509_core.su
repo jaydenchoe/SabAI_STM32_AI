@@ -1,0 +1,4 @@
+sfu_scheme_x509_core.c:115:13:SB_HdrVerifiedInit	16	static
+sfu_scheme_x509_core.c:300:17:SFU_SCHEME_X509_CORE_HashContiguous	56	static
+sfu_scheme_x509_core.c:415:17:SFU_SCHEME_X509_CORE_Init	24	static
+sfu_scheme_x509_core.c:500:17:SFU_SCHEME_X509_CORE_VerifyFWHeader	520	static

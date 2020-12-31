@@ -1,0 +1,8 @@
+stsafea_crypto_mbedtls_interface.c:150:9:StSafeA_HostKeys_Init	24	static
+stsafea_crypto_mbedtls_interface.c:354:6:StSafeA_AES_MAC_Start	16	static
+stsafea_crypto_mbedtls_interface.c:383:6:StSafeA_AES_MAC_Update	0	static
+stsafea_crypto_mbedtls_interface.c:404:6:StSafeA_AES_MAC_LastUpdate	0	static
+stsafea_crypto_mbedtls_interface.c:420:6:StSafeA_AES_MAC_Final	8	static
+stsafea_crypto_mbedtls_interface.c:446:9:StSafeA_AES_ECB_Encrypt	296	static
+stsafea_crypto_mbedtls_interface.c:492:9:StSafeA_AES_CBC_Encrypt	312	static
+stsafea_crypto_mbedtls_interface.c:539:9:StSafeA_AES_CBC_Decrypt	312	static

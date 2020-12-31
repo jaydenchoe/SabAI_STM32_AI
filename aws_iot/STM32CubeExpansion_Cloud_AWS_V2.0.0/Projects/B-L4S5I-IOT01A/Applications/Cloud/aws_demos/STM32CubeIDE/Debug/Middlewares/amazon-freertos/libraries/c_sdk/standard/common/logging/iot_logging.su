@@ -1,0 +1,3 @@
+iot_logging.c:163:17:_reallocLoggingBuffer	32	static
+iot_logging.c:191:6:IotLog_Generic	48	static
+iot_logging.c:399:6:IotLog_GenericPrintBuffer	48	static

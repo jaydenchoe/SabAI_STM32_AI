@@ -1,0 +1,7 @@
+aws_customdemo_runner.c:156:5:aws_custom_demo_init	32	static
+aws_customdemo_runner.c:174:6:aws_custom_demo_run	8	static
+aws_customdemo_runner.c:191:6:aws_custom_demo_networkConnectedCallback	32	static
+aws_customdemo_runner.c:201:6:aws_custom_demo_networkDisconnectedCallback	24	static
+aws_customdemo_runner.c:225:12:_establishMqttConnection	176	static
+aws_customdemo_runner.c:327:5:aws_custom_mqttlib_initialise	48	static
+aws_customdemo_runner.c:399:5:_publishSensorData	72	static

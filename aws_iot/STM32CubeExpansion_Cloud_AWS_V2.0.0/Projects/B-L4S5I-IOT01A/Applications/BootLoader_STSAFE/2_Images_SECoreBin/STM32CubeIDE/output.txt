@@ -1,5 +1,5 @@
 prebuild.sh : started
 ../../../Binary/ECCKEY.txt
 prepareimage with python script
-python3 /Users/sempark/hackathon/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/ST/STM32_Secure_Engine/Utilities/KeysAndImages/prepareimage.py
+python3 /Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/ST/STM32_Secure_Engine/Utilities/KeysAndImages/prepareimage.py
 SECBOOT_X509_ECDSA_WITHOUT_ENCRYPT_SHA256 selected

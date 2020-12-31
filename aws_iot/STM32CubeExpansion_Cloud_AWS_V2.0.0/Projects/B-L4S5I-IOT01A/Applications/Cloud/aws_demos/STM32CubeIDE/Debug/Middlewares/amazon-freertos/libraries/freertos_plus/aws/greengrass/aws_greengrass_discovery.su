@@ -1,0 +1,13 @@
+aws_greengrass_discovery.c:158:12:GGD_GetGGCIPandCertificate	72	static,ignoring_inline_asm
+aws_greengrass_discovery.c:231:12:GGD_JSONRequestStart	72	static,ignoring_inline_asm
+aws_greengrass_discovery.c:311:12:GGD_JSONRequestGetSize	64	static,ignoring_inline_asm
+aws_greengrass_discovery.c:409:12:GGD_JSONRequestGetFile	48	static,ignoring_inline_asm
+aws_greengrass_discovery.c:477:6:GGD_JSONRequestAbort	24	static,ignoring_inline_asm
+aws_greengrass_discovery.c:489:12:GGD_GetIPandCertificateFromJSON	2664	static,ignoring_inline_asm
+aws_greengrass_discovery.c:633:19:prvGGDJsoneq	32	static
+aws_greengrass_discovery.c:658:13:prvCheckMatch	24	static
+aws_greengrass_discovery.c:694:19:prvGGDGetCore	56	static
+aws_greengrass_discovery.c:753:19:prvGGDGetCertificate	64	static
+aws_greengrass_discovery.c:836:19:prvIsIPvalid	24	static
+aws_greengrass_discovery.c:857:19:prvGGDGetIPOnInterface	40	static
+aws_greengrass_discovery.c:908:19:prvCheckForContentLengthString	24	static

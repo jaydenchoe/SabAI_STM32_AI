@@ -1,0 +1,17 @@
+iot_linear_containers.h:303:20:IotLink_IsLinked	24	static
+iot_linear_containers.h:446:20:IotListDouble_InsertHead	32	static,ignoring_inline_asm
+iot_linear_containers.h:584:20:IotListDouble_Remove	24	static,ignoring_inline_asm
+iot_linear_containers.h:710:27:IotListDouble_FindFirstMatch	32	static,ignoring_inline_asm
+iot_mqtt_operation.c:96:13:_mqttOperation_match	32	static,ignoring_inline_asm
+iot_mqtt_operation.c:133:13:_checkRetryLimit	56	static,ignoring_inline_asm
+iot_mqtt_operation.c:207:13:_scheduleNextRetry	64	static,ignoring_inline_asm
+iot_mqtt_operation.c:318:16:_IotMqtt_CreateOperation	48	static
+iot_mqtt_operation.c:465:6:_IotMqtt_DecrementOperationReferences	56	static,ignoring_inline_asm
+iot_mqtt_operation.c:541:6:_IotMqtt_DestroyOperation	56	static,ignoring_inline_asm
+iot_mqtt_operation.c:647:6:_IotMqtt_ProcessKeepAlive	72	static,ignoring_inline_asm
+iot_mqtt_operation.c:778:6:_IotMqtt_ProcessIncomingPublish	88	static,ignoring_inline_asm
+iot_mqtt_operation.c:829:6:_IotMqtt_ProcessSend	88	static,ignoring_inline_asm
+iot_mqtt_operation.c:1012:6:_IotMqtt_ProcessCompletedOperation	88	static,ignoring_inline_asm
+iot_mqtt_operation.c:1052:16:_IotMqtt_ScheduleOperation	80	static,ignoring_inline_asm
+iot_mqtt_operation.c:1100:20:_IotMqtt_FindOperation	80	static,ignoring_inline_asm
+iot_mqtt_operation.c:1209:6:_IotMqtt_Notify	64	static,ignoring_inline_asm

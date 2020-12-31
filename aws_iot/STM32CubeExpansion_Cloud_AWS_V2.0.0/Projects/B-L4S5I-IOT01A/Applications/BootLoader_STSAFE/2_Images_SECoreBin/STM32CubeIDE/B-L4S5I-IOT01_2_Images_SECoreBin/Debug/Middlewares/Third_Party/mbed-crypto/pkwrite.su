@@ -1,0 +1,5 @@
+pkwrite.c:114:12:pk_write_ec_pubkey	168	static
+pkwrite.c:142:12:pk_write_ec_param.isra.2	24	static
+pkwrite.c:159:5:mbedtls_pk_write_pubkey	56	static
+pkwrite.c:208:5:mbedtls_pk_write_pubkey_der	72	static
+pkwrite.c:295:5:mbedtls_pk_write_key_der	64	static

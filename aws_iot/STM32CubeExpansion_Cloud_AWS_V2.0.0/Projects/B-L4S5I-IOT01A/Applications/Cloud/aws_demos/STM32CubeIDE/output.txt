@@ -1,30 +1,30 @@
-python3 /Users/sempark/hackathon/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/ST/STM32_Secure_Engine/Utilities/KeysAndImages/prepareimage.py
-Loading cert: /Users/sempark/hackathon/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_fs_crt.der
-Loading cert: /Users/sempark/hackathon/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_i2_crt.der
+python3 /Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/ST/STM32_Secure_Engine/Utilities/KeysAndImages/prepareimage.py
+Loading cert: /Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_fs_crt.der
+Loading cert: /Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_i2_crt.der
 adding leaf cert of length 597
 adding intermediate cert of length 498
 Adding padding: 537
-Loading cert: /Users/sempark/hackathon/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_fs_crt.der
-Loading cert: /Users/sempark/hackathon/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_i2_crt.der
+Loading cert: /Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_fs_crt.der
+Loading cert: /Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/Certs/sbsfu_i2_crt.der
 adding leaf cert of length 597
 adding intermediate cert of length 498
 Adding padding: 537
 number of segment :5
 0x8105a00
-0x81464a0
-0x8146828
-0x8146830
+0x814f860
+0x814fec0
+0x814fed0
 number of segment :6
 0x80001c0
 0x801a47c
 0x801c2a8
-0x802d740
-0x802d8b0
+0x802d760
+0x802d8d0
 Merging
 SBSFU Base = 0x8000000
 Writing header = 0x8105000
 APPLI Base = 0x8105800
-Writing to ../PostBuild/SBSFU_B-L4S5I-IOT01_aws_demos.bin 1337392
+Writing to ../PostBuild/SBSFU_B-L4S5I-IOT01_aws_demos.bin 1375952
 Generating the global elf file (SBSFU and userApp)
 [36m[01m      -------------------------------------------------------------------
 [39;49m[36m[01m                        STM32CubeProgrammer v2.6.0                  
@@ -32,8 +32,8 @@ Generating the global elf file (SBSFU and userApp)
 
 [39;49m[00;33mWarning: The ELF file will be overwritten
 [39;49m[00;32mELF file modified succesfully
-[39;49mprocessing: /Users/sempark/hackathon/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/STM32CubeIDE/B-L4S5I-IOT01_2_Images_SBSFU/Debug/SBSFU.elf
+[39;49mprocessing: /Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/BootLoader_STSAFE/2_Images_SBSFU/STM32CubeIDE/B-L4S5I-IOT01_2_Images_SBSFU/Debug/SBSFU.elf
 sbsfu entry point is: 0x80209d9
 processing: ./B-L4S5I-IOT01_aws_demos.elf
-initial appli entry point is: 0x81073a9
+initial appli entry point is: 0x8107a25
 changing appli entry point to: 0x80209d9

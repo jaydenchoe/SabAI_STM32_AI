@@ -1,0 +1,14 @@
+es_wifi_io.c:83:8:SPI_WIFI_Init	24	static
+es_wifi_io.c:127:8:SPI_WIFI_ResetModule	24	static
+es_wifi_io.c:163:8:SPI_WIFI_DeInit	8	static
+es_wifi_io.c:193:5:wait_cmddata_rdy_high	24	static
+es_wifi_io.c:208:5:wait_cmddata_rdy_rising_event	16	static
+es_wifi_io.c:225:5:wait_spi_rx_event	16	static
+es_wifi_io.c:242:5:wait_spi_tx_event	16	static
+es_wifi_io.c:261:9:SPI_WIFI_ReceiveData	32	static
+es_wifi_io.c:320:9:SPI_WIFI_SendData	32	static
+es_wifi_io.c:370:6:SPI_WIFI_Delay	16	static
+es_wifi_io.c:386:6:SPI_WIFI_DelayUs	32	static
+es_wifi_io.c:418:6:HAL_SPI_RxCpltCallback	16	static
+es_wifi_io.c:433:6:HAL_SPI_TxCpltCallback	16	static
+es_wifi_io.c:448:6:SPI_WIFI_ISR	8	static

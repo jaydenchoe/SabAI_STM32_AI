@@ -1,0 +1,12 @@
+iot_linear_containers.h:303:20:IotLink_IsLinked	24	static
+iot_linear_containers.h:446:20:IotListDouble_InsertHead	32	static,ignoring_inline_asm
+iot_linear_containers.h:584:20:IotListDouble_Remove	24	static,ignoring_inline_asm
+iot_linear_containers.h:710:27:IotListDouble_FindFirstMatch	32	static,ignoring_inline_asm
+iot_linear_containers.h:812:20:IotListDouble_RemoveAllMatches	32	static
+iot_mqtt_subscription.c:97:13:_topicMatch	48	static,ignoring_inline_asm
+iot_mqtt_subscription.c:254:13:_packetMatch	40	static,ignoring_inline_asm
+iot_mqtt_subscription.c:313:16:_IotMqtt_AddSubscriptions	56	static,ignoring_inline_asm
+iot_mqtt_subscription.c:400:6:_IotMqtt_InvokeSubscriptionCallback	56	static,ignoring_inline_asm
+iot_mqtt_subscription.c:507:6:_IotMqtt_RemoveSubscriptionByPacket	40	static
+iot_mqtt_subscription.c:528:6:_IotMqtt_RemoveSubscriptionByTopicFilter	48	static,ignoring_inline_asm
+iot_mqtt_subscription.c:588:6:IotMqtt_IsSubscribed	48	static

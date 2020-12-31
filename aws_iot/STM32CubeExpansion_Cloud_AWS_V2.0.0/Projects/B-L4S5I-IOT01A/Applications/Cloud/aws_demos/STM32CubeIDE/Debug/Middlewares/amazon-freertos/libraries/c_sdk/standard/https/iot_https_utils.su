@@ -1,0 +1,2 @@
+iot_https_utils.c:41:22:IotHttpsClient_GetUrlPath	80	static
+iot_https_utils.c:91:22:IotHttpsClient_GetUrlAddress	80	static

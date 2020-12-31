@@ -1,0 +1,6 @@
+sfu_low_level_security.c:567:17:SFU_LL_SECU_CheckFlashConfiguration.isra.0	8	static
+sfu_low_level_security.c:200:17:SFU_LL_SECU_CheckApplyStaticProtections	48	static
+sfu_low_level_security.c:320:17:SFU_LL_SECU_CheckApplyRuntimeProtections	8	static
+sfu_low_level_security.c:468:6:SFU_LL_SECU_GetResetSources	0	static
+sfu_low_level_security.c:525:6:SFU_LL_SECU_ClearResetSources	0	static
+sfu_low_level_security.c:537:17:SFU_LL_SECU_IWDG_Refresh	8	static

@@ -1,0 +1,8 @@
+iot_device_metrics.c:182:6:Utils_generateMD5Hash	168	static,ignoring_inline_asm
+iot_device_metrics.c:300:13:_generateDeviceMetrics	40	static,ignoring_inline_asm
+iot_device_metrics.c:316:13:_atomicSpinlock_lock	56	static,ignoring_inline_asm
+iot_device_metrics.c:333:13:_atomicSpinlock_unlock	56	static,ignoring_inline_asm
+iot_device_metrics.c:350:13:_generateUniqueIdentifier	56	static,ignoring_inline_asm
+iot_device_metrics.c:373:14:getDeviceIdentifier	16	static
+iot_device_metrics.c:404:14:getDeviceMetrics	16	static
+iot_device_metrics.c:428:10:getDeviceMetricsLength	16	static

@@ -1,0 +1,2 @@
+aws_demo.c:42:6:vApplicationGetIdleTaskMemory	24	static
+aws_demo.c:73:6:vApplicationGetTimerTaskMemory	24	static

@@ -1,0 +1,3 @@
+FreeRTOS_POSIX_pthread_barrier.c:57:5:pthread_barrier_destroy	24	static
+FreeRTOS_POSIX_pthread_barrier.c:70:5:pthread_barrier_init	32	static
+FreeRTOS_POSIX_pthread_barrier.c:120:5:pthread_barrier_wait	56	static,ignoring_inline_asm

@@ -1,0 +1,4 @@
+threading.c:123:12:threading_mutex_fail	16	static
+threading.c:128:13:threading_mutex_dummy	16	static
+threading.c:142:6:mbedtls_threading_set_alt	24	static
+threading.c:163:6:mbedtls_threading_free_alt	4	static

@@ -1,0 +1,3 @@
+core_cm4.h:1939:34:__NVIC_SystemReset	0	static,ignoring_inline_asm
+se_exception.c:48:6:SE_NMI_ExceptionHandler	8	static
+se_exception.c:58:6:HardFault_Handler	8	static

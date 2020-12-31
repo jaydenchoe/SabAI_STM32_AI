@@ -1,0 +1,6 @@
+FreeRTOS_POSIX_timer.c:61:6:prvTimerCallback	40	static,ignoring_inline_asm
+FreeRTOS_POSIX_timer.c:101:5:timer_create	48	static
+FreeRTOS_POSIX_timer.c:153:5:timer_delete	40	static,ignoring_inline_asm
+FreeRTOS_POSIX_timer.c:180:5:timer_getoverrun	16	static
+FreeRTOS_POSIX_timer.c:190:5:timer_settime	80	static
+FreeRTOS_POSIX_timer.c:295:5:timer_gettime	40	static

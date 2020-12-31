@@ -1,0 +1,2 @@
+aws_iot_ota_interface.c:72:6:prvSetControlInterface	16	static
+aws_iot_ota_interface.c:82:11:prvSetDataInterface	24	static

@@ -1,0 +1,12 @@
+iot_crypto.c:73:15:prvCalloc	24	static
+iot_crypto.c:96:6:aws_mbedtls_mutex_init	16	static
+iot_crypto.c:115:6:aws_mbedtls_mutex_free	16	static
+iot_crypto.c:130:5:aws_mbedtls_mutex_lock	24	static
+iot_crypto.c:156:5:aws_mbedtls_mutex_unlock	24	static
+iot_crypto.c:182:19:prvVerifySignature	360	static
+iot_crypto.c:245:6:CRYPTO_Init	8	static
+iot_crypto.c:254:6:CRYPTO_ConfigureHeap	8	static
+iot_crypto.c:263:6:CRYPTO_ConfigureThreading	8	static
+iot_crypto.c:275:12:CRYPTO_SignatureVerificationStart	32	static
+iot_crypto.c:323:6:CRYPTO_SignatureVerificationUpdate	32	static
+iot_crypto.c:345:12:CRYPTO_SignatureVerificationFinal	88	static

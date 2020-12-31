@@ -1,0 +1,10 @@
+ecdsa.c:245:12:ecdsa_sign_restartable.isra.0	152	static
+ecdsa.c:376:5:mbedtls_ecdsa_sign	0	static
+ecdsa.c:611:5:mbedtls_ecdsa_write_signature_restartable	176	static
+ecdsa.c:655:5:mbedtls_ecdsa_write_signature	32	static
+ecdsa.c:691:5:mbedtls_ecdsa_read_signature_restartable	72	static
+ecdsa.c:680:5:mbedtls_ecdsa_read_signature	16	static
+ecdsa.c:752:5:mbedtls_ecdsa_genkey	24	static
+ecdsa.c:763:5:mbedtls_ecdsa_from_keypair	16	static
+ecdsa.c:780:6:mbedtls_ecdsa_init	0	static
+ecdsa.c:788:6:mbedtls_ecdsa_free	0	static

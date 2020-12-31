@@ -1,0 +1,6 @@
+wrap_digest.c:53:9:SHA1_Init	120	static
+wrap_digest.c:93:9:SHA1_Append	8	static
+wrap_digest.c:129:9:SHA1_Finish	8	static
+wrap_digest.c:164:9:SHA256_Init	120	static
+wrap_digest.c:205:9:SHA256_Append	8	static
+wrap_digest.c:242:9:SHA256_Finish	8	static

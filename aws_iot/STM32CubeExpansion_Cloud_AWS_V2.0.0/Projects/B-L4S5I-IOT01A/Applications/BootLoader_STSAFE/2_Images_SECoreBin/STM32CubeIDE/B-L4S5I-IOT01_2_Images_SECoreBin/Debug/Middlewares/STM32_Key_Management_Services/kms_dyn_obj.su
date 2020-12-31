@@ -1,0 +1,2 @@
+kms_dyn_obj.c:60:8:KMS_CreateObject	0	static
+kms_dyn_obj.c:81:8:KMS_DestroyObject	24	static

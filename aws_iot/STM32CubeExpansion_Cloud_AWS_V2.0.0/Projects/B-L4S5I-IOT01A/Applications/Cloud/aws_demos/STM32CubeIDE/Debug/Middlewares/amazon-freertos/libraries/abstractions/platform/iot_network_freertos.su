@@ -1,0 +1,10 @@
+iot_network_freertos.c:121:13:_destroyConnection	32	static
+iot_network_freertos.c:142:13:_networkReceiveTask	48	static,ignoring_inline_asm
+iot_network_freertos.c:228:26:_tlsSetup	48	static
+iot_network_freertos.c:305:19:IotNetworkAfr_Create	96	static,ignoring_inline_asm
+iot_network_freertos.c:441:19:IotNetworkAfr_SetReceiveCallback	48	static,ignoring_inline_asm
+iot_network_freertos.c:475:8:IotNetworkAfr_Send	48	static
+iot_network_freertos.c:512:8:IotNetworkAfr_Receive	64	static,ignoring_inline_asm
+iot_network_freertos.c:580:8:IotNetworkAfr_ReceiveUpto	48	static,ignoring_inline_asm
+iot_network_freertos.c:628:19:IotNetworkAfr_Close	32	static
+iot_network_freertos.c:653:19:IotNetworkAfr_Destroy	32	static

@@ -1,0 +1,5 @@
+kms_digest.c:77:11:KMS_DigestInit	24	static
+kms_digest.c:159:9:KMS_Digest	24	static
+kms_digest.c:229:9:KMS_DigestUpdate	8	static
+kms_digest.c:280:9:KMS_DigestKey	0	static
+kms_digest.c:298:9:KMS_DigestFinal	24	static

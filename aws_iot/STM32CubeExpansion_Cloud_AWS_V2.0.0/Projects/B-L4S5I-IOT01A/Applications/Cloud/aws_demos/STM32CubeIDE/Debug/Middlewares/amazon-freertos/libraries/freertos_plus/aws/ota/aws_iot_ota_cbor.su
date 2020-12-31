@@ -1,0 +1,11 @@
+cbor.h:226:27:cbor_encode_text_stringz	16	static
+cbor.h:255:24:cbor_encoder_get_buffer_size	16	static
+cbor.h:310:26:_cbor_value_extract_int64_helper	24	static
+cbor.h:318:26:cbor_value_get_type	16	static
+cbor.h:348:22:cbor_value_is_integer	16	static
+cbor.h:378:27:cbor_value_get_int	24	static
+cbor.h:405:22:cbor_value_is_byte_string	16	static
+cbor.h:436:27:cbor_value_copy_byte_string	24	static
+cbor.h:461:22:cbor_value_is_map	16	static
+aws_iot_ota_cbor.c:54:12:OTA_CBOR_Decode_GetStreamResponseMessage	80	static
+aws_iot_ota_cbor.c:199:12:OTA_CBOR_Encode_GetStreamRequestMessage	72	static

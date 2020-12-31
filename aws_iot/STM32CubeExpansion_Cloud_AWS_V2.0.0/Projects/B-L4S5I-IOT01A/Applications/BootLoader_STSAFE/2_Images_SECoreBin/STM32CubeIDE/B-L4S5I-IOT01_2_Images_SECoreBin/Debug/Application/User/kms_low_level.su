@@ -1,0 +1,5 @@
+core_cm4.h:1939:34:__NVIC_SystemReset	0	static,ignoring_inline_asm
+kms_low_level.c:55:7:KMS_LL_FLASH_Read	8	static
+kms_low_level.c:66:10:KMS_LL_FLASH_GetBlobDownloadAddress	0	static
+kms_low_level.c:75:7:KMS_LL_CRC_Init	8	static
+kms_low_level.c:104:6:KMS_LL_IsBufferInSecureEnclave	24	static

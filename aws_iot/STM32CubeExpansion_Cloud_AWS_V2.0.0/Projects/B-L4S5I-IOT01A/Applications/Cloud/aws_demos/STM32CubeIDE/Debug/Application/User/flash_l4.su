@@ -1,0 +1,10 @@
+flash_l4.c:52:5:FLASH_unlock_erase	48	static
+flash_l4.c:96:12:FLASH_write_at	48	static
+flash_l4.c:133:10:FLASH_get_bank	24	static
+flash_l4.c:157:12:FLASH_get_pageInBank	24	static
+flash_l4.c:189:5:FLASH_update	56	static
+flash_l4.c:246:17:GetPage	24	static
+flash_l4.c:269:17:GetBank	24	static
+flash_l4.c:307:10:FLASH_Init	16	static
+flash_l4.c:342:5:FLASH_Erase_Size	56	static
+flash_l4.c:405:5:FLASH_Write	40	static

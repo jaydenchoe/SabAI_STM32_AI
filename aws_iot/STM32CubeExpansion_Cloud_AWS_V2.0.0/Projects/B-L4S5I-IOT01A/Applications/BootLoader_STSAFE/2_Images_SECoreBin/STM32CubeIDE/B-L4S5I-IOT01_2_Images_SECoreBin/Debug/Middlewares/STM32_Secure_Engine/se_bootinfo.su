@@ -1,0 +1,7 @@
+se_bootinfo.c:104:23:SE_LL_CRC_Check	8	static
+se_bootinfo.c:339:16:SE_INFO_WriteBootInfoArea.part.0	24	static
+se_bootinfo.c:151:16:SE_INFO_BootInfoAreaInit	32	static
+se_bootinfo.c:212:16:SE_INFO_BootInfoAreaDeInit	8	static
+se_bootinfo.c:238:16:SE_INFO_BootInfoAreaFactoryReset	32	static
+se_bootinfo.c:289:16:SE_INFO_ReadBootInfoArea	16	static
+se_bootinfo.c:339:16:SE_INFO_WriteBootInfoArea	0	static

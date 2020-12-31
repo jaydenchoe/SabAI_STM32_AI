@@ -1,0 +1,8 @@
+cmac.c:83:12:cmac_multiply_by_u	20	static
+cmac.c:168:13:cmac_xor_block	16	static
+cmac.c:202:5:mbedtls_cipher_cmac_starts	16	static
+cmac.c:242:5:mbedtls_cipher_cmac_update	56	static
+cmac.c:310:5:mbedtls_cipher_cmac_finish	96	static
+cmac.c:371:5:mbedtls_cipher_cmac_reset	16	static
+cmac.c:390:5:mbedtls_cipher_cmac	96	static
+cmac.c:426:5:mbedtls_aes_cmac_prf_128	72	static

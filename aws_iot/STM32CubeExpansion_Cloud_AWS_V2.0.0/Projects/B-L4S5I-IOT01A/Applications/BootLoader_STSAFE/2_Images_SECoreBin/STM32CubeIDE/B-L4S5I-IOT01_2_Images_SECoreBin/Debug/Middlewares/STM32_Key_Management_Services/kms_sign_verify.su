@@ -1,0 +1,4 @@
+kms_sign_verify.c:328:11:KMS_SignInit	16	static
+kms_sign_verify.c:399:11:KMS_Sign	240	static
+kms_sign_verify.c:626:14:KMS_VerifyInit	16	static
+kms_sign_verify.c:698:8:KMS_Verify	472	static

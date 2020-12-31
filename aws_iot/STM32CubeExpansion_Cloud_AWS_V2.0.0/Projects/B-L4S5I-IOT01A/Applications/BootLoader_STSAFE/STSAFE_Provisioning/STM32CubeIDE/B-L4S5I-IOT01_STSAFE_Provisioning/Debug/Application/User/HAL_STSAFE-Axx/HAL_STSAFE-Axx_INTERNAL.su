@@ -1,0 +1,4 @@
+HAL_STSAFE-Axx_INTERNAL.c:103:9:UpdateZone	88	static
+HAL_STSAFE-Axx_INTERNAL.c:420:9:WriteUnsignedCharArrayToFlash	24	static
+HAL_STSAFE-Axx_INTERNAL.c:449:9:GenerateUnsignedChallenge	32	static
+HAL_STSAFE-Axx_INTERNAL.c:279:9:Check_Host_Keys	160	static
