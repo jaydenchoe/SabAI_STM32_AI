@@ -54,8 +54,8 @@
   */
 /* Includes ------------------------------------------------------------------*/
 #include "ai_platform.h"
-#include "cnn_human.h"
-#include "cnn_human_data.h"
+#include "axis_sensor.h"
+#include "axis_sensor_data.h"
 
 void MX_X_CUBE_AI_Init(void);
 void MX_X_CUBE_AI_Process(void);
