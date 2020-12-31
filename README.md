@@ -108,3 +108,6 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 - 시연장면
 
 ※ 참가자들과 함께한 사진 10장이상 포스팅을 하셔야 함
+
+## AWS IOT README
+* [aws_iot/README.md](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/README.md)

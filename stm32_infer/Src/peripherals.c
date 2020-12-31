@@ -22,12 +22,16 @@ static void get_acc_3axis(int* x, int* y, int* z);
 static void print_3axis (int x, int y, int z);
 
 extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart4;
 
-static char str_test[] = "UART1 low level - Hello World\n\r";
+static char str_uart1_test[] = "UART1 low level - Hello World\n\r";
+static char str_uart4_test[] = "UART4 low level - Hello World\n\r";
+
 static uint8_t ch_linefeed = {'\n'};
 static uint8_t ch_CR = {'\r'};
 
 uint8_t g_ch_uart1_rx_data = {'\0'};
+uint8_t g_ch_uart4_rx_data = {'\0'}; // loopback test용
 
 LSM6DSL_Object_t g_motion_sensor;
 volatile uint32_t g_data_rdy_int_received = 0;
@@ -48,7 +52,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 
 /* UART1 handling ------------------------------------------------------------------*/
 
-// UART1 RX complete시 불리는 콜백함수 (지금 에코 기능만 일단 넣었고, CR+NL 에코 출력은 NL이 안 먹는 것 같아 수정 필 )
+// UART RX complete시 불리는 콜백함수
+// 1) UART1 RX event시: 받은 캐릭터를 그대로 UART1 TX에 echo로 출력(UART_Transmit)한다. UART1은 Virtual COM 형태로 PC와 연결된다.
+// 2) UART4 RX event시: 받은 캐릭터를 그대로 UART1 TX에 echo로 출력(UART_Transmit)한다. 이것은 UART4의 echo test 채널로만 사용할 목적이다. UART3는 다른 STM32 보드나 라즈베리파이(이경우에는 USB2Serial Dongle 필요)에 연결된다.
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	if ( huart->Instance == USART1 ) { // UART1 RX 끝날 때 마다 할일
 		 if (g_ch_uart1_rx_data == '\r' || g_ch_uart1_rx_data == '\n' ) {
@@ -58,13 +64,26 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 			 HAL_UART_Transmit(&huart1, &g_ch_uart1_rx_data, 1, 1); // 해당 캐릭터를 에코 출력
 		 }
 		 HAL_UART_Receive_IT(&huart1, &g_ch_uart1_rx_data, 1); // UART1 RX 인터럽트 다시 살린다.
+
 	}
+#ifdef UART4_LOOPBACK_TEST
+	else if ( huart->Instance == UART4 ) {
+		 HAL_UART_Transmit(&huart1, &g_ch_uart4_rx_data, 1, 1); // UART4 데이터임을 알리는 prefix 특수 문자 출력
+		 HAL_UART_Receive_IT(&huart4, &g_ch_uart4_rx_data, 1); // UART4 RX 인터럽트 다시 살린다.
+	}
+#endif
 }
 
 // low-level HAL_UART_Transmit을 이용한 UART1 output test 확인.
 void test_UART1_Output () {
-	HAL_UART_Transmit(&huart1, (uint8_t*)str_test,COUNTOF(str_test)-1, 10);
+	HAL_UART_Transmit(&huart1, (uint8_t*)str_uart1_test,COUNTOF(str_uart1_test)-1, 10);
 }
+
+// low-level HAL_UART_Transmit을 이용한 UART4 output test 확인.
+void test_UART4_Output () {
+	HAL_UART_Transmit(&huart4, (uint8_t*)str_uart4_test,COUNTOF(str_uart4_test)-1, 10);
+}
+
 
 // libc의 printf(tyny printf로 추정)에서 call하는 _write ==> __io_putchar 중 __io_putchar를 overriding한 함수
 int __io_putchar(int ch) {

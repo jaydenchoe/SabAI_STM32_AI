@@ -139,3 +139,15 @@ stm32_infer/Debug/Src/cnn_human_data.o
 stm32_infer/Debug/Src/cnn_human_data.su
 stm32_infer/Debug/Src/network.su
 stm32_infer/Debug/Src/network_data.su
+stm32_infer/.ai/cnn_human_c_graph.json
+stm32_infer/.ai/cnn_human_report.json
+stm32_infer/cnn_human_generate_report.txt
+stm32_infer/Inc/cnn_human.h
+stm32_infer/Inc/cnn_human_data.h
+stm32_infer/Src/cnn_human.c
+stm32_infer/.ai/cnn_human_c_graph.json
+stm32_infer/.ai/cnn_human_c_graph.json
+stm32_infer/.ai/cnn_human_report.json
+stm32_infer/Inc/cnn_human.h
+stm32_infer/Inc/cnn_human_data.h
+stm32_infer/Src/cnn_human.c
