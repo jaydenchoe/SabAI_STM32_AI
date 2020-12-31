@@ -77,32 +77,33 @@
 #include "ai_datatypes_defines.h"
 
 /* USER CODE BEGIN includes */
+ extern ai_handle ai_axis_sensor_data_weights_get(void);
 /* USER CODE END includes */
 
 /* Global AI objects */
-static ai_handle cnn_human = AI_HANDLE_NULL;
-static ai_network_report cnn_human_info;
+static ai_handle axis_sensor = AI_HANDLE_NULL;
+static ai_network_report axis_sensor_info;
 
 /* Global c-array to handle the activations buffer */
 AI_ALIGNED(4)
-static ai_u8 activations[AI_CNN_HUMAN_DATA_ACTIVATIONS_SIZE];
+static ai_u8 activations[AI_AXIS_SENSOR_DATA_ACTIVATIONS_SIZE];
 
 /*  In the case where "--allocate-inputs" option is used, memory buffer can be
  *  used from the activations buffer. This is not mandatory.
  */
-#if !defined(AI_CNN_HUMAN_INPUTS_IN_ACTIVATIONS)
+#if !defined(AI_AXIS_SENSOR_INPUTS_IN_ACTIVATIONS)
 /* Allocate data payload for input tensor */
 AI_ALIGNED(4)
-static ai_u8 in_data_s[AI_CNN_HUMAN_IN_1_SIZE_BYTES];
+static ai_u8 in_data_s[AI_AXIS_SENSOR_IN_1_SIZE_BYTES];
 #endif
 
 /*  In the case where "--allocate-outputs" option is used, memory buffer can be
  *  used from the activations buffer. This is no mandatory.
  */
-#if !defined(AI_CNN_HUMAN_OUTPUTS_IN_ACTIVATIONS)
+#if !defined(AI_AXIS_SENSOR_OUTPUTS_IN_ACTIVATIONS)
 /* Allocate data payload for the output tensor */
 AI_ALIGNED(4)
-static ai_u8 out_data_s[AI_CNN_HUMAN_OUT_1_SIZE_BYTES];
+static ai_u8 out_data_s[AI_AXIS_SENSOR_OUT_1_SIZE_BYTES];
 #endif
 
 static void ai_log_err(const ai_error err, const char *fct)
@@ -123,29 +124,29 @@ static int ai_boostrap(ai_handle w_addr, ai_handle act_addr)
   ai_error err;
 
   /* 1 - Create an instance of the model */
-  err = ai_cnn_human_create(&cnn_human, AI_CNN_HUMAN_DATA_CONFIG);
+  err = ai_axis_sensor_create(&axis_sensor, AI_AXIS_SENSOR_DATA_CONFIG);
   if (err.type != AI_ERROR_NONE) {
-    ai_log_err(err, "ai_cnn_human_create");
+    ai_log_err(err, "ai_axis_sensor_create");
     return -1;
   }
 
   /* 2 - Initialize the instance */
   const ai_network_params params = {
-      AI_CNN_HUMAN_DATA_WEIGHTS(w_addr),
-      AI_CNN_HUMAN_DATA_ACTIVATIONS(act_addr) };
+      AI_AXIS_SENSOR_DATA_WEIGHTS(w_addr),
+      AI_AXIS_SENSOR_DATA_ACTIVATIONS(act_addr) };
 
-  if (!ai_cnn_human_init(cnn_human, &params)) {
-      err = ai_cnn_human_get_error(cnn_human);
-      ai_log_err(err, "ai_cnn_human_init");
+  if (!ai_axis_sensor_init(axis_sensor, &params)) {
+      err = ai_axis_sensor_get_error(axis_sensor);
+      ai_log_err(err, "ai_axis_sensor_init");
       return -1;
     }
 
   /* 3 - Retrieve the network info of the created instance */
-  if (!ai_cnn_human_get_info(cnn_human, &cnn_human_info)) {
-    err = ai_cnn_human_get_error(cnn_human);
-    ai_log_err(err, "ai_cnn_human_get_error");
-    ai_cnn_human_destroy(cnn_human);
-    cnn_human = AI_HANDLE_NULL;
+  if (!ai_axis_sensor_get_info(axis_sensor, &axis_sensor_info)) {
+    err = ai_axis_sensor_get_error(axis_sensor);
+    ai_log_err(err, "ai_axis_sensor_get_error");
+    ai_axis_sensor_destroy(axis_sensor);
+    axis_sensor = AI_HANDLE_NULL;
     return -3;
   }
 
@@ -156,16 +157,16 @@ static int ai_run(void *data_in, void *data_out)
 {
   ai_i32 batch;
 
-  ai_buffer *ai_input = cnn_human_info.inputs;
-  ai_buffer *ai_output = cnn_human_info.outputs;
+  ai_buffer *ai_input = axis_sensor_info.inputs;
+  ai_buffer *ai_output = axis_sensor_info.outputs;
 
   ai_input[0].data = AI_HANDLE_PTR(data_in);
   ai_output[0].data = AI_HANDLE_PTR(data_out);
 
-  batch = ai_cnn_human_run(cnn_human, ai_input, ai_output);
+  batch = ai_axis_sensor_run(axis_sensor, ai_input, ai_output);
   if (batch != 1) {
-    ai_log_err(ai_cnn_human_get_error(cnn_human),
-        "ai_cnn_human_run");
+    ai_log_err(ai_axis_sensor_get_error(axis_sensor),
+        "ai_axis_sensor_run");
     return -1;
   }
 
@@ -192,7 +193,7 @@ void MX_X_CUBE_AI_Init(void)
     /* USER CODE BEGIN 3 */
   printf("\r\nTEMPLATE - initialization\r\n");
 
-  ai_boostrap(ai_cnn_human_data_weights_get(), activations);
+  ai_boostrap(ai_axis_sensor_data_weights_get(), activations);
     /* USER CODE END 3 */
 }
 
@@ -206,9 +207,9 @@ void MX_X_CUBE_AI_Process(void)
 
   printf("TEMPLATE - run - main loop\r\n");
 
-  if (cnn_human) {
+  if (axis_sensor) {
 
-    if ((cnn_human_info.n_inputs != 1) || (cnn_human_info.n_outputs != 1)) {
+    if (( axis_sensor_info.n_inputs != 1) || (axis_sensor_info.n_outputs != 1)) {
       ai_error err = {AI_ERROR_INVALID_PARAM, AI_ERROR_CODE_OUT_OF_RANGE};
       ai_log_err(err, "template code should be updated\r\n to support a model with multiple IO");
       return;

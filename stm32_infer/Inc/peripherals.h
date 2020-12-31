@@ -8,7 +8,7 @@
 #ifndef INC_PERIPHERALS_H_
 #define INC_PERIPHERALS_H_
 
-#define UART4_LOOPBACK_TEST	1
+#define UART4_LOOPBACK_TEST	0
 
 
 #endif /* INC_PERIPHERALS_H_ */
