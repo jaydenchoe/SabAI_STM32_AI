@@ -1,7 +1,7 @@
 # Team SabAI
 Seoul Hackathon SabAI Team Repository
 
-팀원이 맡은 역할을 자유롭게 적어주세요(기획/디자인/설계/개발/디버깅/기술조언/환경설정/발표 등
+## 팀원이 맡은 역할을 자유롭게 적어주세요(기획/디자인/설계/개발/디버깅/기술조언/환경설정/발표 등
 
 - 최재훈: 팀장, STM32 보드 기본 디바이스 enabling / 인공지능 추론+학습 구현 / 개발 내용 발표 정리
 
@@ -10,18 +10,19 @@ Seoul Hackathon SabAI Team Repository
 - 김병헌: User Interface/ User Experience / 시스템 시나리오 기획 / 인공지능 학습데이터 제공
 
 
-프로젝트 제목
+## 프로젝트 제목
 사회적 약자를 위한 초저가 인공지능 운동 도우미
 
 
-프로젝트 배경 혹은 목적
+## 프로젝트 배경 혹은 목적
 
 간단히 적어주세요.
 
 
 
-파일 리스트
+## 파일 리스트
 
+* 웹앱/ 웹서버 코드 모두 박세문
 팀원이 소스 파일을 만든 경우, 해당 파일을 적어주세요.
 
 헤더와 소스만 적어주세요.
@@ -40,7 +41,14 @@ Seoul Hackathon SabAI Team Repository
 
 
 
-코드 기여자
+## 코드 기여자
+
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/aws_customdemo_globals.h 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/Third_Party/amazon-freertos/demos/include/aws_clientcredential.h 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/main.h 박세문
+
 
 각자 개발한 코드를 빠짐없이 기입해주세요.
 
