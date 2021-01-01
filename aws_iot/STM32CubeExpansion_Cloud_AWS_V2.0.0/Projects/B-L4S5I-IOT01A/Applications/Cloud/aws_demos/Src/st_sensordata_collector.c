@@ -159,8 +159,8 @@ void onboardSensorReaderTask() {
 					"\"started\": %d,"
 				"}",
 				WORKOUT_TYPE_inferencd,
-				WORKOUT_START_BUTTON_PRESSED,
-				WORKOUT_END_BUTTON_PRESSED);
+				"user01",
+				WORKOUT_START_BUTTON_PRESSED);
 
 
 		IotLogInfo(
