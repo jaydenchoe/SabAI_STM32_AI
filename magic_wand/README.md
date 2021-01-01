@@ -40,11 +40,19 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 10) 실제 파일 예제: https://github.com/jaydenchoe/SabAI/blob/main/magic_wand/sabai_example_output_wing_shiyun.txt
 
 ## (중요) 운동 캡처 순서
-1) 모션 1번을 20회 반복 후 다음 이름으로 저장합니다: output_ring_본인영문이름.txt
-2) 모션 2번을 20회 반복 후 다음 이름으로 저장합니다: output_slope_본인영문이름.txt
-3) 모션 3번을 20회 반복 후 다음 이름으로 저장합니다: output_wing_본인영문이름.txt
+1) 모션 1번을 10~20회 반복 후 다음 이름으로 저장합니다: output_ring_본인영문이름.txt
+2) 모션 2번을 10~20회 반복 후 다음 이름으로 저장합니다: output_slope_본인영문이름.txt
+3) 모션 3번을 10~20회 반복 후 다음 이름으로 저장합니다: output_wing_본인영문이름.txt
 4) 위 3가지와 전혀 다른 모션을 20회 반복 후 다음 이름으로 저장합니다: output_negative_본인영문이름.txt
-5) 이상 4가지 파일을 제게 전달 주세요 
+5) 이상 4가지 파일을 제게 전달 주세요.
+- 실제 파일 예제: https://github.com/jaydenchoe/SabAI/blob/main/magic_wand/sabai_example_output_wing_shiyun.txt
+
+## MAC에서 캡처하는 방법 
+- 터미널 캡처 아무거나 쓰셔도 되고, 없으면 간단히 아래와 같이 할수 있습니다.
+1) screen /dev/cu.usbmodem14403 115200 ==> 디바이스 이름은 각자 다르겠지요.
+2) CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 시작이 됩니다.
+3) 모션 센싱 작업 여러번 하고 나서 다 되었다 싶으면 다시 CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 끝나고 screenlog.0으로 파일이 나옵니다.
+4) 파일 이름은 위의 가이드 처럼 해 주시고, 파일 열어서 이상하게 된 건 없는지 확인 한번 하고 주세요.
 
 # Magic wand example
 
