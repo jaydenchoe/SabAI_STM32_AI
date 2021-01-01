@@ -77,14 +77,13 @@ Seoul Hackathon SabAI Team Repository
     · src/tizen.c function_3 영희
 
 
-
- 구성 
+## 구성 
 
 프로젝트 구성을 적어주세요. 
 
 
 
-구현사항
+## 구현사항
 
 GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
@@ -106,7 +105,7 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
 
 
- 구현 영상  및 참가영상 
+## 구현 영상  및 참가영상 
  
 - 개발 내용 요약 자료 (PPT)
 
@@ -122,9 +121,9 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
 ※ 참가자들과 함께한 사진 10장이상 포스팅을 하셔야 함
 
-## STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
+#### STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
 * [stm32_infer/README.md](https://github.com/jaydenchoe/SabAI/blob/main/stm32_infer/README.md)
 
-## STM32 AWS IOT Board README
+#### STM32 AWS IOT Board README
 * [aws_iot/README.md](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/README.md)
 
