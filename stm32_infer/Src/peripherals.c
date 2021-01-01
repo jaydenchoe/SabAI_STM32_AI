@@ -154,9 +154,17 @@ static void get_acc_3axis(int* x, int* y, int* z) {
 }
 
 
-// 3axis 값을 단순출력
+// 3axis 값을 캡처용으로 출력 referring to https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/magic_wand/train/README.md
+// 참조 내용: am_util_stdio_printf("%04.2f,%04.2f,%04.2f\r\n", acceleration_mg[0], acceleration_mg[1], acceleration_mg[2]);
+
 static void print_3axis (int x, int y, int z) {
- 	 printf("% 5d, % 5d, % 5d\r\n",  x, y, z);
+	static uint8_t is_first_print = 1;
+	if ( is_first_print == 1 ) {
+		printf( "-,-,-\r\n");
+		is_first_print = 0;
+	} else {
+ 	   printf("%d,%d,%d\r\n", x, y, z); // float option이 없기 때문에 integer로 처리해야 하며 나중에 파이썬 코드 파싱에 문제 없는지 확인 필요
+	}
 }
 
 // 3axis 현재 값을 얻어서 출력한다
