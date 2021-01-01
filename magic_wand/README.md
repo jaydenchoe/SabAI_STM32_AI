@@ -52,7 +52,11 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 1) screen /dev/cu.usbmodem14403 115200 ==> 디바이스 이름은 각자 다르겠지요.
 2) CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 시작이 됩니다.
 3) 모션 센싱 작업 여러번 하고 나서 다 되었다 싶으면 다시 CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 끝나고 screenlog.0으로 파일이 나옵니다.
-4) 파일 이름은 위의 가이드 처럼 해 주시고, 파일 열어서 이상하게 된 건 없는지 확인 한번 하고 주세요.
+4) 파일 이름은 위의 가이드 처럼 해 주시고, 파일 열어서 이상하게 된 건 없는지 확인 한번 하고 아래의 폴더(하부에 4가지 폴더가 있으니 유의바람)에 넣어 주세요
+https://github.com/jaydenchoe/SabAI/tree/main/magic_wand/sabai_training_data
+
+# 데이터 학습 방법 (정리중)
+
 
 # Magic wand example
 
