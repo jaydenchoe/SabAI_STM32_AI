@@ -55,8 +55,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 #else
 			HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 #endif
-	}
-	if (GPIO_Pin == GPIO_PIN_11) {
+	} else if (GPIO_Pin == GPIO_PIN_11) {
 		g_data_rdy_int_received++;
 	}
 }
@@ -104,11 +103,15 @@ int __io_putchar(int ch) {
 	return ret;
 }
 
-/* Timer15 handling ------------------------------------------------------------------*/
+/* Timer15 and Timer 5 handling ------------------------------------------------------------------*/
 
-// 1초에 한번씩 LED2를 토글링하는 예
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+// 25Hz로 Accelerometer 센서값을 출력
 	if ( htim->Instance == TIM15 ) {
+		get_and_print_3axis();
+	}
+// 1Hz로 LED toggling
+	if ( htim->Instance == TIM5 ) {
 		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 	}
 }
@@ -174,11 +177,11 @@ static void print_3axis (int32_t x, int32_t y, int32_t z) {
 	if ( s_is_capture_started == 1 ) {
 #endif
 		if ( is_first_print == 1 ) {
-		// 18 blank lines printed
+		// 18 blank lines to separate motions
 			for (i = 0; i < 18; ++i) {
 				printf( "\r\n" );
 			}
-
+		// Motion Capture Header
 			printf( "-,-,-\r\n");
 			is_first_print = 0;
 		} else {
