@@ -113,6 +113,11 @@ void onboardSensorReaderTask() {
 
 	int snprintfreturn = 0;
 
+	// TODO: 추론된 운동 타입을 이 변수에 넣어줘야 합니다. (3+1가지)
+	int WORKOUT_TYPE_inferencd = 1;
+	// TODO: 운동 시작 버튼을 눌렀을때 버튼 값을 넣어줘야 합니다.
+	int WORKOUT_START_BUTTON_PRESSED = 1;
+
 	gucSensorTopicName[31] = '\0';
 
 	IotLogInfo("ENTRY : onboardSensorReaderTask ");
@@ -134,17 +139,29 @@ void onboardSensorReaderTask() {
 		pSensorPayload = pvPortMalloc(sizeof(char) * SENSOR_STATUS_MSG_BUF_LEN);
 
 		/* Format data for transmission to AWS */
+//		snprintfreturn = snprintf(pSensorPayload, SENSOR_STATUS_MSG_BUF_LEN,
+//				"{\"Board_id\":\"%s\","
+//						"\"Temp\": %d, \"Hum\": %d, \"Press\": %d, "
+//						"\"Accel_X\": %d, \"Accel_Y\": %d, \"Accel_Z\": %d, "
+//						"\"Gyro_X\": %d, \"Gyro_Y\": %d, \"Gyro_Z\": %d, "
+//						"\"Magn_X\": %d, \"Magn_Y\": %d, \"Magn_Z\": %d, \"Proxi\": %d"
+//						"}", "st-discovery-board-01", (int) TEMPERATURE_Value,
+//				(int) HUMIDITY_Value, (int) PRESSURE_Value, ACC_Value[0],
+//				ACC_Value[1], ACC_Value[2], (int) GYR_Value[0],
+//				(int) GYR_Value[1], (int) GYR_Value[2], MAG_Value[0],
+//				MAG_Value[1], MAG_Value[2], (int) PROXIMITY_Value);
+
+		// TODO: 이부분에서 리딩된 값을 넣어주셔야 합니다.
 		snprintfreturn = snprintf(pSensorPayload, SENSOR_STATUS_MSG_BUF_LEN,
-				"{\"Board_id\":\"%s\","
-						"\"Temp\": %d, \"Hum\": %d, \"Press\": %d, "
-						"\"Accel_X\": %d, \"Accel_Y\": %d, \"Accel_Z\": %d, "
-						"\"Gyro_X\": %d, \"Gyro_Y\": %d, \"Gyro_Z\": %d, "
-						"\"Magn_X\": %d, \"Magn_Y\": %d, \"Magn_Z\": %d, \"Proxi\": %d"
-						"}", "st-discovery-board-01", (int) TEMPERATURE_Value,
-				(int) HUMIDITY_Value, (int) PRESSURE_Value, ACC_Value[0],
-				ACC_Value[1], ACC_Value[2], (int) GYR_Value[0],
-				(int) GYR_Value[1], (int) GYR_Value[2], MAG_Value[0],
-				MAG_Value[1], MAG_Value[2], (int) PROXIMITY_Value);
+				"{"
+					"\"type\": %d,"
+					"\"user\": \"%s\","
+					"\"started\": %d,"
+				"}",
+				WORKOUT_TYPE_inferencd,
+				WORKOUT_START_BUTTON_PRESSED,
+				WORKOUT_END_BUTTON_PRESSED);
+
 
 		IotLogInfo(
 				"Publishing sensor data as json string: %s of length [ %d]\n",
