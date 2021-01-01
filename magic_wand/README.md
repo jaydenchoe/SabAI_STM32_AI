@@ -36,6 +36,7 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 * (공백 18줄)
 * -,-,- ==> 여기가 다음 모션 하나의 시작
 * (이상반복)
+10) 실제 파일 예제: https://github.com/jaydenchoe/SabAI/blob/main/magic_wand/sabai_example_output_wing_shiyun.txt
 
 ## (중요) 운동 캡처 순서
 1) 모션 1번을 20회 반복 후 다음 이름으로 저장합니다: output_ring_본인영문이름.txt
