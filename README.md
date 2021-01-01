@@ -109,5 +109,9 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
 ※ 참가자들과 함께한 사진 10장이상 포스팅을 하셔야 함
 
-## AWS IOT README
+## STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
+* [stm32_infer/README.md] (https://github.com/jaydenchoe/SabAI/blob/main/stm32_infer/README.md)
+
+## STM32 AWS IOT Board README
 * [aws_iot/README.md](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/README.md)
+
