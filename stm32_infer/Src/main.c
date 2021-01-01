@@ -131,13 +131,14 @@ int main(void)
 
   //UART1 RX 인터럽트 받는다. 이상하게 아래 라인을 빼면 Printf 실행이 안된다!!!!!!!
 	HAL_UART_Receive_IT( &huart1, &g_ch_uart1_rx_data, 1); // UART1 RX 인터럽트 살린다.
-#ifdef UART4_LOOPBACK_TEST
+#if UART4_LOOPBACK_TEST
 	HAL_UART_Receive_IT( &huart4, &g_ch_uart4_rx_data, 1); // UART4 TX의 loopback test 용.
 #endif
 
   // Timer 15 실행 (by 인터럽트). 상세 설정은 static void MX_TIM15_Init(void) 참고. prescale 12000, period 10000으로 1초마다 한번씩 이벤트 발생.
 	HAL_TIM_Base_Start_IT( &htim15 );
 
+#if (!CAPTURE_MODE)
   // Hello World - UART1 low level output version
 	test_UART1_Output();
   // Hello World - UART4 low level output version
@@ -145,6 +146,7 @@ int main(void)
 
   // Hello World - Printf version
 	printf( "PRINTF(): Hello World\r\n" );
+#endif
 
   /* USER CODE END 2 */
 
@@ -332,8 +334,6 @@ static void MX_OCTOSPI1_Init(void)
     Error_Handler();
   }
   OSPIM_Cfg_Struct.ClkPort = 1;
-  OSPIM_Cfg_Struct.NCSPort = 1;
-  OSPIM_Cfg_Struct.IOLowPort = HAL_OSPIM_IOPORT_1_LOW;
   if (HAL_OSPIM_Config(&hospi1, &OSPIM_Cfg_Struct, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
   {
     Error_Handler();
@@ -660,6 +660,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : QUADSPI_NCS_Pin OQUADSPI_BK1_IO0_Pin QUADSPI_BK1_IO1_Pin QUAD_SPI_BK1_IO2_Pin
+                           QUAD_SPI_BK1_IO3_Pin */
+  GPIO_InitStruct.Pin = QUADSPI_NCS_Pin|OQUADSPI_BK1_IO0_Pin|QUADSPI_BK1_IO1_Pin|QUAD_SPI_BK1_IO2_Pin
+                          |QUAD_SPI_BK1_IO3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF10_OCTOSPIM_P1;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pins : INTERNAL_UART3_TX_Pin INTERNAL_UART3_RX_Pin */
   GPIO_InitStruct.Pin = INTERNAL_UART3_TX_Pin|INTERNAL_UART3_RX_Pin;

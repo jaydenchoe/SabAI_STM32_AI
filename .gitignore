@@ -159,3 +159,4 @@ stm32_infer/Debug/Src/axis_sensor.su
 stm32_infer/Debug/Src/axis_sensor_data.d
 stm32_infer/Debug/Src/axis_sensor_data.o
 stm32_infer/Debug/Src/axis_sensor_data.su
+stm32_infer/axis_sensor_generate_report.txt

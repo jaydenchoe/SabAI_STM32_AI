@@ -18,8 +18,8 @@
 void MEMS_Init(void);
 void get_and_print_3axis( void );
 
-static void get_acc_3axis(int* x, int* y, int* z);
-static void print_3axis (int x, int y, int z);
+static void get_acc_3axis(int32_t* x, int32_t* y, int32_t* z);
+static void print_3axis (int32_t x, int32_t y, int32_t z);
 
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart4;
@@ -29,7 +29,9 @@ static char str_uart4_test[] = "UART4 low level - Hello World\n\r";
 
 static uint8_t ch_linefeed = {'\n'};
 static uint8_t ch_CR = {'\r'};
-
+#if CAPTURE_MODE
+static uint8_t s_is_capture_started = 0;
+#endif
 uint8_t g_ch_uart1_rx_data = {'\0'};
 uint8_t g_ch_uart4_rx_data = {'\0'}; // loopback test용
 
@@ -44,10 +46,19 @@ volatile uint32_t g_data_rdy_int_received = 0;
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 
 	if ( GPIO_Pin == USER_BUTTON_Pin) {
-		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-	} else if (GPIO_Pin == GPIO_PIN_11) {
+#if CAPTURE_MODE
+		if ( s_is_capture_started == 0) {
+			s_is_capture_started = 1;
+		} else {
+			s_is_capture_started = 0;
+		}
+#else
+			HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+#endif
+	}
+	if (GPIO_Pin == GPIO_PIN_11) {
 		g_data_rdy_int_received++;
-	 }
+	}
 }
 
 /* UART1 handling ------------------------------------------------------------------*/
@@ -66,7 +77,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		 HAL_UART_Receive_IT(&huart1, &g_ch_uart1_rx_data, 1); // UART1 RX 인터럽트 다시 살린다.
 
 	}
-#ifdef UART4_LOOPBACK_TEST
+#if UART4_LOOPBACK_TEST
 	else if ( huart->Instance == UART4 ) {
 		 HAL_UART_Transmit(&huart1, &g_ch_uart4_rx_data, 1, 1); // UART4 데이터임을 알리는 prefix 특수 문자 출력
 		 HAL_UART_Receive_IT(&huart4, &g_ch_uart4_rx_data, 1); // UART4 RX 인터럽트 다시 살린다.
@@ -100,7 +111,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if ( htim->Instance == TIM15 ) {
 		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 	}
-
 }
 
 /* 3axis sensor handling ------------------------------------------------------------------*/
@@ -142,14 +152,14 @@ void MEMS_Init( void ) {
 }
 
 //  I2C2에서 현재의 3axis 값을 읽는다.
-static void get_acc_3axis(int* x, int* y, int* z) {
+static void get_acc_3axis(int32_t* x, int32_t* y, int32_t* z) {
 	 if (g_data_rdy_int_received != 0) {
 		 g_data_rdy_int_received = 0;
 		 LSM6DSL_Axes_t acc_axes;
 		 LSM6DSL_ACC_GetAxes(&g_motion_sensor, &acc_axes);
-		 (*x) = (int)acc_axes.x;
-		 (*y) = (int)acc_axes.y;
-		 (*z) = (int)acc_axes.z;
+		 (*x) = (int32_t)acc_axes.x;
+		 (*y) = (int32_t)acc_axes.y;
+		 (*z) = (int32_t)acc_axes.z;
 	 }
 }
 
@@ -157,19 +167,33 @@ static void get_acc_3axis(int* x, int* y, int* z) {
 // 3axis 값을 캡처용으로 출력 referring to https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/magic_wand/train/README.md
 // 참조 내용: am_util_stdio_printf("%04.2f,%04.2f,%04.2f\r\n", acceleration_mg[0], acceleration_mg[1], acceleration_mg[2]);
 
-static void print_3axis (int x, int y, int z) {
+static void print_3axis (int32_t x, int32_t y, int32_t z) {
 	static uint8_t is_first_print = 1;
-	if ( is_first_print == 1 ) {
-		printf( "-,-,-\r\n");
-		is_first_print = 0;
-	} else {
- 	   printf("%d,%d,%d\r\n", x, y, z); // float option이 없기 때문에 integer로 처리해야 하며 나중에 파이썬 코드 파싱에 문제 없는지 확인 필요
+	static uint8_t i = 0;
+#if CAPTURE_MODE
+	if ( s_is_capture_started == 1 ) {
+#endif
+		if ( is_first_print == 1 ) {
+		// 18 blank lines printed
+			for (i = 0; i < 18; ++i) {
+				printf( "\r\n" );
+			}
+
+			printf( "-,-,-\r\n");
+			is_first_print = 0;
+		} else {
+		   printf("%ld,%ld,%ld\r\n", x, y, z); // float option이 없기 때문에 integer로 처리해야 하며 나중에 파이썬 코드 파싱에 문제 없는지 확인 필요
+		}
+#if CAPTURE_MODE
 	}
+#endif
 }
 
 // 3axis 현재 값을 얻어서 출력한다
 void get_and_print_3axis( void ) {
-	int x, y, z;
+	static int32_t x= -1;
+	static int32_t y= -1;
+	static int32_t z= -1;
 	get_acc_3axis(&x, &y, &z);
 	print_3axis(x,y,z);
 }

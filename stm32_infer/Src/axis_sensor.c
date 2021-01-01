@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    axis_sensor.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Thu Dec 31 15:33:28 2020
+  * @date    Fri Jan  1 23:38:48 2021
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -55,7 +55,7 @@
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Thu Dec 31 15:33:28 2020"
+#define AI_TOOLS_DATE_TIME   "Fri Jan  1 23:38:48 2021"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
