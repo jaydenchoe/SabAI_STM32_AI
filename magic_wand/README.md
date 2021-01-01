@@ -12,7 +12,8 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 - 예제 모델은 x, y, z 3개 1 set일 때 예제 모델은 128 set 데이터를 입력을 받습니다 이는 즉 5.12초 정도의 데이터 양입니다. ==> 향후에 데이터 주실 때 동일하게 128 set로 끊어서 만들어 주셔야 합니다!!
 - 예제 모델은 output node가 4개입니다: "wing", "ring", "slope", "no gesture"의 4가지 output node가 있는겁니다. ==> 우리도 동일하게 4가지 모션을 정하면 됩니다. 
 
-## (중요) SabAI에서 취할 모션 제스처 종류 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원, https://www.youtube.com/watch?v=fgA63sgDft4
+## (중요) SabAI에서 취할 모션 제스처 종류 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원)
+0) 반드시 영상 먼저 대충 보셔야 합니다: https://www.youtube.com/watch?v=fgA63sgDft4
 1) 어깨 으쓱하며 숨쉬기 "ring"
 2) 양손 위로 들기 "slope"
 3) 가슴 펴기 "wing"
