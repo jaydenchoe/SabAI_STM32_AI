@@ -101,6 +101,7 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
 - 온라인 해커톤 워크숍 참가영상/사진 (주 1회 권장)
 · 2021년 1월1일 Team SabAI 개발솔루션 설명 영상: https://www.youtube.com/channel/UCpIxpUlECa4bGSRHpx8D43w
+
 · 영상에서 사용한 발표자료: https://drive.google.com/file/d/1_c3b-mi05Lc0y1gY3ajXs9Qvg8tYH93V/view?usp=sharing
 
 - 온라인 해커톤 당일 참가영상/사진 
