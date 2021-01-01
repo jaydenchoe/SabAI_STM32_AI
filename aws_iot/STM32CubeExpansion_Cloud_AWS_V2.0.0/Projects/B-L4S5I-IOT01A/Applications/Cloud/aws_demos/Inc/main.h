@@ -53,7 +53,7 @@ extern RNG_HandleTypeDef hrng;  /* Used by the mbedtls entropy function */
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-//#define CONFIG_ST_CUSTOM_DEMO_ENABLED
+#define CONFIG_ST_CUSTOM_DEMO_ENABLED
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
