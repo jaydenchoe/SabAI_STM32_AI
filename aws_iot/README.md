@@ -90,9 +90,28 @@ File 속성이 읽기 모드로 되어 있는 경우 쓰기가 가능하도록 �
   
 ### 우리가 해야할 부분
 
-1. [ ] AWS IOT에 기기 연동 테스트
-2. [ ] AWS IOT에 데모 값 MQTT로 전송되는지 확인
-3. [ ] Queue에 넣을 데이터 structure 구현
+1. [x] AWS IOT에 기기 연동 테스트
+2. [x] AWS IOT에 데모 값 MQTT로 전송되는지 확인
+3. [x] Queue에 넣을 데이터 structure 구현
 4. [ ] 해당 데이터 structure에 맞는 데이터 입력하게끔 serial RX 부분 구현
-5. [ ] AWS IOT로 올라간 값을 web 에서 읽게 해주기
+5. [x] AWS IOT로 올라간 값을 web 에서 읽게 해주기
 6. [ ] web page 구성
+
+
+### 추가 설명
+
+/B-L4S5I-IOT01_aws_demos/Application/User/st_sensordata_collector.c
+
+SEE TODO.s (line 116~120, 155~164)
+
+시리얼로 읽어들인 값을 type, start button status에 담아주시면 됩니다.
+
+MQTT로 올릴떄 topic 이름은 
+`/Users/sempark/hackathon/SabAI/aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/aws_customdemo_globals.h`
+파일 내에
+
+```
+unsigned char gucSensorTopicName[]="iot/sabai/topic/1";
+```
+이 부분에 정의해두었습니다.
+
