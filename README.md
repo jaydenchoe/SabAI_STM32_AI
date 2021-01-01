@@ -2,8 +2,11 @@
 Seoul Hackathon SabAI Team Repository
 
 팀원이 맡은 역할을 자유롭게 적어주세요(기획/디자인/설계/개발/디버깅/기술조언/환경설정/발표 등
+
 - 최재훈: 팀장, STM32 보드 기본 디바이스 enabling / 인공지능 추론+학습 구현 / 개발 내용 발표 정리
+
 - 박세문: STM32 보드 AWS IoT 환경 구현, AWS IOT 웹서버/서버사이드렌더링/웹앱 서비스 구현 / 인공지능 학습데이터 제공
+
 - 김병헌: User Interface/ User Experience / 시스템 시나리오 기획 / 인공지능 학습데이터 제공
 
 
@@ -100,6 +103,7 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 - 개발 내용 요약 자료 (PPT)
 
 - 온라인 해커톤 워크숍 참가영상/사진 (주 1회 권장)
+
 · 2021년 1월1일 Team SabAI 개발솔루션 설명 영상: https://www.youtube.com/channel/UCpIxpUlECa4bGSRHpx8D43w
 
 · 영상에서 사용한 발표자료: https://drive.google.com/file/d/1_c3b-mi05Lc0y1gY3ajXs9Qvg8tYH93V/view?usp=sharing
