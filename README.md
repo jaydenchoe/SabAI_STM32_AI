@@ -102,6 +102,8 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
  구현 영상  및 참가영상 
 
 - 온라인 해커톤 워크숍 참가영상/사진 (주 1회 권장)
+Team SabAI 유튜브 채널 (2021년 1월1일 개발솔루션 설명 영상)
+https://www.youtube.com/channel/UCpIxpUlECa4bGSRHpx8D43w
 
 - 온라인 해커톤 당일 참가영상/사진 
 
@@ -110,7 +112,7 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 ※ 참가자들과 함께한 사진 10장이상 포스팅을 하셔야 함
 
 ## STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
-* [stm32_infer/README.md] (https://github.com/jaydenchoe/SabAI/blob/main/stm32_infer/README.md)
+* [stm32_infer/README.md](https://github.com/jaydenchoe/SabAI/blob/main/stm32_infer/README.md)
 
 ## STM32 AWS IOT Board README
 * [aws_iot/README.md](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/README.md)
