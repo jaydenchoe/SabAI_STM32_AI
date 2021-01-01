@@ -12,7 +12,8 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 - 예제 모델은 x, y, z 3개 1 set일 때 예제 모델은 128 set 데이터를 입력을 받습니다 이는 즉 5.12초 정도의 데이터 양입니다. ==> 향후에 데이터 주실 때 동일하게 128 set로 끊어서 만들어 주셔야 합니다!!
 - 예제 모델은 output node가 4개입니다: "wing", "ring", "slope", "no gesture"의 4가지 output node가 있는겁니다. ==> 우리도 동일하게 4가지 모션을 정하면 됩니다. 
 
-## (중요) SabAI에서 취할 모션 제스처 종류 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원, https://www.youtube.com/watch?v=fgA63sgDft4
+## (중요) SabAI에서 취할 모션 제스처 종류 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원)
+0) 반드시 영상 먼저 대충 보셔야 합니다: https://www.youtube.com/watch?v=fgA63sgDft4
 1) 어깨 으쓱하며 숨쉬기 "ring"
 2) 양손 위로 들기 "slope"
 3) 가슴 펴기 "wing"
@@ -36,13 +37,22 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 * (공백 18줄)
 * -,-,- ==> 여기가 다음 모션 하나의 시작
 * (이상반복)
+10) 실제 파일 예제: https://github.com/jaydenchoe/SabAI/blob/main/magic_wand/sabai_example_output_wing_shiyun.txt
 
 ## (중요) 운동 캡처 순서
-1) 모션 1번을 20회 반복 후 다음 이름으로 저장합니다: output_ring_본인영문이름.txt
-2) 모션 2번을 20회 반복 후 다음 이름으로 저장합니다: output_slope_본인영문이름.txt
-3) 모션 3번을 20회 반복 후 다음 이름으로 저장합니다: output_wing_본인영문이름.txt
+1) 모션 1번을 10~20회 반복 후 다음 이름으로 저장합니다: output_ring_본인영문이름.txt
+2) 모션 2번을 10~20회 반복 후 다음 이름으로 저장합니다: output_slope_본인영문이름.txt
+3) 모션 3번을 10~20회 반복 후 다음 이름으로 저장합니다: output_wing_본인영문이름.txt
 4) 위 3가지와 전혀 다른 모션을 20회 반복 후 다음 이름으로 저장합니다: output_negative_본인영문이름.txt
-5) 이상 4가지 파일을 제게 전달 주세요 
+5) 이상 4가지 파일을 제게 전달 주세요.
+- 실제 파일 예제: https://github.com/jaydenchoe/SabAI/blob/main/magic_wand/sabai_example_output_wing_shiyun.txt
+
+## MAC에서 캡처하는 방법 
+- 터미널 캡처 아무거나 쓰셔도 되고, 없으면 간단히 아래와 같이 할수 있습니다.
+1) screen /dev/cu.usbmodem14403 115200 ==> 디바이스 이름은 각자 다르겠지요.
+2) CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 시작이 됩니다.
+3) 모션 센싱 작업 여러번 하고 나서 다 되었다 싶으면 다시 CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 끝나고 screenlog.0으로 파일이 나옵니다.
+4) 파일 이름은 위의 가이드 처럼 해 주시고, 파일 열어서 이상하게 된 건 없는지 확인 한번 하고 주세요.
 
 # Magic wand example
 
