@@ -199,6 +199,11 @@ void onboardSensorReaderTask() {
 								rx_buffer,
 	        					"user01",
 	        					WORKOUT_START_BUTTON_PRESSED);
+			IotLogInfo(
+					"Publishing sensor data as json string: %s of length [ %d]\n",
+					pSensorPayload, snprintfreturn);
+
+			sendToTelemetryQueue(gucSensorTopicName, pSensorPayload,snprintfreturn);
 		}
 		//////////////////////////////jbmaster
 		else
@@ -214,12 +219,11 @@ void onboardSensorReaderTask() {
 					WORKOUT_START_BUTTON_PRESSED);
 		}
 
-		IotLogInfo(
-				"Publishing sensor data as json string: %s of length [ %d]\n",
-				pSensorPayload, snprintfreturn);
-
-	   sendToTelemetryQueue(gucSensorTopicName, pSensorPayload,
-				            snprintfreturn);
+//		IotLogInfo(
+//				"Publishing sensor data as json string: %s of length [ %d]\n",
+//				pSensorPayload, snprintfreturn);
+//
+//		sendToTelemetryQueue(gucSensorTopicName, pSensorPayload,snprintfreturn);
 
 	} while (j++ < SENSOR_DATA_NUM_POLL_CYCLE);
 

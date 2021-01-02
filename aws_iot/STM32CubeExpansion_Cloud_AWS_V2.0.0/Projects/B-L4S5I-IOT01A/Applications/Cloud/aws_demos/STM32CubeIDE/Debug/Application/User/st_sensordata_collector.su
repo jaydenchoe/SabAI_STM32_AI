@@ -1,7 +1,7 @@
 st_sensordata_collector.c:64:6:HAL_UART_RxCpltCallback	16	static
 st_sensordata_collector.c:82:13:prvSensorsInit	8	static
 st_sensordata_collector.c:116:6:onboardSensorReaderTask	88	static
-st_sensordata_collector.c:229:5:BSP_Proximity_Init	32	static
-st_sensordata_collector.c:273:5:SetupSingleShot	56	static
-st_sensordata_collector.c:378:7:BSP_Proximity_Read	16	static
-st_sensordata_collector.c:402:6:Sensor_SetNewRange	16	static
+st_sensordata_collector.c:233:5:BSP_Proximity_Init	32	static
+st_sensordata_collector.c:277:5:SetupSingleShot	56	static
+st_sensordata_collector.c:382:7:BSP_Proximity_Read	16	static
+st_sensordata_collector.c:406:6:Sensor_SetNewRange	16	static
