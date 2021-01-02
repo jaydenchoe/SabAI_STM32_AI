@@ -127,3 +127,7 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 #### STM32 AWS IOT Board README
 * [aws_iot/README.md](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/README.md)
 
+#### 인공지능 학습 데이터와 학습 관련 프레임워크
+* [magic_wand/README.md](https://github.com/jaydenchoe/SabAI/tree/main/magic_wand/README.md)
+
+
