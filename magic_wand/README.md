@@ -56,8 +56,3 @@ https://github.com/jaydenchoe/SabAI/tree/main/magic_wand/sabai_training_data
 1) SabAI 제스처 데이터 학습 프레임워크(Colab) : https://colab.research.google.com/drive/1DqGlu8Nrcyt-fy0vpPPRo6iL97KjmdLT#scrollTo=LG6ErX5FRIaV
 2) 학습에 필요한 각 모셔 데이터들은 GDrive 폴더에 모으고, 이것을 Mount해서 Colab에서 당겨 오는 식으로 구현했습니다.
 
-## [참고용] Train your own model
-https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d26c205/tensorflow/lite/micro/examples/magic_wand
-
-To train your own model, or create a new model for a new set of gestures,
-follow the instructions in [magic_wand/train/README.md](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/magic_wand/train/README.md).
