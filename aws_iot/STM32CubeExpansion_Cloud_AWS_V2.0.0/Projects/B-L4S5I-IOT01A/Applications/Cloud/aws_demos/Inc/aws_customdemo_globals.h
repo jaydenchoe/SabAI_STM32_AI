@@ -28,7 +28,7 @@ SOFTWARE.
 #ifdef DEFINE_GLOBAL_ONCE
 
 
-unsigned char gucSensorTopicName[]="iot/sabai/topic/1";
+unsigned char gucSensorTopicName[]="dt/stm32l475e/sensor-data/topic/1";
 QueueHandle_t xSensorDataQueue = NULL;
 const char *pSensorUid="st-stm32l475e-sensor-01";
 

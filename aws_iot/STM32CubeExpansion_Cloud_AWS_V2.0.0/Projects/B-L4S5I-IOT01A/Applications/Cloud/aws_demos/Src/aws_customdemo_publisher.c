@@ -48,7 +48,7 @@ void _sensorDataPublisherTask()
             struct sensorDataMsg    *pRxMsg = pcRxedMsg;
 
 
-            IotLogInfo ("\nReceived Message ,:[ %s ] of length [ %d]\n", pRxMsg->pSensorMsg,pRxMsg->iMsgLen);
+            IotLogInfo ("\nReceived Message ,: topic: [ %s ]  [ %s ] of length [ %d]\n",gucSensorTopicName, pRxMsg->pSensorMsg,pRxMsg->iMsgLen);
             //The Topic Name is hard-coded, message length is hard coded for now
             publishStatus = _publishSensorData(gucSensorTopicName, pRxMsg->pSensorMsg,pRxMsg->iMsgLen);
 

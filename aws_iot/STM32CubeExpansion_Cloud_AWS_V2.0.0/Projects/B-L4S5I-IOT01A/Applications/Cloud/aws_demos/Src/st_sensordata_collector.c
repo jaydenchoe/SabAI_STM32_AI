@@ -42,6 +42,14 @@ typedef enum {
 } RangingConfig_e;
 
 extern I2C_HandleTypeDef hI2cHandler;
+//////////////////////////////jbmaster
+extern UART_HandleTypeDef huart4;
+
+volatile uint8_t uart_ch;
+char rx_buffer[32] = {0,};
+int rx_idx = 0;
+int rx_flag = 0;
+//////////////////////////////jbmaster
 
 VL53L0X_Dev_t VL53L0XDev;
 VL53L0X_RangingMeasurementData_t RangingMeasurementData;
@@ -51,6 +59,25 @@ int BSP_Proximity_Init();
 int SetupSingleShot(RangingConfig_e rangingConfig);
 float BSP_Proximity_Read();
 void Sensor_SetNewRange(VL53L0X_Dev_t *pDev, VL53L0X_RangingMeasurementData_t *pRange);
+
+//////////////////////////////jbmaster
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if (huart->Instance == huart4.Instance)
+    {
+		if( rx_idx > sizeof(rx_buffer)-1 )
+			rx_idx = 0;
+
+        rx_buffer[rx_idx++] = uart_ch;
+        if (uart_ch == '\r'){
+            rx_buffer[rx_idx-1] = '\0';
+            rx_flag = 1;
+        }
+
+        HAL_UART_Receive_IT(&huart4, (uint8_t*)&uart_ch, 1);
+    }
+}
+//////////////////////////////jbmaster
 
 static void prvSensorsInit(void) {
   
@@ -102,7 +129,7 @@ void onboardSensorReaderTask() {
 	//IotMqttError_t publishStatus = IOT_MQTT_STATUS_PENDING;
 
 	int j = 0;
-	//float temperatureC;
+	float temperatureC;
 	float TEMPERATURE_Value;
 	float HUMIDITY_Value;
 	float PRESSURE_Value;
@@ -123,8 +150,14 @@ void onboardSensorReaderTask() {
 	IotLogInfo("ENTRY : onboardSensorReaderTask ");
 	prvSensorsInit();
 
+	//Ready to Receive interrupt
+	HAL_UART_Receive_IT(&huart4, (uint8_t*)&uart_ch, 1);
+
 	do {
 		vTaskDelay(pdMS_TO_TICKS(TEMPERATURE_TASK_READ_DELAY_MS));
+
+
+
 
 		TEMPERATURE_Value = BSP_TSENSOR_ReadTemp();
 		HUMIDITY_Value = BSP_HSENSOR_ReadHumidity();
@@ -133,7 +166,7 @@ void onboardSensorReaderTask() {
 		BSP_GYRO_GetXYZ(GYR_Value);
 		BSP_MAGNETO_GetXYZ(MAG_Value);
                 PROXIMITY_Value = BSP_Proximity_Read();
-                
+
 		IotLogInfo("Accelerometer [X: %d] ", ACC_Value);
 
 		pSensorPayload = pvPortMalloc(sizeof(char) * SENSOR_STATUS_MSG_BUF_LEN);
@@ -152,23 +185,45 @@ void onboardSensorReaderTask() {
 //				MAG_Value[1], MAG_Value[2], (int) PROXIMITY_Value);
 
 		// TODO: 이부분에서 리딩된 값을 넣어주셔야 합니다.
-		snprintfreturn = snprintf(pSensorPayload, SENSOR_STATUS_MSG_BUF_LEN,
-				"{"
-					"\"type\": %d,"
-					"\"user\": \"%s\","
-					"\"started\": %d,"
-				"}",
-				WORKOUT_TYPE_inferencd,
-				"user01",
-				WORKOUT_START_BUTTON_PRESSED);
+		//Check-up Uart Buffer //////////////////////////////jbmaster
+		if(rx_flag){
+			IotLogInfo( " Get Msg : [ %s ]\r\n", rx_buffer);
+	        rx_idx = 0;
+	        rx_flag = 0;
+	        snprintfreturn = snprintf(pSensorPayload, SENSOR_STATUS_MSG_BUF_LEN,
+	        					"{"
+	        						"\"type\": \"%s\","
+	        						"\"user\": \"%s\","
+	        						"\"started\": %d"
+	        					"}",
+								rx_buffer,
+	        					"user01",
+	        					WORKOUT_START_BUTTON_PRESSED);
+			IotLogInfo(
+					"Publishing sensor data as json string: %s of length [ %d]\n",
+					pSensorPayload, snprintfreturn);
 
+			sendToTelemetryQueue(gucSensorTopicName, pSensorPayload,snprintfreturn);
+		}
+		//////////////////////////////jbmaster
+		else
+		{
+			snprintfreturn = snprintf(pSensorPayload, SENSOR_STATUS_MSG_BUF_LEN,
+					"{"
+						"\"type\": %d,"
+						"\"user\": \"%s\","
+						"\"started\": %d"
+					"}",
+					WORKOUT_TYPE_inferencd,
+					"user01",
+					WORKOUT_START_BUTTON_PRESSED);
+		}
 
-		IotLogInfo(
-				"Publishing sensor data as json string: %s of length [ %d]\n",
-				pSensorPayload, snprintfreturn);
-
-	   sendToTelemetryQueue(gucSensorTopicName, pSensorPayload,
-				            snprintfreturn);
+//		IotLogInfo(
+//				"Publishing sensor data as json string: %s of length [ %d]\n",
+//				pSensorPayload, snprintfreturn);
+//
+//		sendToTelemetryQueue(gucSensorTopicName, pSensorPayload,snprintfreturn);
 
 	} while (j++ < SENSOR_DATA_NUM_POLL_CYCLE);
 
