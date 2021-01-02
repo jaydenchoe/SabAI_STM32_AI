@@ -77,8 +77,15 @@
 #include "ai_datatypes_defines.h"
 
 /* USER CODE BEGIN includes */
+#define RING_SAMPLE 1
+#define SLOPE_SAMPLE 0
+#if (RING_SAMPLE==1) && (SLOPE_SAMPLE==1)
+ 	 PANIC!!!
+#endif
 #include "peripherals.h"
 extern ai_handle ai_axis_sensor_data_weights_get(void);
+extern float g_slope_micro_f2e59fea_nohash_1_data[];
+extern float g_ring_micro_f9643d42_nohash_4_data[];
 /* USER CODE END includes */
 
 /* Global AI objects */
@@ -175,13 +182,91 @@ static int ai_run(void *data_in, void *data_out)
 }
 
 /* USER CODE BEGIN 2 */
+static
 int acquire_and_process_data(void * data)
 {
+
+#ifdef AI_AXIS_SENSOR_INPUTS_IN_ACTIVATIONS
+
+	// Keep track of whether we stored any new data
+	  bool new_data = false;
+	  // Loop through new samples and add to buffer
+	  while (IMU.accelerationAvailable()) {
+	    float x, y, z;
+	    // Read each sample, removing it from the device's FIFO buffer
+	    if (!IMU.readAcceleration(x, y, z)) {
+	      TF_LITE_REPORT_ERROR(error_reporter, "Failed to read data");
+	      break;
+	    }
+
+	    const float norm_x = -z;
+	    const float norm_y = y;
+	    const float norm_z = x;
+	    save_data[begin_index++] = norm_x * 1000;
+	    save_data[begin_index++] = norm_y * 1000;
+	    save_data[begin_index++] = norm_z * 1000;
+
+	    // If we reached the end of the circle buffer, reset
+	    if (begin_index >= 600) {
+	      begin_index = 0;
+	    }
+	    new_data = true;
+	  }
+
+#else  // Testing with Golden Samples
+	  uint16_t i = 0;
+	  float * p_buf = (float*) data;
+
+
+	  for ( i = 0; i < AI_AXIS_SENSOR_IN_1_SIZE; ++i) {
+#if SLOPE_SAMPLE
+		  (*p_buf) = g_slope_micro_f2e59fea_nohash_1_data[i];
+#endif
+#if RING_SAMPLE
+		  (*p_buf) = g_ring_micro_f9643d42_nohash_4_data[i];
+#endif
+		  p_buf++;
+	  }
+
+/*
+	  printf ("=======  micro data start  ========");
+	  for ( i = 0; i < AI_AXIS_SENSOR_IN_1_SIZE; ++i ) {
+		  printf ( "%d\r\n", g_slope_micro_f2e59fea_nohash_1_data[i] );
+	  }
+
+	  printf ("=======  micro data end  ========");
+
+	  printf ("=======  copied data start  ========");
+	  p_buf = (float*) data;
+
+	  for ( i = 0; i < AI_AXIS_SENSOR_IN_1_SIZE; ++i ) {
+	  		  printf ( "%d\r\n", (*p_buf) );
+	  		  p_buf++;
+	  }
+	  printf ("=======  copied data end  ========");
+*/
+#endif
+
+
   return 0;
 }
 
 int post_process(void * data)
 {
+	float* p_buf = 0;
+
+	p_buf = (float*)data;
+#if RING_SAMPLE
+	printf("RING-SAMPLE");
+#elif SLOPE_SAMPLE
+	printf("SLOPE-SAMPLE");
+#endif
+	printf("===========================\n\r");
+	printf("output_node[%d/wing W] %f\n\r", 0, *(p_buf+0));
+	printf("output_node[%d/ring O] %f\n\r", 1, *(p_buf+1));
+	printf("output_node[%d/angle] %f\n\r", 2, *(p_buf+2));
+	printf("output_node[%d/unknown] %f\n\r", 3, *(p_buf+3));
+
   return 0;
 }
 /* USER CODE END 2 */
@@ -202,12 +287,30 @@ void MX_X_CUBE_AI_Init(void)
 void MX_X_CUBE_AI_Process(void)
 {
     /* USER CODE BEGIN 4 */
+/*TinyML의 Loop와 같음
+	// Attempt to read new data from the accelerometer.
+	  bool got_data =
+	      ReadAccelerometer(error_reporter, model_input->data.f, input_length);
+	  // If there was no new data, wait until next time.
+	  if (!got_data) return;
+
+	  // Run inference, and report any error.
+	  TfLiteStatus invoke_status = interpreter->Invoke();
+
+	  // Analyze the results to obtain a prediction
+	  int gesture_index = PredictGesture(interpreter->output(0)->data.f);
+
+	  // Produce an output
+	  HandleOutput(error_reporter, gesture_index);
+*/
 
   int res = -1;
   uint8_t *in_data = NULL;
   uint8_t *out_data = NULL;
 
   printf("TEMPLATE - run - main loop\r\n");
+
+  // sensor infofmf tnwjdgodi gka
 
   if (axis_sensor) {
 
@@ -244,10 +347,11 @@ void MX_X_CUBE_AI_Process(void)
       if (res == 0)
         res = ai_run(in_data, out_data);
       /* 3- post-process the predictions */
-      if (res == 0)
+      if (res == 0) {
         res = post_process(out_data);
-    //} while ( res == 0 );  /// jayden.choe 무한루프가 되니 일단 한번만 실행되게 바꿨음.
-    } while ( NULL );
+      }
+    } while ( res == 0 );
+//    } while ( NULL );
   }
 
   if (res) {

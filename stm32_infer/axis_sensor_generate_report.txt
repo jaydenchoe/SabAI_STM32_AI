@@ -1,15 +1,15 @@
 Neural Network Tools for STM32 v1.4.0 (AI tools v5.2.0)
-Created date       : 2020-12-31 15:33:28
-Parameters         : generate --name axis_sensor -m /Users/jaehunchoe/Downloads/axis_sensor.tflite --type tflite --compression 1 --verbosity 1 --workspace /var/folders/65/pn8tw4jx091d9fwkjp8_9qvw0000gn/T/mxAI_workspace778830041663014508364380432258 --output /Users/jaehunchoe/.stm32cubemx
+Created date       : 2021-01-02 04:06:40
+Parameters         : generate --name axis_sensor -m /Users/jaehunchoe/workplace/GitHub/SabAI/stm32_infer/axis_sensor.tflite --type tflite --compression 1 --verbosity 1 --workspace /var/folders/65/pn8tw4jx091d9fwkjp8_9qvw0000gn/T/mxAI_workspace179119679605575120737494566367203 --output /Users/jaehunchoe/.stm32cubemx
 
-Exec/report summary (generate dur=0.55s err=0)
+Exec/report summary (generate dur=0.57s err=0)
 ------------------------------------------------------------------------------------------------------------------------
-model file         : /Users/jaehunchoe/Downloads/axis_sensor.tflite
+model file         : /Users/jaehunchoe/workplace/GitHub/SabAI/stm32_infer/axis_sensor.tflite
 type               : tflite (tflite) 
 c_name             : axis_sensor
 compression        : None
 quantize           : None
-workspace dir      : /private/var/folders/65/pn8tw4jx091d9fwkjp8_9qvw0000gn/T/mxAI_workspace778830041663014508364380432258
+workspace dir      : /private/var/folders/65/pn8tw4jx091d9fwkjp8_9qvw0000gn/T/mxAI_workspace179119679605575120737494566367203
 output dir         : /Users/jaehunchoe/.stm32cubemx
 
 model_name         : axis_sensor

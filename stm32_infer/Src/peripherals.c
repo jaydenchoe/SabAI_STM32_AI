@@ -108,7 +108,9 @@ int __io_putchar(int ch) {
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 // 25Hz로 Accelerometer 센서값을 출력
 	if ( htim->Instance == TIM15 ) {
+#if CAPTURE_MODE
 		get_and_print_3axis();
+#endif
 	}
 // 1Hz로 LED toggling
 	if ( htim->Instance == TIM5 ) {
@@ -185,7 +187,7 @@ static void print_3axis (int32_t x, int32_t y, int32_t z) {
 			printf( "-,-,-\r\n");
 			is_first_print = 0;
 		} else {
-		   printf("%ld,%ld,%ld\r\n", x, y, z); // float option이 없기 때문에 integer로 처리해야 하며 나중에 파이썬 코드 파싱에 문제 없는지 확인 필요
+		   printf("%ld.0,%ld.0,%ld.0\r\n", x, y, z); // float option이 없기 때문에 integer로 처리해야 하며 나중에 파이썬 코드 파싱에 문제 없는지 확인 필요
 		}
 #if CAPTURE_MODE
 	}
