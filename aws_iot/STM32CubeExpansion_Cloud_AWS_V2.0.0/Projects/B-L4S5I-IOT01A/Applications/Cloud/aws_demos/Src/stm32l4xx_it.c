@@ -58,6 +58,7 @@
 /* External variables --------------------------------------------------------*/
 extern SPI_HandleTypeDef hspi3;
 extern TIM_HandleTypeDef htim6;
+extern UART_HandleTypeDef huart4; //////////////////////////////jbmaster
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -223,5 +224,28 @@ void SysTick_Handler(void)
   HAL_SYSTICK_IRQHandler();
 }
 
+/******************************************************************************/
+/* STM32L4xx Peripheral Interrupt Handlers                                    */
+/* Add here the Interrupt Handlers for the used peripherals.                  */
+/* For the available peripheral interrupt handler names,                      */
+/* please refer to the startup file (startup_stm32l4xx.s).                    */
+/******************************************************************************/
+
+/**
+  * @brief This function handles UART4 global interrupt.
+  */
+//////////////////////////////jbmaster
+void UART4_IRQHandler(void)
+{
+	/* USER CODE BEGIN UART4_IRQn 0 */
+
+
+	/* USER CODE END UART4_IRQn 0 */
+	HAL_UART_IRQHandler(&huart4);
+	/* USER CODE BEGIN UART4_IRQn 1 */
+
+	/* USER CODE END UART4_IRQn 1 */
+}
+//////////////////////////////jbmaster
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
