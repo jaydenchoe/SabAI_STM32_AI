@@ -12,17 +12,23 @@
 #include "stm32l4xx_hal_uart.h"
 #include "lsm6dsl.h" // for LSM6DSL sensor
 #include "b_l4s5i_iot01a_bus.h" // for LSM6DSL sensor
+#include "axis_sensor.h"
 
 #define COUNTOF(__BUFFER__) (sizeof(__BUFFER__)/sizeof(*(__BUFFER__)))
 
 void MEMS_Init(void);
 void get_and_print_3axis( void );
 
-static void get_acc_3axis(int32_t* x, int32_t* y, int32_t* z);
+static int get_acc_3axis(int32_t* x, int32_t* y, int32_t* z);
 static void print_3axis (int32_t x, int32_t y, int32_t z);
 
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart4;
+extern float save_data[];
+extern uint8_t pending_initial_data;
+extern uint16_t begin_index;
+extern float save_data[600];
+extern uint8_t pending_initial_data;
 
 static char str_uart1_test[] = "UART1 low level - Hello World\n\r";
 static char str_uart4_test[] = "UART4 low level - Hello World\n\r";
@@ -37,6 +43,7 @@ uint8_t g_ch_uart4_rx_data = {'\0'}; // loopback test용
 
 LSM6DSL_Object_t g_motion_sensor;
 volatile uint32_t g_data_rdy_int_received = 0;
+uint8_t new_sensor_data_detected_from_timer_event = 0;
 
 /* GPIO and 3axis handling ------------------------------------------------------------------*/
 
@@ -84,6 +91,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 #endif
 }
 
+
 // low-level HAL_UART_Transmit을 이용한 UART1 output test 확인.
 void test_UART1_Output () {
 	HAL_UART_Transmit(&huart1, (uint8_t*)str_uart1_test,COUNTOF(str_uart1_test)-1, 10);
@@ -106,10 +114,31 @@ int __io_putchar(int ch) {
 /* Timer15 and Timer 5 handling ------------------------------------------------------------------*/
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-// 25Hz로 Accelerometer 센서값을 출력
+	static int32_t x= -1;
+	static int32_t y= -1;
+	static int32_t z= -1;
+
+// 25Hz로 Accelerometer 센서값을 얻어서 쌓고 일정한 양이 쌓이면 인공지능 모델에 던진다.
 	if ( htim->Instance == TIM15 ) {
 #if CAPTURE_MODE
 		get_and_print_3axis();
+#else // Inference Mode
+
+		if ( get_acc_3axis(&x, &y, &z) == -1 ) { // no change or errornous case
+//			printf( "ERROR: can't read 3axis\n\r");
+			new_sensor_data_detected_from_timer_event = 0;
+			return;
+		}
+		// 추론 배열에 값 추가
+		save_data[begin_index++] = x;
+		save_data[begin_index++] = y;
+		save_data[begin_index++] = z;
+
+		// If we reached the end of the ring buffer, reset
+		if (begin_index >= 600) {
+			  begin_index = 0;
+		}
+		new_sensor_data_detected_from_timer_event = 1;
 #endif
 	}
 // 1Hz로 LED toggling
@@ -157,7 +186,7 @@ void MEMS_Init( void ) {
 }
 
 //  I2C2에서 현재의 3axis 값을 읽는다.
-static void get_acc_3axis(int32_t* x, int32_t* y, int32_t* z) {
+static int get_acc_3axis(int32_t* x, int32_t* y, int32_t* z) {
 	 if (g_data_rdy_int_received != 0) {
 		 g_data_rdy_int_received = 0;
 		 LSM6DSL_Axes_t acc_axes;
@@ -165,6 +194,12 @@ static void get_acc_3axis(int32_t* x, int32_t* y, int32_t* z) {
 		 (*x) = (int32_t)acc_axes.x;
 		 (*y) = (int32_t)acc_axes.y;
 		 (*z) = (int32_t)acc_axes.z;
+
+		 return 0;
+
+	 } else {
+
+		 return -1;
 	 }
 }
 
@@ -202,5 +237,6 @@ void get_and_print_3axis( void ) {
 	get_acc_3axis(&x, &y, &z);
 	print_3axis(x,y,z);
 }
+
 
 

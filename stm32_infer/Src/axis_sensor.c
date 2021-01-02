@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    axis_sensor.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Sat Jan  2 04:06:40 2021
+  * @date    Sat Jan  2 22:47:17 2021
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -48,14 +48,14 @@
 #define AI_NET_OBJ_INSTANCE g_axis_sensor
  
 #undef AI_AXIS_SENSOR_MODEL_SIGNATURE
-#define AI_AXIS_SENSOR_MODEL_SIGNATURE     "d089bd21834ba19a5abb89635dac14bc"
+#define AI_AXIS_SENSOR_MODEL_SIGNATURE     "2c6dae2cd3c436722eae700df5f832d0"
 
 #ifndef AI_TOOLS_REVISION_ID
 #define AI_TOOLS_REVISION_ID     "(rev-5.2.0)"
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Sat Jan  2 04:06:40 2021"
+#define AI_TOOLS_DATE_TIME   "Sat Jan  2 22:47:17 2021"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
