@@ -1,7 +1,5 @@
-# 참고용으로 아래에서 가져왔어요:
-https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d26c205/tensorflow/lite/micro/examples/magic_wand
 
-# 아래는 분석하면서 STM32용으로 수정하는 내용입니다 (실시간 수정)
+
 
 ## Application Architecture
 - x, y, z 3 axis accelerometer sensor 값을 사용합니다
@@ -12,511 +10,54 @@ https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d
 - 예제 모델은 x, y, z 3개 1 set일 때 예제 모델은 128 set 데이터를 입력을 받습니다 이는 즉 5.12초 정도의 데이터 양입니다. ==> 향후에 데이터 주실 때 동일하게 128 set로 끊어서 만들어 주셔야 합니다!!
 - 예제 모델은 output node가 4개입니다: "wing", "ring", "slope", "no gesture"의 4가지 output node가 있는겁니다. ==> 우리도 동일하게 4가지 모션을 정하면 됩니다. 
 
-## (중요) SabAI에서 취할 모델 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원, https://www.youtube.com/watch?v=fgA63sgDft4)
-1) 어깨 으쓱하며 숨쉬기
-2) 양손 위로 들기
-3) 가슴 펴기
-4) "No gesture"
-이렇게 일단 4개만 하겠습니다. 
-
-## (중요) 운동 step 안은 다음과 같습니다
-1) 보드를 팔에 부착합니다. 부착하는 위치와 방향은 한번 밴드로 묶어 보시고 안을 주세요 저도 해보겠습니다.
-2) 먼저 운동 시작 포지션으로 팔을 움직여 놓은 생태에서,
-3) 5초 시간 내에 안에 한번의 운동이 완전히 끝나야 합니다. 
-
-## 추론 테스트용 데이터를 기존 예제에서 교체해 보는 중
-1) 기존 예제는   
-
-# Magic wand example
-
-This example shows how you can use TensorFlow Lite to run a 20 kilobyte neural
-network model to recognize gestures with an accelerometer. It's designed to run
-on systems with very small amounts of memory, such as microcontrollers.
-
-The example application reads data from the accelerometer on an Arduino Nano 33
-BLE Sense or SparkFun Edge board and indicates when it has detected a gesture,
-then outputs the gesture to the serial port.
-
-## Table of contents
-
--   [Getting started](#getting-started)
--   [Deploy to Arduino](#deploy-to-arduino)
--   [Deploy to Himax WE1 EVB](#deploy-to-himax-we1-evb)
--   [Deploy to SparkFun Edge](#deploy-to-sparkfun-edge)
--   [Run the tests on a development machine](#run-the-tests-on-a-development-machine)
--   [Train your own model](#train-your-own-model)
-
-## Deploy to Arduino
-
-The following instructions will help you build and deploy this sample
-to [Arduino](https://www.arduino.cc/) devices.
-
-The sample has been tested with the following devices:
-
-- [Arduino Nano 33 BLE Sense](https://store.arduino.cc/usa/nano-33-ble-sense-with-headers)
-
-### Install the Arduino_TensorFlowLite library
-
-This example application is included as part of the official TensorFlow Lite
-Arduino library. To install it, open the Arduino library manager in
-`Tools -> Manage Libraries...` and search for `Arduino_TensorFlowLite`.
-
-### Install and patch the accelerometer driver
-
-This example depends on the [Arduino_LSM9DS1](https://github.com/arduino-libraries/Arduino_LSM9DS1)
-library to communicate with the device's accelerometer. However, the library
-must be patched in order to enable the accelerometer's FIFO buffer.
-
-Follow these steps to install and patch the driver:
-
-#### Install the correct version
-
-In the Arduino IDE, go to `Tools -> Manage Libraries...` and search for
-`Arduino_LSM9DS1`. **Install version 1.0.0 of the driver** to ensure the
-following instructions work.
-
-#### Patch the driver
-
-The driver will be installed to your `Arduino/libraries` directory, in the
-subdirectory `Arduino_LSM9DS1`.
-
-Open the following file:
-
-```
-Arduino_LSM9DS1/src/LSM9DS1.cpp
-```
-
-Go to the function named `LSM9DS1Class::begin()`. Insert the following lines at
-the end of the function, immediately before the `return 1` statement:
-
-```cpp
-// Enable FIFO (see docs https://www.st.com/resource/en/datasheet/DM00103319.pdf)
-writeRegister(LSM9DS1_ADDRESS, 0x23, 0x02);
-// Set continuous mode
-writeRegister(LSM9DS1_ADDRESS, 0x2E, 0xC0);
-```
-
-Next, go to the function named `LSM9DS1Class::accelerationAvailable()`. You will
-see the following lines:
-
-```cpp
-if (readRegister(LSM9DS1_ADDRESS, LSM9DS1_STATUS_REG) & 0x01) {
-  return 1;
-}
-```
-
-Comment out those lines and replace them with the following:
-
-```cpp
-// Read FIFO_SRC. If any of the rightmost 8 bits have a value, there is data
-if (readRegister(LSM9DS1_ADDRESS, 0x2F) & 63) {
-  return 1;
-}
-```
-
-Next, save the file. Patching is now complete.
-
-### Load and run the example
-
-Once the library has been added, go to `File -> Examples`. You should see an
-example near the bottom of the list named `TensorFlowLite`. Select
-it and click `magic_wand` to load the example.
-
-Use the Arduino Desktop IDE to build and upload the example. Once it is running,
-you should see the built-in LED on your device flashing.
-
-Open the Arduino Serial Monitor (`Tools -> Serial Monitor`).
-
-You will see the following message:
-
-```
-Magic starts！
-```
-
-Hold the Arduino with its components facing upwards and the USB cable to your
-left. Perform the gestures "WING", "RING"(clockwise), and "SLOPE", and you
-should see the corresponding output:
-
-```
-WING:
-*         *         *
- *       * *       *
-  *     *   *     *
-   *   *     *   *
-    * *       * *
-     *         *
-```
-
-```
-RING:
-          *
-       *     *
-     *         *
-    *           *
-     *         *
-       *     *
-          *
-```
-
-```
-SLOPE:
-        *
-       *
-      *
-     *
-    *
-   *
-  *
- * * * * * * * *
-```
-
-## Deploy to Himax WE1 EVB
-
-The following instructions will help you build and deploy this example to
-[HIMAX WE1 EVB](https://github.com/HimaxWiseEyePlus/bsp_tflu/tree/master/HIMAX_WE1_EVB_board_brief)
-board. To understand more about using this board, please check
-[HIMAX WE1 EVB user guide](https://github.com/HimaxWiseEyePlus/bsp_tflu/tree/master/HIMAX_WE1_EVB_user_guide).
-
-### Initial Setup
-
-To use the HIMAX WE1 EVB, please make sure following software are installed:
-
-#### MetaWare Development Toolkit
-
-See
-[Install the Synopsys DesignWare ARC MetaWare Development Toolkit](/tensorflow/lite/micro/tools/make/targets/arc/README.md#install-the-synopsys-designware-arc-metaware-development-toolkit)
-section for instructions on toolchain installation.
-
-#### Make Tool version
-
-A `'make'` tool is required for deploying Tensorflow Lite Micro applications on
-HIMAX WE1 EVB, See
-[Check make tool version](/tensorflow/lite/micro/tools/make/targets/arc/README.md#make-tool)
-section for proper environment.
-
-#### Serial Terminal Emulation Application
-
-There are 2 main purposes for HIMAX WE1 EVB Debug UART port
-
--   print application output
--   burn application to flash by using xmodem send application binary
-
-You can use any terminal emulation program (like [PuTTY](https://www.putty.org/)
-or [minicom](https://linux.die.net/man/1/minicom)).
-
-### Generate Example Project
-
-The example project for HIMAX WE1 EVB platform can be generated with the
-following command:
-
-Download related third party data
-
-```
-make -f tensorflow/lite/micro/tools/make/Makefile TARGET=himax_we1_evb third_party_downloads
-```
-
-Generate magic wand project
-
-```
-make -f tensorflow/lite/micro/tools/make/Makefile generate_magic_wand_make_project TARGET=himax_we1_evb
-```
-
-### Build and Burn Example
-
-Following the Steps to run magic wand example at HIMAX WE1 EVB platform.
-
-1.  Go to the generated example project directory.
-
-    ```
-    cd tensorflow/lite/micro/tools/make/gen/himax_we1_evb_arc/prj/magic_wand/make
-    ```
-
-2.  Build the example using
-
-    ```
-    make app
-    ```
-
-3.  After example build finish, copy ELF file and map file to image generate
-    tool directory. \
-    image generate tool directory located at
-    `'tensorflow/lite/micro/tools/make/downloads/himax_we1_sdk/image_gen_linux_v3/'`
-
-    ```
-    cp magic_wand.elf himax_we1_evb.map ../../../../../downloads/himax_we1_sdk/image_gen_linux_v3/
-    ```
-
-4.  Go to flash image generate tool directory.
-
-    ```
-    cd ../../../../../downloads/himax_we1_sdk/image_gen_linux_v3/
-    ```
-
-    make sure this tool directory is in $PATH. You can permanently set it to
-    PATH by
-
-    ```
-    export PATH=$PATH:$(pwd)
-    ```
-
-5.  run image generate tool, generate flash image file.
-
-    *   Before running image generate tool, by typing `sudo chmod +x image_gen`
-        and `sudo chmod +x sign_tool` to make sure it is executable.
-
-    ```
-    image_gen -e magic_wand.elf -m himax_we1_evb.map -o out.img
-    ```
-
-6.  Download flash image file to HIMAX WE1 EVB by UART:
-
-    *   more detail about download image through UART can be found at
-        [HIMAX WE1 EVB update Flash image](https://github.com/HimaxWiseEyePlus/bsp_tflu/tree/master/HIMAX_WE1_EVB_user_guide#flash-image-update)
-
-After these steps, press reset button on the HIMAX WE1 EVB, you will see
-application output in the serial terminal. Perform following gestures
-`'Wing'`,`'Ring'`,`'Slope'` and you can see the output in serial terminal.
-
-```
-WING:
-*         *         *
- *       * *       *
-  *     *   *     *
-   *   *     *   *
-    * *       * *
-     *         *
-```
-
-```
-RING:
-          *
-       *     *
-     *         *
-    *           *
-     *         *
-       *     *
-          *
-```
-
-```
-SLOPE:
-        *
-       *
-      *
-     *
-    *
-   *
-  *
- * * * * * * * *
-```
-
-## Deploy to SparkFun Edge
-
-The following instructions will help you build and deploy this sample on the
-[SparkFun Edge development board](https://sparkfun.com/products/15170).
-
-If you're new to using this board, we recommend walking through the
-[AI on a microcontroller with TensorFlow Lite and SparkFun Edge](https://codelabs.developers.google.com/codelabs/sparkfun-tensorflow)
-codelab to get an understanding of the workflow.
-
-### Compile the binary
-
-Run the following command to build a binary for SparkFun Edge.
-
-```
-make -f tensorflow/lite/micro/tools/make/Makefile TARGET=sparkfun_edge magic_wand_bin
-```
-
-The binary will be created in the following location:
-
-```
-tensorflow/lite/micro/tools/make/gen/sparkfun_edge_cortex-m4/bin/magic_wand.bin
-```
-
-### Sign the binary
-
-The binary must be signed with cryptographic keys to be deployed to the device.
-We'll now run some commands that will sign our binary so it can be flashed to
-the SparkFun Edge. The scripts we are using come from the Ambiq SDK, which is
-downloaded when the `Makefile` is run.
-
-Enter the following command to set up some dummy cryptographic keys we can use
-for development:
-
-```
-cp tensorflow/lite/micro/tools/make/downloads/AmbiqSuite-Rel2.2.0/tools/apollo3_scripts/keys_info0.py \
-tensorflow/lite/micro/tools/make/downloads/AmbiqSuite-Rel2.2.0/tools/apollo3_scripts/keys_info.py
-```
-
-Next, run the following command to create a signed binary:
-
-```
-python3 tensorflow/lite/micro/tools/make/downloads/AmbiqSuite-Rel2.2.0/tools/apollo3_scripts/create_cust_image_blob.py \
---bin tensorflow/lite/micro/tools/make/gen/sparkfun_edge_cortex-m4/bin/magic_wand.bin \
---load-address 0xC000 \
---magic-num 0xCB \
--o main_nonsecure_ota \
---version 0x0
-```
-
-This will create the file `main_nonsecure_ota.bin`. We'll now run another
-command to create a final version of the file that can be used to flash our
-device with the bootloader script we will use in the next step:
-
-```
-python3 tensorflow/lite/micro/tools/make/downloads/AmbiqSuite-Rel2.2.0/tools/apollo3_scripts/create_cust_wireupdate_blob.py \
---load-address 0x20000 \
---bin main_nonsecure_ota.bin \
--i 6 \
--o main_nonsecure_wire \
---options 0x1
-```
-
-You should now have a file called `main_nonsecure_wire.bin` in the directory
-where you ran the commands. This is the file we'll be flashing to the device.
-
-### Flash the binary
-
-Next, attach the board to your computer via a USB-to-serial adapter.
-
-**Note:** If you're using the
-[SparkFun Serial Basic Breakout](https://www.sparkfun.com/products/15096), you
-should
-[install the latest drivers](https://learn.sparkfun.com/tutorials/sparkfun-serial-basic-ch340c-hookup-guide#drivers-if-you-need-them)
-before you continue.
-
-Once connected, assign the USB device name to an environment variable:
-
-```
-export DEVICENAME=put your device name here
-```
-
-Set another variable with the baud rate:
-
-```
-export BAUD_RATE=921600
-```
-
-Now, hold the button marked `14` on the device. While still holding the button,
-hit the button marked `RST`. Continue holding the button marked `14` while
-running the following command:
-
-```
-python3 tensorflow/lite/micro/tools/make/downloads/AmbiqSuite-Rel2.2.0/tools/apollo3_scripts/uart_wired_update.py \
--b ${BAUD_RATE} ${DEVICENAME} \
--r 1 \
--f main_nonsecure_wire.bin \
--i 6
-```
-
-You should see a long stream of output as the binary is flashed to the device.
-Once you see the following lines, flashing is complete:
-
-```
-Sending Reset Command.
-Done.
-```
-
-If you don't see these lines, flashing may have failed. Try running through the
-steps in [Flash the binary](#flash-the-binary) again (you can skip over setting
-the environment variables). If you continue to run into problems, follow the
-[AI on a microcontroller with TensorFlow Lite and SparkFun Edge](https://codelabs.developers.google.com/codelabs/sparkfun-tensorflow)
-codelab, which includes more comprehensive instructions for the flashing
-process.
-
-The binary should now be deployed to the device. Hit the button marked `RST` to
-reboot the board.
-
-Do the three magic gestures and you will see the corresponding LED light on! Red
-for "Wing", blue for "Ring" and green for "Slope".
-
-Debug information is logged by the board while the program is running. To view
-it, establish a serial connection to the board using a baud rate of `115200`. On
-OSX and Linux, the following command should work:
-
-```
-screen ${DEVICENAME} 115200
-```
-
-You will see the following message:
-
-```
-Magic starts！
-```
-
-Keep the chip face up, do magic gestures "WING", "RING"(clockwise), and "SLOPE"
-with your wand, and you will see the corresponding output like this!
-
-```
-WING:
-*         *         *
- *       * *       *
-  *     *   *     *
-   *   *     *   *
-    * *       * *
-     *         *
-```
-
-```
-RING:
-          *
-       *     *
-     *         *
-    *           *
-     *         *
-       *     *
-          *
-```
-
-```
-SLOPE:
-        *
-       *
-      *
-     *
-    *
-   *
-  *
- * * * * * * * *
-```
-
-To stop viewing the debug output with `screen`, hit `Ctrl+A`, immediately
-followed by the `K` key, then hit the `Y` key.
-
-## Run the tests on a development machine
-
-To compile and test this example on a desktop Linux or macOS machine, first
-clone the TensorFlow repository from GitHub to a convenient place:
-
-```bash
-git clone --depth 1 https://github.com/tensorflow/tensorflow.git
-```
-
-Next, put this folder under the
-tensorflow/tensorflow/lite/micro/examples/ folder, then `cd` into
-the source directory from a terminal and run the following command:
-
-```bash
-make -f tensorflow/lite/micro/tools/make/Makefile test_magic_wand_test
-```
-
-This will take a few minutes, and downloads frameworks the code uses like
-[CMSIS](https://developer.arm.com/embedded/cmsis) and
-[flatbuffers](https://google.github.io/flatbuffers/). Once that process has
-finished, you should see a series of files get compiled, followed by some
-logging output from a test, which should conclude with `~~~ALL TESTS PASSED~~~`.
-
-If you see this, it means that a small program has been built and run that loads
-the trained TensorFlow model, runs some example inputs through it, and got the
-expected outputs.
-
-To understand how TensorFlow Lite does this, you can look at the source in
-[hello_world_test.cc](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/hello_world/hello_world_test.cc).
-It's a fairly small amount of code that creates an interpreter, gets a handle to
-a model that's been compiled into the program, and then invokes the interpreter
-with the model and sample inputs.
-
-## Train your own model
+## (중요) SabAI에서 취할 모션 제스처 종류 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원)
+0) 반드시 영상 먼저 대충 보셔야 합니다: https://www.youtube.com/watch?v=fgA63sgDft4
+1) 어깨 으쓱하며 숨쉬기 "ring"
+2) 양손 위로 들기 "slope"
+3) 가슴 펴기 "wing"
+4) No gesture "negative"
+
+## (중요) 운동 STEP
+1) 보드를 오른손으로 듭니다. 보드 윗면은 안쪽으로, 버튼 있는 쪽이 정면으로 향한 상태로(검지로 파란색 버튼을 누를수 있게) 듭니다. 긴 케이블이 필요합니다. 영상 찍어서 드릴께요.
+2) 먼저 하고자 하는 운동의 시작 포지션으로 팔을 미리 움직여 놓습니다.
+3) 검은색 버튼을 눌러 리셋합니다.
+4) 준비가 되면 파란색 버튼을 눌러 센서값 출력을 시작합니다.
+5) 팔을 이동하여 운동이 종료되는 포지션까지 움직입니다.
+6) 다 움직였으면 파란색 버튼을 눌러 센서값 출력을 중지합니다.
+7) 위 스텝 2번부터 6번까지를 정확히 반복하는 겁니다.
+8) 하나의 운동은 5초 내에 끝나야 합니다. (가급적 4초 미만)
+9) 캡처된 파일 내용의 형태는 아래와 같습니다.
+* (공백 18줄)
+* -,-,-  ==> 여기가 모션 하나의 시작
+* -487,15,1167
+* -441,157,1077
+* (...생략 ) ==> 여기가 모션 하나의 끝
+* (공백 18줄)
+* -,-,- ==> 여기가 다음 모션 하나의 시작
+* (이상반복)
+10) 실제 파일 예제: https://github.com/jaydenchoe/SabAI/blob/main/magic_wand/sabai_example_output_wing_shiyun.txt
+
+## (중요) 운동 캡처 순서
+1) 모션 1번을 10~20회 반복 후 다음 이름으로 저장합니다: output_ring_본인영문이름.txt
+2) 모션 2번을 10~20회 반복 후 다음 이름으로 저장합니다: output_slope_본인영문이름.txt
+3) 모션 3번을 10~20회 반복 후 다음 이름으로 저장합니다: output_wing_본인영문이름.txt
+4) 위 3가지와 전혀 다른 모션을 20회 반복 후 다음 이름으로 저장합니다: output_negative_본인영문이름.txt
+5) 이상 4가지 파일을 https://drive.google.com/drive/folders/1icQ4qJHHk1hSBjss-vmbKZ6YyiIh81CU?usp=sharing 하위의 폴더에 적절히 넣으면 됩니다. 다른 파일들의 구성을 참고하세요.
+
+## MAC에서 캡처하는 방법 
+- 터미널 캡처 아무거나 쓰셔도 되고, 없으면 간단히 아래와 같이 할수 있습니다.
+1) screen /dev/cu.usbmodem14403 115200 ==> 디바이스 이름은 각자 다르겠지요.
+2) CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 시작이 됩니다.
+3) 모션 센싱 작업 여러번 하고 나서 다 되었다 싶으면 다시 CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 끝나고 screenlog.0으로 파일이 나옵니다.
+4) 파일 이름은 위의 가이드 처럼 해 주시고, 파일 열어서 이상하게 된 건 없는지 확인 한번 하고 아래의 폴더(하부에 4가지 폴더가 있으니 유의바람)에 넣어 주세요
+https://github.com/jaydenchoe/SabAI/tree/main/magic_wand/sabai_training_data
+
+# 데이터 학습 방법 (정리중)
+1) SabAI 제스처 데이터 학습 프레임워크(Colab) : https://colab.research.google.com/drive/1DqGlu8Nrcyt-fy0vpPPRo6iL97KjmdLT#scrollTo=LG6ErX5FRIaV
+2) 학습에 필요한 각 모셔 데이터들은 GDrive 폴더에 모으고, 이것을 Mount해서 Colab에서 당겨 오는 식으로 구현했습니다.
+
+## [참고용] Train your own model
+https://github.com/tensorflow/tensorflow/tree/dec8e0b11f4f87693b67e125e67dfbc68d26c205/tensorflow/lite/micro/examples/magic_wand
 
 To train your own model, or create a new model for a new set of gestures,
 follow the instructions in [magic_wand/train/README.md](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/magic_wand/train/README.md).

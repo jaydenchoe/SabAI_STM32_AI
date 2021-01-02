@@ -1,28 +1,28 @@
-# SabAI
+# Team SabAI
 Seoul Hackathon SabAI Team Repository
 
-SabAI
+## 팀원이 맡은 역할을 자유롭게 적어주세요(기획/디자인/설계/개발/디버깅/기술조언/환경설정/발표 등
+
+- 최재훈: 팀장, STM32 보드 기본 디바이스 enabling / 인공지능 추론+학습 구현 / 개발 내용 발표 정리
+
+- 박세문: STM32 보드 AWS IoT 환경 구현, AWS IOT 웹서버/서버사이드렌더링/웹앱 서비스 구현 / 인공지능 학습데이터 제공
+
+- 김병헌: User Interface/ User Experience / 시스템 시나리오 기획 / 인공지능 학습데이터 제공
+
+
+## 프로젝트 제목
+사회적 약자를 위한 초저가 인공지능 운동 도우미
+
+
+## 프로젝트 배경 혹은 목적
 
 간단히 적어주세요.
 
-팀원이 맡은 역할을 자유롭게 적어주세요(기획/디자인/설계/개발/디버깅/기술조언/환경설정/발표 등)
 
 
+## 파일 리스트
 
-프로젝트 제목
-
-간단히 적어주세요.
-
-
-
-프로젝트 배경 혹은 목적
-
-간단히 적어주세요.
-
-
-
-파일 리스트
-
+* 웹앱/ 웹서버 코드 모두 박세문
 팀원이 소스 파일을 만든 경우, 해당 파일을 적어주세요.
 
 헤더와 소스만 적어주세요.
@@ -41,7 +41,14 @@ SabAI
 
 
 
-코드 기여자
+## 코드 기여자
+
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/aws_customdemo_globals.h 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/Third_Party/amazon-freertos/demos/include/aws_clientcredential.h 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/main.h 박세문
+
 
 각자 개발한 코드를 빠짐없이 기입해주세요.
 
@@ -70,14 +77,13 @@ SabAI
     · src/tizen.c function_3 영희
 
 
-
- 구성 
+## 구성 
 
 프로젝트 구성을 적어주세요. 
 
 
 
-구현사항
+## 구현사항
 
 GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
@@ -99,9 +105,15 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
 
 
- 구현 영상  및 참가영상 
+## 구현 영상  및 참가영상 
+ 
+- 개발 내용 요약 자료 (PPT)
 
 - 온라인 해커톤 워크숍 참가영상/사진 (주 1회 권장)
+
+· 2021년 1월1일 Team SabAI 개발솔루션 설명 영상: https://www.youtube.com/channel/UCpIxpUlECa4bGSRHpx8D43w
+
+· 영상에서 사용한 발표자료: https://drive.google.com/file/d/1_c3b-mi05Lc0y1gY3ajXs9Qvg8tYH93V/view?usp=sharing
 
 - 온라인 해커톤 당일 참가영상/사진 
 
@@ -109,5 +121,13 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
 ※ 참가자들과 함께한 사진 10장이상 포스팅을 하셔야 함
 
-## AWS IOT README
+#### STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
+* [stm32_infer/README.md](https://github.com/jaydenchoe/SabAI/blob/main/stm32_infer/README.md)
+
+#### STM32 AWS IOT Board README
 * [aws_iot/README.md](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/README.md)
+
+#### 인공지능 학습 데이터와 학습 관련 프레임워크
+* [magic_wand/README.md](https://github.com/jaydenchoe/SabAI/tree/main/magic_wand/README.md)
+
+

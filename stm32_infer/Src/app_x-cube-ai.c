@@ -77,7 +77,8 @@
 #include "ai_datatypes_defines.h"
 
 /* USER CODE BEGIN includes */
- extern ai_handle ai_axis_sensor_data_weights_get(void);
+#include "peripherals.h"
+extern ai_handle ai_axis_sensor_data_weights_get(void);
 /* USER CODE END includes */
 
 /* Global AI objects */
@@ -191,8 +192,9 @@ int post_process(void * data)
 void MX_X_CUBE_AI_Init(void)
 {
     /* USER CODE BEGIN 3 */
+#if (!CAPTURE_MODE)
   printf("\r\nTEMPLATE - initialization\r\n");
-
+#endif
   ai_boostrap(ai_axis_sensor_data_weights_get(), activations);
     /* USER CODE END 3 */
 }

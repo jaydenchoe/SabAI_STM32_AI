@@ -53,6 +53,7 @@ OSPI_HandleTypeDef hospi1;
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi3;
 
+TIM_HandleTypeDef htim5;
 TIM_HandleTypeDef htim15;
 
 UART_HandleTypeDef huart4;
@@ -77,10 +78,11 @@ static void MX_USART1_UART_Init(void);
 static void MX_TIM15_Init(void);
 static void MX_CRC_Init(void);
 static void MX_UART4_Init(void);
+static void MX_TIM5_Init(void);
 /* USER CODE BEGIN PFP */
 extern void test_UART1_Output ();
 extern void test_UART4_Output ();
-extern void get_and_print_3axis( void );
+
 extern void MEMS_Init( void );
 /* USER CODE END PFP */
 
@@ -124,6 +126,7 @@ int main(void)
   MX_TIM15_Init();
   MX_CRC_Init();
   MX_UART4_Init();
+  MX_TIM5_Init();
   MX_X_CUBE_AI_Init();
   /* USER CODE BEGIN 2 */
   // 가속 센서 초기화합니다.
@@ -131,13 +134,18 @@ int main(void)
 
   //UART1 RX 인터럽트 받는다. 이상하게 아래 라인을 빼면 Printf 실행이 안된다!!!!!!!
 	HAL_UART_Receive_IT( &huart1, &g_ch_uart1_rx_data, 1); // UART1 RX 인터럽트 살린다.
-#ifdef UART4_LOOPBACK_TEST
+#if UART4_LOOPBACK_TEST
 	HAL_UART_Receive_IT( &huart4, &g_ch_uart4_rx_data, 1); // UART4 TX의 loopback test 용.
 #endif
 
-  // Timer 15 실행 (by 인터럽트). 상세 설정은 static void MX_TIM15_Init(void) 참고. prescale 12000, period 10000으로 1초마다 한번씩 이벤트 발생.
+  // Timer 15 실행 (by 인터럽트). 상세 설정은 static void MX_TIM15_Init(void) 참고. prescale 12000, period 400으로 25Hz로 이벤트 발생.
 	HAL_TIM_Base_Start_IT( &htim15 );
 
+  // Timer 5 실행 (by 인터럽트). 상세 설정은 static void MX_TIM5_Init(void) 참고. prescale 12000, period 10000으로 1초마다 한번씩 이벤트 발생.
+	HAL_TIM_Base_Start_IT( &htim5 );
+
+
+#if (!CAPTURE_MODE)
   // Hello World - UART1 low level output version
 	test_UART1_Output();
   // Hello World - UART4 low level output version
@@ -145,21 +153,28 @@ int main(void)
 
   // Hello World - Printf version
 	printf( "PRINTF(): Hello World\r\n" );
+#endif
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1) {
-	  get_and_print_3axis(); // 3축 센서 값을 받아서 그 값들 printf로 출력한다.
-	//continue;
+	while (1) {
+#if CAPTURE_MODE
+		break; // jump to the infinite loop
+#else
+	printf ("#### MAIN WHILE ####\r\n");
+#endif
+
     /* USER CODE END WHILE */
 
   MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
   	  break;
   }
-  printf ("#### code end ####\r\n");
+#if (!CAPTURE_MODE)
+  printf ("#### CODE END ####\r\n");
+#endif
   while (1) {
 	  // intentional infinite loop
   }
@@ -425,6 +440,51 @@ static void MX_SPI3_Init(void)
 }
 
 /**
+  * @brief TIM5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM5_Init(void)
+{
+
+  /* USER CODE BEGIN TIM5_Init 0 */
+
+  /* USER CODE END TIM5_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM5_Init 1 */
+
+  /* USER CODE END TIM5_Init 1 */
+  htim5.Instance = TIM5;
+  htim5.Init.Prescaler = 11999;
+  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim5.Init.Period = 9999;
+  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM5_Init 2 */
+
+  /* USER CODE END TIM5_Init 2 */
+
+}
+
+/**
   * @brief TIM15 Initialization Function
   * @param None
   * @retval None
@@ -445,7 +505,7 @@ static void MX_TIM15_Init(void)
   htim15.Instance = TIM15;
   htim15.Init.Prescaler = 11999;
   htim15.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim15.Init.Period = 9999;
+  htim15.Init.Period = 399;
   htim15.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim15.Init.RepetitionCounter = 0;
   htim15.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;

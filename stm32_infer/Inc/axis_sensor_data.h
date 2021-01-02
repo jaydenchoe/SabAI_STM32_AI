@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    axis_sensor_data.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Thu Dec 31 15:33:28 2020
+  * @date    Sat Jan  2 04:06:40 2021
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention

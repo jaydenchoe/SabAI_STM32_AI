@@ -155,3 +155,10 @@ stm32_infer/Inc/cnn_human_data.h
 stm32_infer/Src/cnn_human.c
 stm32_infer/.ai/cnn_human_c_graph.json
 stm32_infer/.ai/cnn_human_report.json
+stm32_infer/Debug/Src/axis_sensor.d
+stm32_infer/Debug/Src/axis_sensor.o
+stm32_infer/Debug/Src/axis_sensor.su
+stm32_infer/Debug/Src/axis_sensor_data.d
+stm32_infer/Debug/Src/axis_sensor_data.o
+stm32_infer/Debug/Src/axis_sensor_data.su
+stm32_infer/axis_sensor_generate_report.txt
