@@ -1,7 +1,7 @@
 # Team SabAI
 Seoul Hackathon SabAI Team Repository
 
-## 팀원이 맡은 역할을 자유롭게 적어주세요(기획/디자인/설계/개발/디버깅/기술조언/환경설정/발표 등
+## 팀원 구성 및 역할
 
 - 최재훈: 팀장, STM32 보드 기본 디바이스 enabling / 인공지능 추론+학습 구현 / 개발 내용 발표 정리
 
@@ -23,41 +23,6 @@ SabAI팀은 모두가 함께 건강 기록을 위해 사용가능한 IoT 제품�
 나아가, 분석 결과를 기록하고 관리할 수 있도록 서비스를 제공합니다.
 SabAI는 특별한 관리를 받을 수 없어도 편리한 운동 기록을 통한 자기 관리가 가능한 미래를 꿈 꿉니다.
 
-## 파일 리스트
-
-* 웹앱/ 웹서버 코드 모두 박세문
-팀원이 소스 파일을 만든 경우, 해당 파일을 적어주세요.
-
-헤더와 소스만 적어주세요.
-
-디자인 등의 리소스는 적지 말아주세요.
-
-예시
-
-  - inc/resource_1.h
-
-  - inc/resource_2.h
-
-  - src/resource_1.c
-
-  - src/resource_2.c
-
-
-
-## 코드 기여자
-
-* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
-* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/aws_customdemo_globals.h 박세문
-* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
-* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/Third_Party/amazon-freertos/demos/include/aws_clientcredential.h 박세문
-* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/main.h 박세문
-* stm32_infer/Src/main.c 최재훈
-* stm32_infer/Src/gesture_predictor.c 최재훈
-* stm32_infer/Src/axis_sensor.c 최재훈
-* stm32_infer/Src/peripherals.c 최재훈
-* stm32_infer/Src/stm32l4xx_hal_msp.c 최재훈
-* stm32_infer/Src/stm32l4xx_it.c 최재훈
-
 ## 구성
 본 프로젝트는 `aws_iot` 그리고 `stm32_infer`로 크게 나뉩니다. 각각 stm32보드에서의 AWS IoT 및 인공지능 추론을 포함합니다.
 
@@ -70,8 +35,6 @@ SabAI는 특별한 관리를 받을 수 없어도 편리한 운동 기록을 통
 > 
 > 인공지능 모델 추론에는 UART, GPIO, SPI 기능을 사용해 내장 가속도 센서 데이터를 획득 및 데이터를 이용해 인공지능 모델을 통한 추론을 진행합니다.
 > 추론 결과는 UART를 통해 `aws_iot` 역할을 수행하는 다른 보드로 전달합니다.
-
-
 
 ## 구현사항
 
@@ -87,6 +50,19 @@ GPIO / UART / SPI 를 이용하여 프로젝트를 진행했습니다.
 * 이미지 분석 기능 사용하지 않음.
 (인공지능 모델 상 Convolution 네트워크는 이용함)
 
+## 코드 기여자
+
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/aws_customdemo_globals.h 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/Third_Party/amazon-freertos/demos/include/aws_clientcredential.h 박세문
+* aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/main.h 박세문
+* stm32_infer/Src/main.c 최재훈
+* stm32_infer/Src/gesture_predictor.c 최재훈
+* stm32_infer/Src/axis_sensor.c 최재훈
+* stm32_infer/Src/peripherals.c 최재훈
+* stm32_infer/Src/stm32l4xx_hal_msp.c 최재훈
+* stm32_infer/Src/stm32l4xx_it.c 최재훈
 
 ## 구현 영상  및 참가영상 
  
