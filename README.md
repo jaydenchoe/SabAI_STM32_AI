@@ -74,11 +74,10 @@ GPIO / UART / SPI 를 이용하여 프로젝트를 진행했습니다.
 
 · 영상에서 사용한 발표자료: https://drive.google.com/file/d/1_c3b-mi05Lc0y1gY3ajXs9Qvg8tYH93V/view?usp=sharing
 
-- 온라인 해커톤 당일 참가영상/사진 
+- [온라인 해커톤 당일 참가영상/사진](https://github.com/jaydenchoe/SabAI/edit/main/README.md/#)
 
-- 시연장면
+- [시연장면](https://github.com/jaydenchoe/SabAI/edit/main/README.md/#)
 
-※ 참가자들과 함께한 사진 10장이상 포스팅을 하셔야 함
 
 #### STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
 * [stm32_infer/README.md](https://github.com/jaydenchoe/SabAI/blob/main/stm32_infer/README.md)
@@ -87,9 +86,7 @@ GPIO / UART / SPI 를 이용하여 프로젝트를 진행했습니다.
 * [aws_iot/README.md](https://github.com/jaydenchoe/SabAI/blob/main/aws_iot/README.md)
 
 
-## 아래는 인공지능 학습 데이터와 학습 관련 프레임워크 설명입니다.
-
-
+## 부록 (인공지능 학습 데이터와 학습 관련 프레임워크 설명)
 
 ## Application Architecture
 - x, y, z 3 axis accelerometer sensor 값을 사용합니다
