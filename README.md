@@ -74,9 +74,9 @@ GPIO / UART / SPI 를 이용하여 프로젝트를 진행했습니다.
 
 · 영상에서 사용한 발표자료: https://drive.google.com/file/d/1_c3b-mi05Lc0y1gY3ajXs9Qvg8tYH93V/view?usp=sharing
 
-- [온라인 해커톤 당일 참가영상/사진](https://github.com/jaydenchoe/SabAI/edit/main/README.md/#)
+- [온라인 해커톤 당일 참가영상/사진]()
 
-- [시연장면](https://github.com/jaydenchoe/SabAI/edit/main/README.md/#)
+- [시연장면]()
 
 
 #### STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
