@@ -54,6 +54,7 @@ SabAI는 특별한 관리를 받을 수 없어도 편리한 운동 기록을 통
 * stm32_infer/Src/main.c 최재훈
 * stm32_infer/Src/gesture_predictor.c 최재훈
 * stm32_infer/Src/axis_sensor.c 최재훈
+* stm32_infer/Src/peripherals.c 최재훈
 * stm32_infer/Src/stm32l4xx_hal_msp.c 최재훈
 * stm32_infer/Src/stm32l4xx_it.c 최재훈
 
@@ -74,24 +75,17 @@ SabAI는 특별한 관리를 받을 수 없어도 편리한 운동 기록을 통
 
 ## 구현사항
 
-GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
+GPIO / UART / SPI 를 이용하여 프로젝트를 진행했습니다.
 
-사용한 클라우드 명시
+### 사용 클라우드
+* AWS IoT (데이터 provisioning)
+* vercel (웹서비스 deploy)
 
-카메라 기능 사용 여부
+### 기타 사항
+* 카메라 기능 사용하지 않음.
 
-이미지 분석 기능 사용 여부
-
-예시
-
-  - GPIO 사용
-
-  - 클라우드 사용
-
-  - 카메라 사용하지 않음
-
-  - 이미지 분석 사용하지 않음
-
+* 이미지 분석 기능 사용하지 않음.
+(인공지능 모델 상 Convolution 네트워크는 이용함)
 
 
 ## 구현 영상  및 참가영상 
