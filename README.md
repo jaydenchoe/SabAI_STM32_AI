@@ -68,15 +68,9 @@ GPIO / UART / SPI 를 이용하여 프로젝트를 진행했습니다.
  
 - 개발 내용 요약 자료 (PPT)
 
-- 온라인 해커톤 워크숍 참가영상/사진 (주 1회 권장)
+· Team SabAI 개발솔루션 설명 영상 / 발표 영상 / 시연 영상 : https://www.youtube.com/channel/UCpIxpUlECa4bGSRHpx8D43w
 
-· 2021년 1월1일 Team SabAI 개발솔루션 설명 영상: https://www.youtube.com/channel/UCpIxpUlECa4bGSRHpx8D43w
-
-· 영상에서 사용한 발표자료: https://drive.google.com/file/d/1_c3b-mi05Lc0y1gY3ajXs9Qvg8tYH93V/view?usp=sharing
-
-- [온라인 해커톤 당일 참가영상/사진]()
-
-- [시연장면]()
+· 발표자료: https://drive.google.com/drive/folders/11SJwUSGQbpouVL-liDn9XfmvkwitSEFn?usp=sharing
 
 
 #### STM32 Inference(모션 데이터 센싱과 인공지능 추론) Board README
