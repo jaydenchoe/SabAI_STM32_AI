@@ -186,7 +186,6 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 
 # 데이터 학습 방법 (정리중)
 1) SabAI 제스처 데이터 학습 프레임워크(Colab) : https://colab.research.google.com/drive/1DqGlu8Nrcyt-fy0vpPPRo6iL97KjmdLT#scrollTo=LG6ErX5FRIaV
-
-
+2) 학습에 필요한 각 모션 데이터들은 GDrive 폴더에 모으고, 이것을 Mount해서 Colab에서 당겨 오는 식으로 구현했습니다.
 
 
