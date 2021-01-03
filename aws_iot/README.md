@@ -93,9 +93,9 @@ File 속성이 읽기 모드로 되어 있는 경우 쓰기가 가능하도록 �
 1. [x] AWS IOT에 기기 연동 테스트
 2. [x] AWS IOT에 데모 값 MQTT로 전송되는지 확인
 3. [x] Queue에 넣을 데이터 structure 구현
-4. [ ] 해당 데이터 structure에 맞는 데이터 입력하게끔 serial RX 부분 구현
+4. [x] 해당 데이터 structure에 맞는 데이터 입력하게끔 serial RX 부분 구현
 5. [x] AWS IOT로 올라간 값을 web 에서 읽게 해주기
-6. [ ] web page 구성
+6. [x] web page 구성
 
 
 ### 추가 설명
