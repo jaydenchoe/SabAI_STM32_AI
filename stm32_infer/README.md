@@ -41,9 +41,5 @@
 7. AWS 보드에 command 날릴 목적으로 UART4 RX/TX 살렸습니다. 루프백으로 테스트 코드와 ifdef 넣어서 commit 했습니다. 루프백 코드 돌리려면 UART4 TX/RX가 아두이노 커넥터 PA0/1이니 이 둘을 묶어주고 테스트 해 보면 됩니다(굳이 할일은 없겠으나). 참고자료: https://os.mbed.com/platforms/B-L4S5I-IOT01A/
 8. 더 필요하면 말씀 주세요. 심전도나 심박, 카메라 등 각종 센서 붙여 볼 수 있을 것 같습니다. 다만 학습은 또 다른 이야기고....
 
-## AI 코드 관련 주의사항
-1. AI 쪽 코드 들어가면 빌드나 Flashing 할 때마다 변경사항 하나도 없어도 자꾸 ioc 파일에서 code generation 필요하다고 하여 "OK"를 한두번 눌러줘야 하는 번거로움 있음. 이건 CubeIDE/MX 버그인듯.
-2. cloning 다시 한 후에는 ioc 파일 열고 https://github.com/jaydenchoe/SabAI/blob/main/stm32_infer/axis_sensor.tflite 파일을 읽어서 CubeMX UI - SW 분석 쪽에서 "analyze" 해 주시기 바랍니다. 이후에 "Generate Code" 눌러서 코드 자동 생성해 주세요. 안그러면 조금 꼬이는 것 같더라고요. 
-3. 2.번 후에는 꼭 Clean All 하고 나서 Build All 해야 합니다. 안그러면 몇가지 자동 생성되는 파일이 꼬여서 AI 쪽 referencing error 납니다.
 
 # 기타
