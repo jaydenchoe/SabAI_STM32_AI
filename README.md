@@ -89,13 +89,11 @@ GPIO / UART / SPI 를 이용하여 프로젝트를 진행했습니다.
 ## 부록 (인공지능 학습 데이터와 학습 관련 프레임워크 설명)
 
 ## Application Architecture
-- x, y, z 3 axis accelerometer sensor 값을 사용합니다
-- 예제의 SparkFun Edge 보드에서는 25Hz로 샘플링합니다. ==> 우리 보드에서 어떻게 되어 있는지 내용 확인해야함
-- 예제에서는 전처리 없이 그냥 x, y, z 의 값을 바로 때려 넣습니다. ==> 우리도 일단 이렇게 해 봅시다. 나중에는 calibration이나 normalization windowing 작업 필요할 수 있어요.
+- x, y, z 3 axis accelerometer sensor 값을 사용합니다. 전처리 없이 그냥 x, y, z 의 값을 바로 때려 넣습니다. 나중에는 calibration이나 normalization windowing 작업 필요할 수 있어요.
 
 ## Model Overview
-- 예제 모델은 x, y, z 3개 1 set일 때 예제 모델은 128 set 데이터를 입력을 받습니다 이는 즉 5.12초 정도의 데이터 양입니다. ==> 향후에 데이터 주실 때 동일하게 128 set로 끊어서 만들어 주셔야 합니다!!
-- 예제 모델은 output node가 4개입니다: "wing", "ring", "slope", "no gesture"의 4가지 output node가 있는겁니다. ==> 우리도 동일하게 4가지 모션을 정하면 됩니다. 
+- x, y, z 3개 1 set일 때 예제 모델은 128 set 데이터를 입력을 받습니다 이는 즉 5.12초 정도의 데이터 양입니다. ==> 향후에 데이터 주실 때 동일하게 128 set로 끊어서 만들어 주셔야 합니다!!
+- output node가 4개입니다: 즉 4가지 모션을 처리하게 됩니다.
 
 ## (중요) SabAI에서 취할 모션 제스처 종류 (참고자료: 뇌졸중 재활 환자를 위한 앉아서 하는 자가 재활운동 by 재활의료기관 서울재활병원)
 0) 반드시 영상 먼저 대충 보셔야 합니다: https://www.youtube.com/watch?v=fgA63sgDft4
