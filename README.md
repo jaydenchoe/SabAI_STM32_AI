@@ -51,34 +51,11 @@ SabAI는 특별한 관리를 받을 수 없어도 편리한 운동 기록을 통
 * aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Src/st_sensordata_collector.c 박세문
 * aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Middlewares/Third_Party/amazon-freertos/demos/include/aws_clientcredential.h 박세문
 * aws_iot/STM32CubeExpansion_Cloud_AWS_V2.0.0/Projects/B-L4S5I-IOT01A/Applications/Cloud/aws_demos/Inc/main.h 박세문
-
-
-각자 개발한 코드를 빠짐없이 기입해주세요.
-
-파일 단위 혹은 함수 단위로 적어주세요.
-
-라인 단위로는 적지 말아주세요.
-
-팀원의 이름을 반드시 명시해주세요.
-
-예시
-
-  - 철수가 파일 전체를 개발한 경우
-
-    · inc/resource_1.h 철수src/resource_1.c 철수
-
-
-
-  - 철수와 영희가 각각 특정 파일의 함수를 개발한 경우
-
-    · src/resource_2.c function_1 영희
-
-    · src/resource_2.c function_2 철수
-
-  - 영희가 오픈소스에 특정 함수를 개발한 경우
-
-    · src/tizen.c function_3 영희
-
+* stm32_infer/Src/main.c 최재훈
+* stm32_infer/Src/gesture_predictor.c 최재훈
+* stm32_infer/Src/axis_sensor.c 최재훈
+* stm32_infer/Src/stm32l4xx_hal_msp.c 최재훈
+* stm32_infer/Src/stm32l4xx_it.c 최재훈
 
 ## 구성 
 
