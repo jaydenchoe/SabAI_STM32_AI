@@ -33829,7 +33829,7 @@ UNINIT_FIXED_LOC
 .iplt           0x0000000008147408        0x0
  .iplt          0x0000000008147408        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.rodata         0x0000000008147408     0xb240
+.rodata         0x0000000008147408     0xb248
                 0x0000000008147408                . = ALIGN (0x8)
  *(.rodata)
  .rodata        0x0000000008147408       0xfd Application/User/aws_customdemo_main.o
@@ -33837,308 +33837,309 @@ UNINIT_FIXED_LOC
  .rodata        0x0000000008147508      0x100 Application/User/aws_customdemo_publisher.o
  .rodata        0x0000000008147608      0x31b Application/User/aws_customdemo_runner.o
  *fill*         0x0000000008147923        0x1 
- .rodata        0x0000000008147924      0x231 Application/User/main.o
- *fill*         0x0000000008147b55        0x3 
- .rodata        0x0000000008147b58      0x27c Application/User/st_sensordata_collector.o
- .rodata        0x0000000008147dd4      0x370 Application/User/st_statusled_update.o
- .rodata        0x0000000008148144        0xa Application/User/watchdogkicker.o
- *fill*         0x000000000814814e        0x2 
- .rodata        0x0000000008148150      0x2ae Drivers/BSP/Components/es_wifi/es_wifi.o
- *fill*         0x00000000081483fe        0x2 
- .rodata        0x0000000008148400       0x10 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_uart_ex.o
- .rodata        0x0000000008148410      0x379 Middlewares/amazon-freertos/demos/demo_runner/iot_demo_freertos.o
- *fill*         0x0000000008148789        0x3 
- .rodata        0x000000000814878c      0x16d Middlewares/amazon-freertos/demos/network_manager/aws_iot_network_manager.o
- *fill*         0x00000000081488f9        0x3 
- .rodata        0x00000000081488fc        0x5 Middlewares/amazon-freertos/freertos_kernel/tasks.o
- *fill*         0x0000000008148901        0x3 
- .rodata        0x0000000008148904        0xd Middlewares/amazon-freertos/freertos_kernel/timers.o
- *fill*         0x0000000008148911        0x3 
- .rodata        0x0000000008148914       0xc0 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
- .rodata        0x00000000081489d4      0x210 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp.o
- .rodata        0x0000000008148be4       0x17 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
- *fill*         0x0000000008148bfb        0x1 
- .rodata        0x0000000008148bfc      0x8bc Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
- .rodata        0x00000000081494b8       0x17 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pem.o
- *fill*         0x00000000081494cf        0x1 
- .rodata        0x00000000081494d0       0x38 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
- .rodata        0x0000000008149508       0x36 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/rsa_internal.o
- *fill*         0x000000000814953e        0x2 
- .rodata        0x0000000008149540      0x144 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
- .rodata        0x0000000008149684       0x95 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_tls.o
- *fill*         0x0000000008149719        0x3 
- .rodata        0x000000000814971c      0x76c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
- .rodata        0x0000000008149e88        0xe Middlewares/amazon-freertos/libraries/abstractions/platform/iot_clock_freertos.o
- *fill*         0x0000000008149e96        0x2 
- .rodata        0x0000000008149e98       0x10 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_metrics.o
- .rodata        0x0000000008149ea8      0x348 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_network_freertos.o
- .rodata        0x000000000814a1f0        0xb Middlewares/amazon-freertos/libraries/abstractions/platform/iot_threads_freertos.o
- *fill*         0x000000000814a1fb        0x1 
- .rodata        0x000000000814a1fc      0x7b3 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_api.o
- *fill*         0x000000000814a9af        0x1 
- .rodata        0x000000000814a9b0      0x480 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_operation.o
- .rodata        0x000000000814ae30       0xb9 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_parser.o
- *fill*         0x000000000814aee9        0x3 
- .rodata        0x000000000814aeec      0x55e Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_subscription.o
- *fill*         0x000000000814b44a        0x2 
- .rodata        0x000000000814b44c       0x5c Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
- .rodata        0x000000000814b4a8       0x6e Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_init.o
- *fill*         0x000000000814b516        0x2 
- .rodata        0x000000000814b518       0x3a Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging.o
- *fill*         0x000000000814b552        0x2 
- .rodata        0x000000000814b554       0x22 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging_task_dynamic_buffers.o
- *fill*         0x000000000814b576        0x2 
- .rodata        0x000000000814b578       0x6f Middlewares/amazon-freertos/libraries/c_sdk/standard/common/taskpool/iot_taskpool.o
- *fill*         0x000000000814b5e7        0x1 
- .rodata        0x000000000814b5e8      0x946 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_api.o
- *fill*         0x000000000814bf2e        0x2 
- .rodata        0x000000000814bf30      0x4e5 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_network.o
- *fill*         0x000000000814c415        0x3 
- .rodata        0x000000000814c418      0x925 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_operation.o
- *fill*         0x000000000814cd3d        0x3 
- .rodata        0x000000000814cd40      0x790 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
- .rodata        0x000000000814d4d0      0x6f6 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_validate.o
- *fill*         0x000000000814dbc6        0x2 
- .rodata        0x000000000814dbc8       0x6e Middlewares/amazon-freertos/libraries/freertos_plus/standard/crypto/iot_crypto.o
- *fill*         0x000000000814dc36        0x2 
- .rodata        0x000000000814dc38       0x27 Middlewares/amazon-freertos/libraries/freertos_plus/standard/pkcs11/iot_pkcs11.o
- *fill*         0x000000000814dc5f        0x1 
- .rodata        0x000000000814dc60      0x204 Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
- .rodata        0x000000000814de64        0xc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfscanf_i.o)
+ .rodata        0x0000000008147924      0x235 Application/User/main.o
+ *fill*         0x0000000008147b59        0x3 
+ .rodata        0x0000000008147b5c      0x27c Application/User/st_sensordata_collector.o
+ .rodata        0x0000000008147dd8      0x370 Application/User/st_statusled_update.o
+ .rodata        0x0000000008148148        0xa Application/User/watchdogkicker.o
+ *fill*         0x0000000008148152        0x2 
+ .rodata        0x0000000008148154      0x2ae Drivers/BSP/Components/es_wifi/es_wifi.o
+ *fill*         0x0000000008148402        0x2 
+ .rodata        0x0000000008148404       0x10 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_uart_ex.o
+ .rodata        0x0000000008148414      0x379 Middlewares/amazon-freertos/demos/demo_runner/iot_demo_freertos.o
+ *fill*         0x000000000814878d        0x3 
+ .rodata        0x0000000008148790      0x16d Middlewares/amazon-freertos/demos/network_manager/aws_iot_network_manager.o
+ *fill*         0x00000000081488fd        0x3 
+ .rodata        0x0000000008148900        0x5 Middlewares/amazon-freertos/freertos_kernel/tasks.o
+ *fill*         0x0000000008148905        0x3 
+ .rodata        0x0000000008148908        0xd Middlewares/amazon-freertos/freertos_kernel/timers.o
+ *fill*         0x0000000008148915        0x3 
+ .rodata        0x0000000008148918       0xc0 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+ .rodata        0x00000000081489d8      0x210 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp.o
+ .rodata        0x0000000008148be8       0x17 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
+ *fill*         0x0000000008148bff        0x1 
+ .rodata        0x0000000008148c00      0x8bc Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
+ .rodata        0x00000000081494bc       0x17 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pem.o
+ *fill*         0x00000000081494d3        0x1 
+ .rodata        0x00000000081494d4       0x38 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
+ .rodata        0x000000000814950c       0x36 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/rsa_internal.o
+ *fill*         0x0000000008149542        0x2 
+ .rodata        0x0000000008149544      0x144 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
+ .rodata        0x0000000008149688       0x95 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_tls.o
+ *fill*         0x000000000814971d        0x3 
+ .rodata        0x0000000008149720      0x76c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
+ .rodata        0x0000000008149e8c        0xe Middlewares/amazon-freertos/libraries/abstractions/platform/iot_clock_freertos.o
+ *fill*         0x0000000008149e9a        0x2 
+ .rodata        0x0000000008149e9c       0x10 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_metrics.o
+ .rodata        0x0000000008149eac      0x348 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_network_freertos.o
+ .rodata        0x000000000814a1f4        0xb Middlewares/amazon-freertos/libraries/abstractions/platform/iot_threads_freertos.o
+ *fill*         0x000000000814a1ff        0x1 
+ .rodata        0x000000000814a200      0x7b3 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_api.o
+ *fill*         0x000000000814a9b3        0x1 
+ .rodata        0x000000000814a9b4      0x480 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_operation.o
+ .rodata        0x000000000814ae34       0xb9 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_parser.o
+ *fill*         0x000000000814aeed        0x3 
+ .rodata        0x000000000814aef0      0x55e Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_subscription.o
+ *fill*         0x000000000814b44e        0x2 
+ .rodata        0x000000000814b450       0x5c Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
+ .rodata        0x000000000814b4ac       0x6e Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_init.o
+ *fill*         0x000000000814b51a        0x2 
+ .rodata        0x000000000814b51c       0x3a Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging.o
+ *fill*         0x000000000814b556        0x2 
+ .rodata        0x000000000814b558       0x22 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging_task_dynamic_buffers.o
+ *fill*         0x000000000814b57a        0x2 
+ .rodata        0x000000000814b57c       0x6f Middlewares/amazon-freertos/libraries/c_sdk/standard/common/taskpool/iot_taskpool.o
+ *fill*         0x000000000814b5eb        0x1 
+ .rodata        0x000000000814b5ec      0x946 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_api.o
+ *fill*         0x000000000814bf32        0x2 
+ .rodata        0x000000000814bf34      0x4e5 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_network.o
+ *fill*         0x000000000814c419        0x3 
+ .rodata        0x000000000814c41c      0x925 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_operation.o
+ *fill*         0x000000000814cd41        0x3 
+ .rodata        0x000000000814cd44      0x790 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
+ .rodata        0x000000000814d4d4      0x6f6 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_validate.o
+ *fill*         0x000000000814dbca        0x2 
+ .rodata        0x000000000814dbcc       0x6e Middlewares/amazon-freertos/libraries/freertos_plus/standard/crypto/iot_crypto.o
+ *fill*         0x000000000814dc3a        0x2 
+ .rodata        0x000000000814dc3c       0x27 Middlewares/amazon-freertos/libraries/freertos_plus/standard/pkcs11/iot_pkcs11.o
+ *fill*         0x000000000814dc63        0x1 
+ .rodata        0x000000000814dc64      0x204 Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
+ .rodata        0x000000000814de68        0xc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfscanf_i.o)
  *(.rodata*)
  .rodata.AHBPrescTable
-                0x000000000814de70       0x10 Drivers/CMSIS/system_stm32l4xx.o
-                0x000000000814de70                AHBPrescTable
+                0x000000000814de74       0x10 Drivers/CMSIS/system_stm32l4xx.o
+                0x000000000814de74                AHBPrescTable
  .rodata.APBPrescTable
-                0x000000000814de80        0x8 Drivers/CMSIS/system_stm32l4xx.o
-                0x000000000814de80                APBPrescTable
+                0x000000000814de84        0x8 Drivers/CMSIS/system_stm32l4xx.o
+                0x000000000814de84                APBPrescTable
  .rodata.MSIRangeTable
-                0x000000000814de88       0x30 Drivers/CMSIS/system_stm32l4xx.o
-                0x000000000814de88                MSIRangeTable
+                0x000000000814de8c       0x30 Drivers/CMSIS/system_stm32l4xx.o
+                0x000000000814de8c                MSIRangeTable
  .rodata.network.7370
-                0x000000000814deb8       0x10 Middlewares/amazon-freertos/demos/network_manager/aws_iot_network_manager.o
- .rodata.FSb    0x000000000814dec8      0x100 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.FT0    0x000000000814dfc8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.FT1    0x000000000814e3c8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.FT2    0x000000000814e7c8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.FT3    0x000000000814ebc8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.RSb    0x000000000814efc8      0x100 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.RT0    0x000000000814f0c8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.RT1    0x000000000814f4c8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.RT2    0x000000000814f8c8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.RT3    0x000000000814fcc8      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
- .rodata.RCON   0x00000000081500c8       0x28 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+                0x000000000814debc       0x10 Middlewares/amazon-freertos/demos/network_manager/aws_iot_network_manager.o
+ .rodata.FSb    0x000000000814decc      0x100 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.FT0    0x000000000814dfcc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.FT1    0x000000000814e3cc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.FT2    0x000000000814e7cc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.FT3    0x000000000814ebcc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.RSb    0x000000000814efcc      0x100 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.RT0    0x000000000814f0cc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.RT1    0x000000000814f4cc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.RT2    0x000000000814f8cc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.RT3    0x000000000814fccc      0x400 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .rodata.RCON   0x00000000081500cc       0x28 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
  .rodata.base64_enc_map
-                0x00000000081500f0       0x40 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/base64.o
+                0x00000000081500f4       0x40 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/base64.o
  .rodata.base64_dec_map
-                0x0000000008150130       0x80 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/base64.o
+                0x0000000008150134       0x80 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/base64.o
  .rodata.small_prime
-                0x00000000081501b0      0x2a0 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/bignum.o
+                0x00000000081501b4      0x2a0 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/bignum.o
  .rodata.aes_info
-                0x0000000008150450       0x24 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150454       0x24 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_128_ecb_info
-                0x0000000008150474       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150478       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_192_ecb_info
-                0x0000000008150490       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150494       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_256_ecb_info
-                0x00000000081504ac       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x00000000081504b0       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_128_cbc_info
-                0x00000000081504c8       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x00000000081504cc       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_192_cbc_info
-                0x00000000081504e4       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x00000000081504e8       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_256_cbc_info
-                0x0000000008150500       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150504       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_128_cfb128_info
-                0x000000000815051c       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150520       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_192_cfb128_info
-                0x0000000008150538       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x000000000815053c       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_256_cfb128_info
-                0x0000000008150554       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150558       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_128_ctr_info
-                0x0000000008150570       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150574       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_192_ctr_info
-                0x000000000815058c       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150590       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_256_ctr_info
-                0x00000000081505a8       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x00000000081505ac       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.gcm_aes_info
-                0x00000000081505c4       0x24 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x00000000081505c8       0x24 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_128_gcm_info
-                0x00000000081505e8       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x00000000081505ec       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_192_gcm_info
-                0x0000000008150604       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150608       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.aes_256_gcm_info
-                0x0000000008150620       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150624       0x1c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
  .rodata.mbedtls_cipher_definitions
-                0x000000000815063c       0x80 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
-                0x000000000815063c                mbedtls_cipher_definitions
+                0x0000000008150640       0x80 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+                0x0000000008150640                mbedtls_cipher_definitions
  .rodata.ecp_supported_curves
-                0x00000000081506bc       0x24 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp.o
+                0x00000000081506c0       0x24 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp.o
  .rodata.secp256r1_p
-                0x00000000081506e0       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x00000000081506e4       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp256r1_b
-                0x0000000008150700       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x0000000008150704       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp256r1_gx
-                0x0000000008150720       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x0000000008150724       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp256r1_gy
-                0x0000000008150740       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x0000000008150744       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp256r1_n
-                0x0000000008150760       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x0000000008150764       0x20 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp384r1_p
-                0x0000000008150780       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x0000000008150784       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp384r1_b
-                0x00000000081507b0       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x00000000081507b4       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp384r1_gx
-                0x00000000081507e0       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x00000000081507e4       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp384r1_gy
-                0x0000000008150810       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+                0x0000000008150814       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
  .rodata.secp384r1_n
-                0x0000000008150840       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
- .rodata.last4  0x0000000008150870       0x80 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/gcm.o
+                0x0000000008150844       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+ *fill*         0x0000000008150874        0x4 
+ .rodata.last4  0x0000000008150878       0x80 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/gcm.o
  .rodata.mbedtls_sha1_info
-                0x00000000081508f0       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
-                0x00000000081508f0                mbedtls_sha1_info
+                0x00000000081508f8       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
+                0x00000000081508f8                mbedtls_sha1_info
  .rodata.mbedtls_sha224_info
-                0x0000000008150920       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
-                0x0000000008150920                mbedtls_sha224_info
+                0x0000000008150928       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
+                0x0000000008150928                mbedtls_sha224_info
  .rodata.mbedtls_sha256_info
-                0x0000000008150950       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
-                0x0000000008150950                mbedtls_sha256_info
+                0x0000000008150958       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
+                0x0000000008150958                mbedtls_sha256_info
  .rodata.oid_x509_ext
-                0x0000000008150980       0x78 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
+                0x0000000008150988       0x78 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
  .rodata.oid_sig_alg
-                0x00000000081509f8       0xb4 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
+                0x0000000008150a00       0xb4 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
  .rodata.oid_pk_alg
-                0x0000000008150aac       0x50 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
+                0x0000000008150ab4       0x50 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
  .rodata.oid_ecp_grp
-                0x0000000008150afc       0x3c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
+                0x0000000008150b04       0x3c Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
  .rodata.oid_md_alg
-                0x0000000008150b38       0x50 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
+                0x0000000008150b40       0x50 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
  .rodata.mbedtls_rsa_info
-                0x0000000008150b88       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
-                0x0000000008150b88                mbedtls_rsa_info
+                0x0000000008150b90       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
+                0x0000000008150b90                mbedtls_rsa_info
  .rodata.mbedtls_eckey_info
-                0x0000000008150bb8       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
-                0x0000000008150bb8                mbedtls_eckey_info
+                0x0000000008150bc0       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
+                0x0000000008150bc0                mbedtls_eckey_info
  .rodata.mbedtls_eckeydh_info
-                0x0000000008150be8       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
-                0x0000000008150be8                mbedtls_eckeydh_info
+                0x0000000008150bf0       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
+                0x0000000008150bf0                mbedtls_eckeydh_info
  .rodata.mbedtls_ecdsa_info
-                0x0000000008150c18       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
-                0x0000000008150c18                mbedtls_ecdsa_info
- .rodata.K      0x0000000008150c48      0x100 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/sha256.o
+                0x0000000008150c20       0x30 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
+                0x0000000008150c20                mbedtls_ecdsa_info
+ .rodata.K      0x0000000008150c50      0x100 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/sha256.o
  .rodata.ciphersuite_preference
-                0x0000000008150d48      0x340 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
+                0x0000000008150d50      0x340 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
  .rodata.ciphersuite_definitions
-                0x0000000008151088      0x120 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
+                0x0000000008151090      0x120 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
  .rodata.mbedtls_x509_crt_profile_default
-                0x00000000081511a8       0x10 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
-                0x00000000081511a8                mbedtls_x509_crt_profile_default
+                0x00000000081511b0       0x10 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
+                0x00000000081511b0                mbedtls_x509_crt_profile_default
  .rodata.mbedtls_x509_crt_profile_suiteb
-                0x00000000081511b8       0x10 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
-                0x00000000081511b8                mbedtls_x509_crt_profile_suiteb
+                0x00000000081511c0       0x10 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
+                0x00000000081511c0                mbedtls_x509_crt_profile_suiteb
  .rodata.IotNetworkAfr
-                0x00000000081511c8       0x1c Middlewares/amazon-freertos/libraries/abstractions/platform/iot_network_freertos.o
-                0x00000000081511c8                IotNetworkAfr
+                0x00000000081511d0       0x1c Middlewares/amazon-freertos/libraries/abstractions/platform/iot_network_freertos.o
+                0x00000000081511d0                IotNetworkAfr
  .rodata._pAwsIotShadowCallbackNames
-                0x00000000081511e4        0x8 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_api.o
-                0x00000000081511e4                _pAwsIotShadowCallbackNames
+                0x00000000081511ec        0x8 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_api.o
+                0x00000000081511ec                _pAwsIotShadowCallbackNames
  .rodata._pAwsIotShadowOperationNames
-                0x00000000081511ec       0x14 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_operation.o
-                0x00000000081511ec                _pAwsIotShadowOperationNames
- .rodata.S      0x0000000008151200       0x40 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
- .rodata.K      0x0000000008151240      0x100 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
+                0x00000000081511f4       0x14 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_operation.o
+                0x00000000081511f4                _pAwsIotShadowOperationNames
+ .rodata.S      0x0000000008151208       0x40 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
+ .rodata.K      0x0000000008151248      0x100 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
  .rodata._pLogLevelStrings
-                0x0000000008151340       0x14 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging.o
+                0x0000000008151348       0x14 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging.o
  .rodata._logHideAll
-                0x0000000008151354        0x3 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
- *fill*         0x0000000008151357        0x1 
+                0x000000000815135c        0x3 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
+ *fill*         0x000000000815135f        0x1 
  .rodata.pPingreq.7766
-                0x0000000008151358        0x2 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
- *fill*         0x000000000815135a        0x2 
+                0x0000000008151360        0x2 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
+ *fill*         0x0000000008151362        0x2 
  .rodata.tlsATS1_ROOT_CERTIFICATE_PEM
-                0x000000000815135c      0x4a5 Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
- *fill*         0x0000000008151801        0x3 
+                0x0000000008151364      0x4a5 Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
+ *fill*         0x0000000008151809        0x3 
  .rodata.tlsSTARFIELD_ROOT_CERTIFICATE_PEM
-                0x0000000008151804      0x5bd Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
- *fill*         0x0000000008151dc1        0x3 
+                0x000000000815180c      0x5bd Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
+ *fill*         0x0000000008151dc9        0x3 
  .rodata.tlsVERISIGN_ROOT_CERTIFICATE_PEM
-                0x0000000008151dc4      0x6c5 Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
+                0x0000000008151dcc      0x6c5 Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
  .rodata._printf_i.str1.1
-                0x0000000008152489       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
- *fill*         0x00000000081524ab        0x1 
+                0x0000000008152491       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ *fill*         0x00000000081524b3        0x1 
  .rodata.__sf_fake_stderr
-                0x00000000081524ac       0x20 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-findfp.o)
-                0x00000000081524ac                __sf_fake_stderr
+                0x00000000081524b4       0x20 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-findfp.o)
+                0x00000000081524b4                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x00000000081524cc       0x20 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-findfp.o)
-                0x00000000081524cc                __sf_fake_stdin
+                0x00000000081524d4       0x20 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-findfp.o)
+                0x00000000081524d4                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x00000000081524ec       0x20 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-findfp.o)
-                0x00000000081524ec                __sf_fake_stdout
+                0x00000000081524f4       0x20 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-findfp.o)
+                0x00000000081524f4                __sf_fake_stdout
  .rodata._setlocale_r.str1.1
-                0x000000000815250c        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-locale.o)
+                0x0000000008152514        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-locale.o)
                                           0x9 (size before relaxing)
  .rodata.str1.1
-                0x0000000008152514        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-locale.o)
+                0x000000000815251c        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-locale.o)
  .rodata._svfprintf_r.str1.1
-                0x0000000008152516       0x11 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000815251e       0x11 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata.__ssvfscanf_r.str1.1
-                0x0000000008152527        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-svfscanf.o)
+                0x000000000815252f        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-svfscanf.o)
  .rodata._scanf_i.str1.1
-                0x0000000008152527       0x12 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfscanf_i.o)
+                0x000000000815252f       0x12 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata.str1.1
-                0x0000000008152539        0x9 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfscanf_i.o)
+                0x0000000008152541        0x9 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata._ctype_
-                0x0000000008152542      0x101 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-ctype_.o)
-                0x0000000008152542                _ctype_
-                0x0000000008152648                . = ALIGN (0x8)
- *fill*         0x0000000008152643        0x5 
+                0x000000000815254a      0x101 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/libc_nano.a(lib_a-ctype_.o)
+                0x000000000815254a                _ctype_
+                0x0000000008152650                . = ALIGN (0x8)
+ *fill*         0x000000000815264b        0x5 
 
-.ARM.extab      0x0000000008152648        0x0
-                0x0000000008152648                . = ALIGN (0x8)
+.ARM.extab      0x0000000008152650        0x0
+                0x0000000008152650                . = ALIGN (0x8)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008152648                . = ALIGN (0x8)
+                0x0000000008152650                . = ALIGN (0x8)
 
-.ARM            0x0000000008152648        0x8
-                0x0000000008152648                . = ALIGN (0x8)
-                0x0000000008152648                __exidx_start = .
+.ARM            0x0000000008152650        0x8
+                0x0000000008152650                . = ALIGN (0x8)
+                0x0000000008152650                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0000000008152648        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_udivmoddi4.o)
-                0x0000000008152650                __exidx_end = .
-                0x0000000008152650                . = ALIGN (0x8)
+ .ARM.exidx     0x0000000008152650        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/libgcc.a(_udivmoddi4.o)
+                0x0000000008152658                __exidx_end = .
+                0x0000000008152658                . = ALIGN (0x8)
 
-.rel.dyn        0x0000000008152650        0x0
- .rel.iplt      0x0000000008152650        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.rel.dyn        0x0000000008152658        0x0
+ .rel.iplt      0x0000000008152658        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.preinit_array  0x0000000008152650        0x0
-                0x0000000008152650                . = ALIGN (0x8)
-                0x0000000008152650                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008152658        0x0
+                0x0000000008152658                . = ALIGN (0x8)
+                0x0000000008152658                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008152650                PROVIDE (__preinit_array_end = .)
-                0x0000000008152650                . = ALIGN (0x8)
+                0x0000000008152658                PROVIDE (__preinit_array_end = .)
+                0x0000000008152658                . = ALIGN (0x8)
 
-.init_array     0x0000000008152650        0x8
-                0x0000000008152650                . = ALIGN (0x8)
-                0x0000000008152650                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008152658        0x8
+                0x0000000008152658                . = ALIGN (0x8)
+                0x0000000008152658                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008152650        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
-                0x0000000008152654                PROVIDE (__init_array_end = .)
-                0x0000000008152658                . = ALIGN (0x8)
- *fill*         0x0000000008152654        0x4 
+ .init_array    0x0000000008152658        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x000000000815265c                PROVIDE (__init_array_end = .)
+                0x0000000008152660                . = ALIGN (0x8)
+ *fill*         0x000000000815265c        0x4 
 
-.fini_array     0x0000000008152658        0x8
-                0x0000000008152658                . = ALIGN (0x8)
+.fini_array     0x0000000008152660        0x8
+                0x0000000008152660                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008152658        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .fini_array    0x0000000008152660        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008152660                . = ALIGN (0x8)
- *fill*         0x000000000815265c        0x4 
-                0x0000000008152660                _sidata = LOADADDR (.data)
+                0x0000000008152668                . = ALIGN (0x8)
+ *fill*         0x0000000008152664        0x4 
+                0x0000000008152668                _sidata = LOADADDR (.data)
 
-.data           0x0000000020040000      0x738 load address 0x0000000008152660
+.data           0x0000000020040000      0x738 load address 0x0000000008152668
                 0x0000000020040000                . = ALIGN (0x8)
                 0x0000000020040000                _sdata = .
  *(.data)
@@ -34247,16 +34248,16 @@ UNINIT_FIXED_LOC
  *fill*         0x0000000020040734        0x4 
                 0x0000000020040738                _edata = .
 
-.igot.plt       0x0000000020040738        0x0 load address 0x0000000008152d98
+.igot.plt       0x0000000020040738        0x0 load address 0x0000000008152da0
  .igot.plt      0x0000000020040738        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.align16        0x0000000008152d98        0x8
-                0x0000000008152d99                . = (. + 0x1)
- *fill*         0x0000000008152d98        0x1 
-                0x0000000008152d9f                . = (ALIGN (0x10) - 0x1)
- *fill*         0x0000000008152d99        0x6 
-                0x0000000008152d9f        0x1 BYTE 0x0
-                0x0000000008152da0                . = ALIGN (0x4)
+.align16        0x0000000008152da0       0x10
+                0x0000000008152da1                . = (. + 0x1)
+ *fill*         0x0000000008152da0        0x1 
+                0x0000000008152daf                . = (ALIGN (0x10) - 0x1)
+ *fill*         0x0000000008152da1        0xe 
+                0x0000000008152daf        0x1 BYTE 0x0
+                0x0000000008152db0                . = ALIGN (0x4)
 
 .bss            0x0000000020040738    0x34300
                 0x0000000020040738                _sbss = .
@@ -35919,240 +35920,240 @@ OUTPUT(B-L4S5I-IOT01_aws_demos.elf elf32-littlearm)
  .debug_line    0x00000000000644f2      0x88b Middlewares/amazon-freertos/libraries/freertos_plus/standard/utils/iot_pki_utils.o
  .debug_line    0x0000000000064d7d      0x822 Middlewares/amazon-freertos/libraries/freertos_plus/standard/utils/iot_system_init.o
 
-.debug_str      0x0000000000000000   0x15e6d0
+.debug_str      0x0000000000000000   0x15e6d1
  .debug_str     0x0000000000000000   0x1191e6 Application/AWS/ports/aws_ota_pal.o
                                      0x1195ea (size before relaxing)
  .debug_str     0x00000000001191e6     0x6b5e Application/AWS/ports/iot_pkcs11_st.o
                                       0x1461f (size before relaxing)
- .debug_str     0x000000000011fd44     0x6942 Application/AWS/ports/iot_secure_sockets.o
-                                     0x11cf2d (size before relaxing)
- .debug_str     0x0000000000126686      0x680 Application/AWS/ports/iot_wifi.o
-                                     0x11c0fc (size before relaxing)
- .debug_str     0x0000000000126d06       0x3d Application/Startup/startup_stm32l4s5vitx.o
+ .debug_str     0x000000000011fd44     0x6943 Application/AWS/ports/iot_secure_sockets.o
+                                     0x11cf2e (size before relaxing)
+ .debug_str     0x0000000000126687      0x680 Application/AWS/ports/iot_wifi.o
+                                     0x11c0fd (size before relaxing)
+ .debug_str     0x0000000000126d07       0x3d Application/Startup/startup_stm32l4s5vitx.o
                                          0xd0 (size before relaxing)
- .debug_str     0x0000000000126d43     0x217a Application/User/aws_customdemo_main.o
+ .debug_str     0x0000000000126d44     0x217a Application/User/aws_customdemo_main.o
                                        0xff81 (size before relaxing)
- .debug_str     0x0000000000128ebd      0x364 Application/User/aws_customdemo_publisher.o
+ .debug_str     0x0000000000128ebe      0x364 Application/User/aws_customdemo_publisher.o
                                       0x100c1 (size before relaxing)
- .debug_str     0x0000000000129221      0xdd3 Application/User/aws_customdemo_runner.o
+ .debug_str     0x0000000000129222      0xdd3 Application/User/aws_customdemo_runner.o
                                       0x10f4e (size before relaxing)
- .debug_str     0x0000000000129ff4      0x6d7 Application/User/es_wifi_io.o
+ .debug_str     0x0000000000129ff5      0x6d7 Application/User/es_wifi_io.o
                                      0x11ba8d (size before relaxing)
- .debug_str     0x000000000012a6cb     0x2167 Application/User/main.o
-                                     0x126c84 (size before relaxing)
- .debug_str     0x000000000012c832     0x442a Application/User/st_sensordata_collector.o
+ .debug_str     0x000000000012a6cc     0x2167 Application/User/main.o
+                                     0x126c85 (size before relaxing)
+ .debug_str     0x000000000012c833     0x442a Application/User/st_sensordata_collector.o
                                      0x1222f7 (size before relaxing)
- .debug_str     0x0000000000130c5c      0x6cc Application/User/st_statusled_update.o
+ .debug_str     0x0000000000130c5d      0x6cc Application/User/st_statusled_update.o
                                      0x11a7af (size before relaxing)
- .debug_str     0x0000000000131328      0x133 Application/User/stm32l4xx_hal_msp.o
+ .debug_str     0x0000000000131329      0x133 Application/User/stm32l4xx_hal_msp.o
                                      0x1128ce (size before relaxing)
- .debug_str     0x000000000013145b      0x120 Application/User/stm32l4xx_hal_timebase_tim.o
+ .debug_str     0x000000000013145c      0x120 Application/User/stm32l4xx_hal_timebase_tim.o
                                      0x1110de (size before relaxing)
- .debug_str     0x000000000013157b      0x14d Application/User/stm32l4xx_it.o
+ .debug_str     0x000000000013157c      0x14d Application/User/stm32l4xx_it.o
                                      0x11223a (size before relaxing)
- .debug_str     0x00000000001316c8      0x35b Application/User/sysmem.o
+ .debug_str     0x00000000001316c9      0x35b Application/User/sysmem.o
                                        0x7bc7 (size before relaxing)
- .debug_str     0x0000000000131a23      0x13f Application/User/watchdogkicker.o
+ .debug_str     0x0000000000131a24      0x13f Application/User/watchdogkicker.o
                                      0x112395 (size before relaxing)
- .debug_str     0x0000000000131b62      0x5a4 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01.o
+ .debug_str     0x0000000000131b63      0x5a4 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01.o
                                      0x10f2eb (size before relaxing)
- .debug_str     0x0000000000132106      0x1ac Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_accelero.o
+ .debug_str     0x0000000000132107      0x1ac Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_accelero.o
                                      0x10f798 (size before relaxing)
- .debug_str     0x00000000001322b2       0xed Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.o
+ .debug_str     0x00000000001322b3       0xed Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.o
                                      0x10f732 (size before relaxing)
- .debug_str     0x000000000013239f       0xc9 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_hsensor.o
+ .debug_str     0x00000000001323a0       0xc9 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_hsensor.o
                                      0x10e6b5 (size before relaxing)
- .debug_str     0x0000000000132468      0x106 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.o
+ .debug_str     0x0000000000132469      0x106 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.o
                                      0x10eab7 (size before relaxing)
- .debug_str     0x000000000013256e       0xc9 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_psensor.o
+ .debug_str     0x000000000013256f       0xc9 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_psensor.o
                                      0x10ecd7 (size before relaxing)
- .debug_str     0x0000000000132637       0xb2 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_tsensor.o
+ .debug_str     0x0000000000132638       0xb2 Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_tsensor.o
                                      0x10e69e (size before relaxing)
- .debug_str     0x00000000001326e9      0x209 Drivers/BSP/B-L475E-IOT01/vl53l0x_platform.o
+ .debug_str     0x00000000001326ea      0x209 Drivers/BSP/B-L475E-IOT01/vl53l0x_platform.o
                                      0x1159e7 (size before relaxing)
- .debug_str     0x00000000001328f2      0xa03 Drivers/BSP/Components/es_wifi/es_wifi.o
+ .debug_str     0x00000000001328f3      0xa03 Drivers/BSP/Components/es_wifi/es_wifi.o
                                        0xe864 (size before relaxing)
- .debug_str     0x00000000001332f5      0x140 Drivers/BSP/Components/hts221/hts221.o
+ .debug_str     0x00000000001332f6      0x140 Drivers/BSP/Components/hts221/hts221.o
                                        0x45b3 (size before relaxing)
- .debug_str     0x0000000000133435       0xfe Drivers/BSP/Components/lis3mdl/lis3mdl.o
+ .debug_str     0x0000000000133436       0xfe Drivers/BSP/Components/lis3mdl/lis3mdl.o
                                        0x48f6 (size before relaxing)
- .debug_str     0x0000000000133533       0xed Drivers/BSP/Components/lps22hb/lps22hb.o
+ .debug_str     0x0000000000133534       0xed Drivers/BSP/Components/lps22hb/lps22hb.o
                                        0x4b9e (size before relaxing)
- .debug_str     0x0000000000133620      0x142 Drivers/BSP/Components/lsm6dsl/lsm6dsl.o
+ .debug_str     0x0000000000133621      0x142 Drivers/BSP/Components/lsm6dsl/lsm6dsl.o
                                        0x559c (size before relaxing)
- .debug_str     0x0000000000133762     0x158e Drivers/BSP/Components/vl53l0x/vl53l0x_api.o
+ .debug_str     0x0000000000133763     0x158e Drivers/BSP/Components/vl53l0x/vl53l0x_api.o
                                      0x1170b7 (size before relaxing)
- .debug_str     0x0000000000134cf0      0x7ec Drivers/BSP/Components/vl53l0x/vl53l0x_api_calibration.o
+ .debug_str     0x0000000000134cf1      0x7ec Drivers/BSP/Components/vl53l0x/vl53l0x_api_calibration.o
                                      0x11638d (size before relaxing)
- .debug_str     0x00000000001354dc      0xd66 Drivers/BSP/Components/vl53l0x/vl53l0x_api_core.o
+ .debug_str     0x00000000001354dd      0xd66 Drivers/BSP/Components/vl53l0x/vl53l0x_api_core.o
                                      0x116999 (size before relaxing)
- .debug_str     0x0000000000136242       0xdc Drivers/CMSIS/system_stm32l4xx.o
+ .debug_str     0x0000000000136243       0xdc Drivers/CMSIS/system_stm32l4xx.o
                                      0x10d441 (size before relaxing)
- .debug_str     0x000000000013631e      0x5ac Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal.o
+ .debug_str     0x000000000013631f      0x5ac Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal.o
                                      0x10defa (size before relaxing)
- .debug_str     0x00000000001368ca      0x3c5 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_cortex.o
+ .debug_str     0x00000000001368cb      0x3c5 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_cortex.o
                                      0x10dc51 (size before relaxing)
- .debug_str     0x0000000000136c8f      0x2de Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_dma.o
+ .debug_str     0x0000000000136c90      0x2de Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_dma.o
                                      0x10d74e (size before relaxing)
- .debug_str     0x0000000000136f6d      0x250 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_gpio.o
+ .debug_str     0x0000000000136f6e      0x250 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_gpio.o
                                      0x10d658 (size before relaxing)
- .debug_str     0x00000000001371bd      0xd92 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_i2c.o
+ .debug_str     0x00000000001371be      0xd92 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_i2c.o
                                      0x10e5c5 (size before relaxing)
- .debug_str     0x0000000000137f4f      0x100 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_i2c_ex.o
+ .debug_str     0x0000000000137f50      0x100 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_i2c_ex.o
                                      0x10d9e2 (size before relaxing)
- .debug_str     0x000000000013804f       0xc3 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_iwdg.o
+ .debug_str     0x0000000000138050       0xc3 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_iwdg.o
                                      0x10d2b6 (size before relaxing)
- .debug_str     0x0000000000138112      0x5c9 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_pwr_ex.o
+ .debug_str     0x0000000000138113      0x5c9 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_pwr_ex.o
                                      0x10d9a6 (size before relaxing)
- .debug_str     0x00000000001386db      0x40e Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rcc.o
+ .debug_str     0x00000000001386dc      0x40e Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rcc.o
                                      0x10d9c7 (size before relaxing)
- .debug_str     0x0000000000138ae9      0x5e2 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rcc_ex.o
+ .debug_str     0x0000000000138aea      0x5e2 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rcc_ex.o
                                      0x10dda0 (size before relaxing)
- .debug_str     0x00000000001390cb      0x1bd Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rng.o
+ .debug_str     0x00000000001390cc      0x1bd Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rng.o
                                      0x10d465 (size before relaxing)
- .debug_str     0x0000000000139288      0x269 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rtc.o
+ .debug_str     0x0000000000139289      0x269 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_rtc.o
                                      0x10d785 (size before relaxing)
- .debug_str     0x00000000001394f1      0x5d0 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_spi.o
+ .debug_str     0x00000000001394f2      0x5d0 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_spi.o
                                      0x10dcac (size before relaxing)
- .debug_str     0x0000000000139ac1      0xdb4 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_tim.o
+ .debug_str     0x0000000000139ac2      0xdb4 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_tim.o
                                      0x10e52e (size before relaxing)
- .debug_str     0x000000000013a875      0x651 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_tim_ex.o
+ .debug_str     0x000000000013a876      0x651 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_tim_ex.o
                                      0x10de4f (size before relaxing)
- .debug_str     0x000000000013aec6      0x90f Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_uart.o
+ .debug_str     0x000000000013aec7      0x90f Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_uart.o
                                      0x10e199 (size before relaxing)
- .debug_str     0x000000000013b7d5      0x2c0 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_uart_ex.o
+ .debug_str     0x000000000013b7d6      0x2c0 Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_uart_ex.o
                                      0x10d9ae (size before relaxing)
- .debug_str     0x000000000013ba95      0x248 Middlewares/amazon-freertos/demos/demo_runner/aws_demo.o
+ .debug_str     0x000000000013ba96      0x248 Middlewares/amazon-freertos/demos/demo_runner/aws_demo.o
                                        0x9e97 (size before relaxing)
- .debug_str     0x000000000013bcdd      0x5b5 Middlewares/amazon-freertos/demos/demo_runner/iot_demo_freertos.o
+ .debug_str     0x000000000013bcde      0x5b5 Middlewares/amazon-freertos/demos/demo_runner/iot_demo_freertos.o
                                        0xe1b6 (size before relaxing)
- .debug_str     0x000000000013c292      0xdb2 Middlewares/amazon-freertos/demos/network_manager/aws_iot_network_manager.o
-                                       0xf6eb (size before relaxing)
- .debug_str     0x000000000013d044      0x536 Middlewares/amazon-freertos/freertos_kernel/event_groups.o
+ .debug_str     0x000000000013c293      0xdb2 Middlewares/amazon-freertos/demos/network_manager/aws_iot_network_manager.o
+                                       0xf6ec (size before relaxing)
+ .debug_str     0x000000000013d045      0x536 Middlewares/amazon-freertos/freertos_kernel/event_groups.o
                                        0xbf10 (size before relaxing)
- .debug_str     0x000000000013d57a      0x117 Middlewares/amazon-freertos/freertos_kernel/list.o
+ .debug_str     0x000000000013d57b      0x117 Middlewares/amazon-freertos/freertos_kernel/list.o
                                        0xabd3 (size before relaxing)
- .debug_str     0x000000000013d691      0x8bc Middlewares/amazon-freertos/freertos_kernel/queue.o
+ .debug_str     0x000000000013d692      0x8bc Middlewares/amazon-freertos/freertos_kernel/queue.o
                                        0xc506 (size before relaxing)
- .debug_str     0x000000000013df4d     0x163c Middlewares/amazon-freertos/freertos_kernel/tasks.o
+ .debug_str     0x000000000013df4e     0x163c Middlewares/amazon-freertos/freertos_kernel/tasks.o
                                        0xd37f (size before relaxing)
- .debug_str     0x000000000013f589      0x5fd Middlewares/amazon-freertos/freertos_kernel/timers.o
+ .debug_str     0x000000000013f58a      0x5fd Middlewares/amazon-freertos/freertos_kernel/timers.o
                                        0xca51 (size before relaxing)
- .debug_str     0x000000000013fb86      0x3af Middlewares/amazon-freertos/freertos_kernel/portable/heap_5.o
+ .debug_str     0x000000000013fb87      0x3af Middlewares/amazon-freertos/freertos_kernel/portable/heap_5.o
                                        0xb566 (size before relaxing)
- .debug_str     0x000000000013ff35      0x86f Middlewares/amazon-freertos/freertos_kernel/portable/port.o
+ .debug_str     0x000000000013ff36      0x86f Middlewares/amazon-freertos/freertos_kernel/portable/port.o
                                        0x89a0 (size before relaxing)
- .debug_str     0x00000000001407a4     0x2ffd Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
+ .debug_str     0x00000000001407a5     0x2ffd Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/aes.o
                                        0xbcc4 (size before relaxing)
- .debug_str     0x00000000001437a1      0xa0a Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/asn1parse.o
+ .debug_str     0x00000000001437a2      0xa0a Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/asn1parse.o
                                        0x9ac2 (size before relaxing)
- .debug_str     0x00000000001441ab      0x307 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/asn1write.o
+ .debug_str     0x00000000001441ac      0x307 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/asn1write.o
                                        0x9b47 (size before relaxing)
- .debug_str     0x00000000001444b2      0x1af Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/base64.o
+ .debug_str     0x00000000001444b3      0x1af Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/base64.o
                                        0x91ef (size before relaxing)
- .debug_str     0x0000000000144661      0x899 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/bignum.o
+ .debug_str     0x0000000000144662      0x899 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/bignum.o
                                        0x9d0c (size before relaxing)
- .debug_str     0x0000000000144efa     0x143a Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher.o
+ .debug_str     0x0000000000144efb     0x143a Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher.o
                                        0xa556 (size before relaxing)
- .debug_str     0x0000000000146334      0x2cf Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
+ .debug_str     0x0000000000146335      0x2cf Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/cipher_wrap.o
                                        0xa3af (size before relaxing)
- .debug_str     0x0000000000146603      0x8bc Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecdh.o
+ .debug_str     0x0000000000146604      0x8bc Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecdh.o
                                        0x86a7 (size before relaxing)
- .debug_str     0x0000000000146ebf      0x54e Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecdsa.o
+ .debug_str     0x0000000000146ec0      0x54e Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecdsa.o
                                        0xa30d (size before relaxing)
- .debug_str     0x000000000014740d      0xa90 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp.o
+ .debug_str     0x000000000014740e      0xa90 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp.o
                                        0xf663 (size before relaxing)
- .debug_str     0x0000000000147e9d      0x784 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
+ .debug_str     0x0000000000147e9e      0x784 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ecp_curves.o
                                        0x8a93 (size before relaxing)
- .debug_str     0x0000000000148621      0x3e3 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/gcm.o
+ .debug_str     0x0000000000148622      0x3e3 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/gcm.o
                                        0xa465 (size before relaxing)
- .debug_str     0x0000000000148a04      0x325 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md.o
+ .debug_str     0x0000000000148a05      0x325 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md.o
                                        0x8be6 (size before relaxing)
- .debug_str     0x0000000000148d29      0x2bd Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
+ .debug_str     0x0000000000148d2a      0x2bd Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/md_wrap.o
                                        0x951a (size before relaxing)
- .debug_str     0x0000000000148fe6     0x428a Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
+ .debug_str     0x0000000000148fe7     0x428a Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/oid.o
                                       0x13f3a (size before relaxing)
- .debug_str     0x000000000014d270      0x20b Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pem.o
+ .debug_str     0x000000000014d271      0x20b Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pem.o
                                        0x97f0 (size before relaxing)
- .debug_str     0x000000000014d47b      0x4a8 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk.o
+ .debug_str     0x000000000014d47c      0x4a8 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk.o
                                        0xe109 (size before relaxing)
- .debug_str     0x000000000014d923      0x2b5 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
+ .debug_str     0x000000000014d924      0x2b5 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pk_wrap.o
                                        0xf883 (size before relaxing)
- .debug_str     0x000000000014dbd8      0x1cc Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pkparse.o
+ .debug_str     0x000000000014dbd9      0x1cc Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/pkparse.o
                                       0x12d88 (size before relaxing)
- .debug_str     0x000000000014dda4      0x154 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/platform.o
+ .debug_str     0x000000000014dda5      0x154 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/platform.o
                                        0x87d0 (size before relaxing)
- .debug_str     0x000000000014def8      0x13f Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/platform_util.o
+ .debug_str     0x000000000014def9      0x13f Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/platform_util.o
                                        0xdade (size before relaxing)
- .debug_str     0x000000000014e037      0x9e6 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/rsa.o
+ .debug_str     0x000000000014e038      0x9e6 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/rsa.o
                                       0x132ad (size before relaxing)
- .debug_str     0x000000000014ea1d      0x14d Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/rsa_internal.o
+ .debug_str     0x000000000014ea1e      0x14d Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/rsa_internal.o
                                        0xd5cb (size before relaxing)
- .debug_str     0x000000000014eb6a      0x3a7 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/sha1.o
+ .debug_str     0x000000000014eb6b      0x3a7 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/sha1.o
                                        0x9689 (size before relaxing)
- .debug_str     0x000000000014ef11      0x5d1 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/sha256.o
+ .debug_str     0x000000000014ef12      0x5d1 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/sha256.o
                                        0x975f (size before relaxing)
- .debug_str     0x000000000014f4e2     0x4bab Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
+ .debug_str     0x000000000014f4e3     0x4bab Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_ciphersuites.o
                                       0x15921 (size before relaxing)
- .debug_str     0x000000000015408d     0x1492 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_cli.o
+ .debug_str     0x000000000015408e     0x1492 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_cli.o
                                       0x17316 (size before relaxing)
- .debug_str     0x000000000015551f     0x1085 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_tls.o
+ .debug_str     0x0000000000155520     0x1085 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/ssl_tls.o
                                       0x1a346 (size before relaxing)
- .debug_str     0x00000000001565a4      0x10e Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/threading.o
+ .debug_str     0x00000000001565a5      0x10e Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/threading.o
                                        0xce4d (size before relaxing)
- .debug_str     0x00000000001566b2      0x799 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509.o
+ .debug_str     0x00000000001566b3      0x799 Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509.o
                                       0x133bf (size before relaxing)
- .debug_str     0x0000000000156e4b      0x7ed Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
+ .debug_str     0x0000000000156e4c      0x7ed Middlewares/amazon-freertos/libraries/3rdparty/mbedtls/x509_crt.o
                                       0x1390e (size before relaxing)
- .debug_str     0x0000000000157638      0x361 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_clock_freertos.o
+ .debug_str     0x0000000000157639      0x361 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_clock_freertos.o
                                        0xe4a2 (size before relaxing)
- .debug_str     0x0000000000157999      0x292 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_metrics.o
+ .debug_str     0x000000000015799a      0x292 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_metrics.o
                                        0xef53 (size before relaxing)
- .debug_str     0x0000000000157c2b      0x6c2 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_network_freertos.o
+ .debug_str     0x0000000000157c2c      0x6c2 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_network_freertos.o
                                        0xf947 (size before relaxing)
- .debug_str     0x00000000001582ed      0x289 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_threads_freertos.o
+ .debug_str     0x00000000001582ee      0x289 Middlewares/amazon-freertos/libraries/abstractions/platform/iot_threads_freertos.o
                                        0xb5d1 (size before relaxing)
- .debug_str     0x0000000000158576      0xbd5 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_api.o
+ .debug_str     0x0000000000158577      0xbd5 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_api.o
                                        0xeff2 (size before relaxing)
- .debug_str     0x000000000015914b      0x311 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_operation.o
+ .debug_str     0x000000000015914c      0x311 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_operation.o
                                        0xeeed (size before relaxing)
- .debug_str     0x000000000015945c      0x353 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_parser.o
+ .debug_str     0x000000000015945d      0x353 Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_parser.o
                                        0xe6f5 (size before relaxing)
- .debug_str     0x00000000001597af      0x20d Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_subscription.o
+ .debug_str     0x00000000001597b0      0x20d Middlewares/amazon-freertos/libraries/c_sdk/aws/shadow/aws_iot_shadow_subscription.o
                                        0xede9 (size before relaxing)
- .debug_str     0x00000000001599bc      0x64b Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
+ .debug_str     0x00000000001599bd      0x64b Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_device_metrics.o
                                        0xe6c2 (size before relaxing)
- .debug_str     0x000000000015a007      0x150 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_init.o
+ .debug_str     0x000000000015a008      0x150 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/iot_init.o
                                        0xaad4 (size before relaxing)
- .debug_str     0x000000000015a157      0x243 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging.o
+ .debug_str     0x000000000015a158      0x243 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging.o
                                        0xe3a0 (size before relaxing)
- .debug_str     0x000000000015a39a      0x159 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging_task_dynamic_buffers.o
+ .debug_str     0x000000000015a39b      0x159 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/logging/iot_logging_task_dynamic_buffers.o
                                        0xcd4f (size before relaxing)
- .debug_str     0x000000000015a4f3      0xc35 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/taskpool/iot_taskpool.o
+ .debug_str     0x000000000015a4f4      0xc35 Middlewares/amazon-freertos/libraries/c_sdk/standard/common/taskpool/iot_taskpool.o
                                        0xea4e (size before relaxing)
- .debug_str     0x000000000015b128      0xa41 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_api.o
+ .debug_str     0x000000000015b129      0xa41 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_api.o
                                        0xf1a4 (size before relaxing)
- .debug_str     0x000000000015bb69      0x25f Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_network.o
+ .debug_str     0x000000000015bb6a      0x25f Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_network.o
                                        0xed42 (size before relaxing)
- .debug_str     0x000000000015bdc8      0x2ef Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_operation.o
+ .debug_str     0x000000000015bdc9      0x2ef Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_operation.o
                                        0xee65 (size before relaxing)
- .debug_str     0x000000000015c0b7      0x9dc Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
+ .debug_str     0x000000000015c0b8      0x9dc Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_serialize.o
                                        0xf719 (size before relaxing)
- .debug_str     0x000000000015ca93      0x241 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_subscription.o
+ .debug_str     0x000000000015ca94      0x241 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_subscription.o
                                        0xed65 (size before relaxing)
- .debug_str     0x000000000015ccd4      0x139 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_validate.o
+ .debug_str     0x000000000015ccd5      0x139 Middlewares/amazon-freertos/libraries/c_sdk/standard/mqtt/iot_mqtt_validate.o
                                        0xeb0e (size before relaxing)
- .debug_str     0x000000000015ce0d      0x155 Middlewares/amazon-freertos/libraries/c_sdk/standard/serializer/iot_json_utils.o
+ .debug_str     0x000000000015ce0e      0x155 Middlewares/amazon-freertos/libraries/c_sdk/standard/serializer/iot_json_utils.o
                                        0xcd67 (size before relaxing)
- .debug_str     0x000000000015cf62      0xa38 Middlewares/amazon-freertos/libraries/freertos_plus/standard/crypto/iot_crypto.o
+ .debug_str     0x000000000015cf63      0xa38 Middlewares/amazon-freertos/libraries/freertos_plus/standard/crypto/iot_crypto.o
                                       0x11234 (size before relaxing)
- .debug_str     0x000000000015d99a      0x282 Middlewares/amazon-freertos/libraries/freertos_plus/standard/pkcs11/iot_pkcs11.o
+ .debug_str     0x000000000015d99b      0x282 Middlewares/amazon-freertos/libraries/freertos_plus/standard/pkcs11/iot_pkcs11.o
                                       0x122fb (size before relaxing)
- .debug_str     0x000000000015dc1c      0x89c Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
+ .debug_str     0x000000000015dc1d      0x89c Middlewares/amazon-freertos/libraries/freertos_plus/standard/tls/iot_tls.o
                                       0x1d9ff (size before relaxing)
- .debug_str     0x000000000015e4b8      0x15c Middlewares/amazon-freertos/libraries/freertos_plus/standard/utils/iot_pki_utils.o
+ .debug_str     0x000000000015e4b9      0x15c Middlewares/amazon-freertos/libraries/freertos_plus/standard/utils/iot_pki_utils.o
                                        0xb56a (size before relaxing)
- .debug_str     0x000000000015e614       0xbc Middlewares/amazon-freertos/libraries/freertos_plus/standard/utils/iot_system_init.o
+ .debug_str     0x000000000015e615       0xbc Middlewares/amazon-freertos/libraries/freertos_plus/standard/utils/iot_system_init.o
                                        0x7e58 (size before relaxing)
 
 .comment        0x0000000000000000       0x7b

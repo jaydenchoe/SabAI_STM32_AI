@@ -64,12 +64,12 @@
 /**
  * @brief Soft Access point SSID
  */
-#define wificonfigACCESS_POINT_SSID_PREFIX    ( "Semoon" )
+#define wificonfigACCESS_POINT_SSID_PREFIX    ( "A302-WIFI" )
 
 /**
  * @brief Soft Access point Passkey
  */
-#define wificonfigACCESS_POINT_PASSKEY        ( "jess8412%%" )
+#define wificonfigACCESS_POINT_PASSKEY        ( "cyclops0" )
 
 /**
  * @brief Soft Access point Channel
