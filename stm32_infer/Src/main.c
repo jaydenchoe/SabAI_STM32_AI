@@ -170,7 +170,6 @@ int main(void)
 
   MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
-  	  break;
   }
 #if (!CAPTURE_MODE)
   printf ("#### CODE END ####\r\n");

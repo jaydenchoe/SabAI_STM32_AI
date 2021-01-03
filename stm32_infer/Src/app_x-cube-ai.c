@@ -78,7 +78,33 @@
 
 /* USER CODE BEGIN includes */
 #include "peripherals.h"
+
+ // user-defined conditions
+//#define AI_AXIS_SENSOR_INPUTS_IN_ACTIVATIONS
+//#define AI_AXIS_SENSOR_OUTPUTS_IN_ACTIVATIONS
+
+ #if (!AI_AXIS_SENSOR_INPUTS_IN_ACTIVATIONS)
+	#define RING_SAMPLE 0
+	#define SLOPE_SAMPLE 0
+#endif
+
+#if (RING_SAMPLE==1) && (SLOPE_SAMPLE==1)
+ 	 PANIC!!!
+#endif
+
+extern int PredictGesture(float* output);
+
 extern ai_handle ai_axis_sensor_data_weights_get(void);
+extern float g_slope_micro_f2e59fea_nohash_1_data[];
+extern float g_ring_micro_f9643d42_nohash_4_data[];
+extern UART_HandleTypeDef huart4;
+
+// A buffer holding the last 200 sets of 3-channel values
+float save_data[600] = {0.0};
+// Most recent position in the save_data buffer
+uint16_t begin_index = 0;
+// True if there is not yet enough data to run inference
+uint8_t pending_initial_data = 1;
 /* USER CODE END includes */
 
 /* Global AI objects */
@@ -175,13 +201,139 @@ static int ai_run(void *data_in, void *data_out)
 }
 
 /* USER CODE BEGIN 2 */
+static
 int acquire_and_process_data(void * data)
 {
-  return 0;
+	uint16_t i = 0;
+	float * p_buf = (float*) data;
+
+	// Check if we are ready for prediction or still pending more initial data
+	if (pending_initial_data && begin_index >= 200) { // enough data available
+	  pending_initial_data = 0; // pending clear, then
+	}
+
+	// Return if we don't have enough data
+	if (pending_initial_data)
+		return -1;
+
+
+	// Copy the requested number of bytes to the provided input tensor
+	for ( i = 0; i < AI_AXIS_SENSOR_IN_1_SIZE; ++i) {
+		int ring_array_index = begin_index + i - AI_AXIS_SENSOR_IN_1_SIZE;
+		if (ring_array_index < 0) {
+			ring_array_index += 600;
+		}
+	#if SLOPE_SAMPLE
+		(*p_buf++) = g_slope_micro_f2e59fea_nohash_1_data[i];
+	#elif RING_SAMPLE
+		(*p_buf++) = g_ring_micro_f9643d42_nohash_4_data[i];
+	#else
+		(*p_buf++) = save_data[ring_array_index];
+	#endif
+	}
+
+	return 0;
+
+/*
+	  printf ("=======  micro data start  ========");
+	  for ( i = 0; i < AI_AXIS_SENSOR_IN_1_SIZE; ++i ) {
+		  printf ( "%d\r\n", g_slope_micro_f2e59fea_nohash_1_data[i] );
+	  }
+
+	  printf ("=======  micro data end  ========");
+
+	  printf ("=======  copied data start  ========");
+	  p_buf = (float*) data;
+
+	  for ( i = 0; i < AI_AXIS_SENSOR_IN_1_SIZE; ++i ) {
+	  		  printf ( "%d\r\n", (*p_buf) );
+	  		  p_buf++;
+	  }
+	  printf ("=======  copied data end  ========");
+*/
+
 }
+
+
+static int get_highest_score_index( float* p_nodes) {
+	int  i = 0;
+	float highest_score = -1;
+	int highest_score_index = -1;
+    float threshold = 0.7f;
+
+	for (i = 0; i < 4; i++) {
+		if( (*p_nodes) > highest_score ) {
+			highest_score = (*p_nodes);
+			highest_score_index = i;
+			p_nodes++;
+		}
+	}
+
+	if (highest_score < threshold ) {
+		return 3; // no gesture;
+	} else {
+		return highest_score_index;
+	}
+}
+
 
 int post_process(void * data)
 {
+	float* p_buf = 0;
+	int cur_inferred_index = -1;
+	static int pre_inferred_index = -1;
+
+	p_buf = (float*)data;
+
+	cur_inferred_index = PredictGesture(p_buf);
+//	cur_inferred_index = get_highest_score_index(p_buf);
+
+#if RING_SAMPLE
+	printf("RING-SAMPLE");
+#elif SLOPE_SAMPLE
+	printf("SLOPE-SAMPLE");
+#endif
+
+	if (pre_inferred_index == cur_inferred_index ) {
+		return 0;
+	} else {
+		pre_inferred_index = cur_inferred_index;
+	}
+
+	if ( cur_inferred_index == 0 ) {
+		printf( "1" );
+		 HAL_UART_Transmit(&huart4, "s0\r", 3, 10);
+	} else {
+		printf( "0" );
+	}
+	if (cur_inferred_index == 1 ) {
+		 HAL_UART_Transmit(&huart4, "s1\r", 3, 10);
+		printf( "1" );
+	} else {
+		printf( "0" );
+	}
+	if (cur_inferred_index == 2 ) {
+		printf( "1" );
+		 HAL_UART_Transmit(&huart4, "s2\r", 3, 10);
+	} else {
+		printf( "0" );
+	}
+	if (cur_inferred_index == 3 ) {
+		printf( "1" );
+		// HAL_UART_Transmit(&huart4, "s3\r", 3, 10);
+	} else {
+		printf( "0" );
+	}
+	printf( "\r\n" );
+
+/*
+	printf("&d===========================\n\r");
+	printf("output_node[%d/wing W] %f\n\r", 0, *(p_buf+0));
+	printf("output_node[%d/ring O] %f\n\r", 1, *(p_buf+1));
+	printf("output_node[%d/angle] %f\n\r", 2, *(p_buf+2));
+	printf("output_node[%d/unknown] %f\n\r", 3, *(p_buf+3));
+	printf("Result Node Index (Prediction Calcucation) : %d\n\r", result);
+	*/
   return 0;
 }
 /* USER CODE END 2 */
@@ -209,6 +361,8 @@ void MX_X_CUBE_AI_Process(void)
 
   printf("TEMPLATE - run - main loop\r\n");
 
+  // sensor infofmf tnwjdgodi gka
+
   if (axis_sensor) {
 
     if (( axis_sensor_info.n_inputs != 1) || (axis_sensor_info.n_outputs != 1)) {
@@ -219,14 +373,14 @@ void MX_X_CUBE_AI_Process(void)
 
     /* 1 - Set the I/O data buffer */
 
-#if AI_CNN_HUMAN_INPUTS_IN_ACTIVATIONS
-    in_data = cnn_human_info.inputs[0].data;
+#if AI_AXIS_SENSOR_INPUTS_IN_ACTIVATIONS
+    in_data = axis_sensor_info.inputs[0].data;
 #else
     in_data = in_data_s;
 #endif
 
-#if AI_CNN_HUMAN_OUTPUTS_IN_ACTIVATIONS
-    out_data = cnn_human_info.outputs[0].data;
+#if AI_AXIS_SENSOR_INPUTS_IN_ACTIVATIONS
+    out_data = axis_sensor_info.outputs[0].data;
 #else
     out_data = out_data_s;
 #endif
@@ -237,18 +391,22 @@ void MX_X_CUBE_AI_Process(void)
     }
 
     /* 2 - main loop */
-    do {
+   do {
       /* 1 - acquire and pre-process input data */
       res = acquire_and_process_data(in_data);
       /* 2 - process the data - call inference engine */
-      if (res == 0)
+      if (res == 0) {
         res = ai_run(in_data, out_data);
+      } else {
+    	  continue;
+      }
       /* 3- post-process the predictions */
       if (res == 0)
         res = post_process(out_data);
-    //} while ( res == 0 );  /// jayden.choe 무한루프가 되니 일단 한번만 실행되게 바꿨음.
-    } while ( NULL );
-  }
+    } while ( 1 );
+      //    } while ( res == 0 );
+
+   }
 
   if (res) {
     ai_error err = {AI_ERROR_INVALID_STATE, AI_ERROR_CODE_NETWORK};

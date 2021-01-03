@@ -162,3 +162,14 @@ stm32_infer/Debug/Src/axis_sensor_data.d
 stm32_infer/Debug/Src/axis_sensor_data.o
 stm32_infer/Debug/Src/axis_sensor_data.su
 stm32_infer/axis_sensor_generate_report.txt
+stm32_infer/Drivers/BSP/B-L4S5I-IOT01A/b_l4s5i_iot01a_bus.c
+stm32_infer/Drivers/BSP/B-L4S5I-IOT01A/b_l4s5i_iot01a_bus.h
+stm32_infer/Inc/axis_sensor.h
+stm32_infer/Inc/axis_sensor_data.h
+magic_wand/sabai_training_data/ring/output_ring_jayden.txt
+magic_wand/sabai_training_data/ring/output_ring_jb.txt
+magic_wand/sabai_training_data/ring/output_ring_kimsang.txt
+magic_wand/sabai_training_data/slope/output_slope_jayden.txt
+*.d
+*.o
+*.su
