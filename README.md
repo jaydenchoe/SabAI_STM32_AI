@@ -169,7 +169,6 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 * (공백 18줄)
 * -,-,- ==> 여기가 다음 모션 하나의 시작
 * (이상반복)
-10) 실제 파일 예제: https://github.com/jaydenchoe/SabAI/blob/main/magic_wand/sabai_example_output_wing_shiyun.txt
 
 ## (중요) 운동 캡처 순서
 1) 모션 1번을 10~20회 반복 후 다음 이름으로 저장합니다: output_ring_본인영문이름.txt
@@ -183,12 +182,10 @@ GPIO / I2C / PWM / UART / SPI 중 사용한 프로토콜 명시
 1) screen /dev/cu.usbmodem14403 115200 ==> 디바이스 이름은 각자 다르겠지요.
 2) CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 시작이 됩니다.
 3) 모션 센싱 작업 여러번 하고 나서 다 되었다 싶으면 다시 CTRL-a 누르고 대문자 H 누르면 콘솔 터미널 캡처 끝나고 screenlog.0으로 파일이 나옵니다.
-4) 파일 이름은 위의 가이드 처럼 해 주시고, 파일 열어서 이상하게 된 건 없는지 확인 한번 하고 아래의 폴더(하부에 4가지 폴더가 있으니 유의바람)에 넣어 주세요
-https://github.com/jaydenchoe/SabAI/tree/main/magic_wand/sabai_training_data
+
 
 # 데이터 학습 방법 (정리중)
 1) SabAI 제스처 데이터 학습 프레임워크(Colab) : https://colab.research.google.com/drive/1DqGlu8Nrcyt-fy0vpPPRo6iL97KjmdLT#scrollTo=LG6ErX5FRIaV
-2) 학습에 필요한 각 모셔 데이터들은 GDrive 폴더에 모으고, 이것을 Mount해서 Colab에서 당겨 오는 식으로 구현했습니다.
 
 
 
